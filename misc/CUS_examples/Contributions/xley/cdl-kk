@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+Name=Candle: Reversal: Dark Cloud Cover (Kabuse) and Piercing Line (Kirikomi)
+script=candles := BARS(Candle,dimgray)|crkk1 := TALIB(CDLDARKCLOUDCOVER)|c1 := UTIL(COMP, crkk1, -1, LTEQ)|t1 := UTIL(COLOR, c1, candles, 1, red)|crkk2 := TALIB(CDLPIERCING)|c2 := UTIL(COMP, crkk2, 1, GTEQ)|t2 := UTIL(COLOR, c2, candles, 1, green)|plot(candles,dimgray,c-r-kk,Candle)
+logScale=1

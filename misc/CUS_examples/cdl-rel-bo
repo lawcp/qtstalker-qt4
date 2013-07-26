@@ -1,0 +1,8 @@
+enable=0
+plugin=CUS
+tabRow=1
+dateFlag=1
+Name=Relative Candles with 55 Day Breakouts
+version=0.33
+script=INCLUDECUS(cdl-rel)|cl := UTIL(REF,Close,1)|hi := TALIB(MAX,cl,55)|lo := TALIB(MIN,cl,55)|plot (hi,#ff9900,HC,Horizontal)|plot (lo,#11ffcc,LC,Horizontal)
+logScale=1

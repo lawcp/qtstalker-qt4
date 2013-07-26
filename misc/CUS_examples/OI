@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=OI
+script=oi := UTIL(REF,OpenInterest,0)|plot (oi,#ffff00,OI,Line)
+logScale=0

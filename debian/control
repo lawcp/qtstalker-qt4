@@ -1,0 +1,54 @@
+Source: qtstalker
+Section: finance
+Priority: optional
+Maintainer: Balwinder S "bdheeman" Dheeman <bdheeman@gmail.com>
+Build-Depends: cdbs (>= 0.4.50), debhelper (>= 7.0.10), quilt (>= 0.40),
+ libqt4-dev (>= 4.3.0), libdb4.8-dev (>= 4.8.0), libta-dev(>= 0.4.0~)
+Standards-Version: 3.8.4
+Homepage: http://qtstalker.sourceforge.net/
+
+Package: qtstalker
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: qtstalker-doc (= ${Source-Version})
+Description: Commodity/Stock Charting and Technical Analysis Platform [binary]
+ Qtstalker is a user friendly Technical Analysis package for GNU/Linux.  It is
+ similar to commercial wares such as Metastock, Supercharts and Tradestation.
+ It keeps to a lean, simple design for speed, portability, and low resource
+ usage.  Because it uses a plugin model, Qtstalker can easily be extended.
+ .
+ Qtstalker's features include:
+  - A point-and-click object-oriented graphical user interface.
+  - Chart plugins include line, bar, candlestick, point and figure, and swing.
+  - Customizable colors, Logarithmic and linear scaling.
+  - Indicator plugins include MACD, MAs, Bollinger Bands, RSI, and dozens more.
+  - Chart objects: trendlines, buy/sell arrows, fibonacci retracement, text.
+  - Quote plugins download data from online sources such as Yahoo, CME, NYBOT.
+  - Data import plugins for plain-text CSV files and MySQL database.
+  - Daily, weekly and monthly chart compression (intra-day in development)
+  - Various data classes such as stocks, futures, indices, ratios and spreads.
+  - A back testing function allowing indicator tests using actual trading data.
+  - A very basic portfolio manager. (Suggestions welcome.)
+ .
+ This package contains the main program and plugins.  Documentation is in the
+ qtstalker-doc package.
+ .
+ Qtstalker is 100% free software, distributed under the terms of the GNU GPL.
+ An active development community is continually adding new features.  We
+ appreciate your input towards creating a world-class GNU/Linux TA package.
+
+Package: qtstalker-doc
+Architecture: all
+Depends: qtstalker (= ${Source-Version})
+Recommends: www-browser | lynx | links, x-www-browser | firefox
+Description: Commodity/Stock Charting and Technical Analysis Platform [docs]
+ Qtstalker is a user friendly Technical Analysis package for GNU/Linux.  It is
+ similar to commercial wares such as Metastock, Supercharts and Tradestation.
+ It keeps to a lean, simple design for speed, portability, and low resource
+ usage.  Because it uses a plugin model, Qtstalker can easily be extended.
+ .
+ This package contains the HTML documentation
+ .
+ Qtstalker is 100% free software, distributed under the terms of the GNU GPL
+ An active development community is continually adding new features.  We
+ appreciate your input towards creating a world-class GNU/Linux TA package.

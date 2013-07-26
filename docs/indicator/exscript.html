@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Indicator: ExScript: External Script</title>
+    <link rel="stylesheet" type="text/css" href="../qtstalker.css" media="screen" />
+    <script src="../qtstalker.js" type="text/javascript"> </script>
+  </head>
+  <body>
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+    <h1>Indicator: ExScript: External Script</h1>
+    <p>
+      The "ExScript" indicator passes data to an external program and then plots
+      the output that is returned.
+    </p>
+    <p>
+     See the example <a href="../cus.html#examples">CUS</a> indicator at
+      <code>misc/CUS_examples/Contributions/xley/ExScript</code>
+    </p>
+    <p>Copy the companion Perl program ExScript.pl to somewhere in your home
+     directory. Now edit the indicator example to refer to that pathname.
+    </p>
+<pre>
+# That example indicator outputs just the "date,volume" for each bar, as well
+# as the commandline argument scaleFactor, and calls this Perl script.
+# The script calculates the average of all bars, gets the difference
+# from average and scales it. The script then passes the data back to the
+# indicator which plots it as a "Histogram Bar". It is a silly example which
+# could be done directly as a CUS script, but it gives an idea of the power.
+#
+# For example, it could also be enhanced to access the xml summary which
+# is exported using the "Tools => IndicatorSummary".
+</pre>
+    <p>
+      Back to <a href="intro.html">introduction</a>.
+    </p>
+  </body>
+</html>

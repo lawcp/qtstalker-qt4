@@ -1,0 +1,31 @@
+This document contains information on how to compile qtstalker on
+windows for windows using Qt Creator and mingw tools.
+
+The qtstaler  now can also be build in 'Qt Creator'; which a great IDE
+for dvelopment, testing and debugging Qt applications IDE :)
+
+1.  Get and install windows specific depending libraries, that are
+    pre-compiled for mingw/g++ compiler at
+    http://www.file-upload.net/download-1398226/mingw32libs.gz.html.
+    Unzip the file into mingwin32 directory at the root of qtstalker
+    project
+
+2.  Get and install Qt Creator (windows version) from
+    http://www.qtsoftware.com/developer/qt-creator. This contains the needed
+    qt libraries as well as the mingw enviornement and g++ compiler used to
+    complie the project under windows.
+
+3.  Start Qt Creator, open the qtstalker project by opening the
+    qtstalker.pro file from the qtstalker root directory.
+
+4.  Run qmake through the build menu
+
+5.  Run build through the build menu
+
+6.  Final binaries are created in the mingwin32/deploy (release version)
+    and mingwin32/deploydebug (debug version) directories
+
+Have fun, and contribute to the project.
+
+--
+gjn

@@ -1,0 +1,181 @@
+20040614: applied patch #972357 - new indicator VFI. Thanks to Xiaoguang Zhang.
+
+20040615: applied patch #972868,972870 - VFI and Tester exit changes. Thanks to Xiaoguang Zhang.
+
+20040615: fixed bug #972949 - yahoo Y2K bug. qtstalker was assuming any dates <1950 was a
+          21st century date. The yahoo history data only goes back to 1930, so cutoff date
+	  is changed to anything before 1930 will be considered a 21st century date.
+
+20040620: fixed bug in WMA that causes a segfault. period was off by one for second loop.
+
+20040621: fixed bug in BB that switched labels for upper and lower bands.
+
+20040622: fixed bug #976814 in EMA logic that applied smoothing factor to the first value. now just a plain
+          SMA value unsmoothed.
+
+20040622: changed Tester:: class to non-modal dialog for multiple instances. testing needed.
+
+20040624: fixed bug in MOM, ROC, SD indicators that plots a blank chart.
+
+20040624: fixed bugs in OVRLY indicator that displayed erratic behaviour.
+
+20040626: fixed bug that didn't restore stacked indicators space defaults on startup. now it
+          restores the default size of 75.
+
+20040628: fixed bug in PP indicator that didn't save linetype correctly.
+
+20040704: New indicator plugin CUS. This allows the user to create custom indicator
+          formulas. See DOCS for more info on usage.
+
+20040706: Changed the navigator gui from tabs to small buttons. Having to page back and forth
+          to access all the tabs was becoming tiresome. Ahhh, much better being able to see and
+	  select all the buttons at once.
+
+20040710: Rough version of the symbol scanner is now included. Will be improving as time goes on.
+          Need to update DOCS.
+
+20040711: Changed the PaintBars chart type to use a custom formula to draw the paint bars. In order
+          for it to work, the last step must be a COMP function that is checked to plot. This is the
+	  boolean array that will be used to draw the paint bars. If the COMP function returns
+	  TRUE than the bar will be considered an up bar. A FALSE value will be a down bar.
+	  Need to update DOCS.
+
+20040717: Changed the Line chart type to use a custom formula to plot. Now more flexible to use
+          a user defined formula rather than the hard coded options. The last step that is checked
+	  to plot will be the one to plot. Need to update DOCS.
+
+20040724: Applied patches #997264 - single pass optimisation for SMA, #997252 - cvsignore updates.
+          Thanks to Marco van Zwetselaar.
+
+20040728: Removed all the alert functions from all classes. The base plugin class was modified,
+          so we have to bump up all the lib and plugin versions from 0.26 to 0.27. qtstalker now only loads
+	  version 0.27 plugins.
+
+20040729: Changed the back testing gui and logic to use the new CUS user language to create
+          enter/exit rules instead of using the alert functions in the indicator plugins. The new
+	  system is not backwards compatible with the old one, so you will need to re-create any
+	  testing rules you already have. Need to update DOCS.
+
+20040730: Added value labels to fibo objects to display when adjusting the various levels in real
+          time. Also fixed fonts for values to use local font instead of system default.
+
+20040730: Added a chart page to the back testing module. First chart is an equity line that
+          plots the account balance. The second chart is a line plot of the symbol close with
+	  the buy/sell points marked for each signal. Replaced the date range parms with a bars
+	  counter instead.
+
+20040730: Added option to extend trendlines into the future in the edit dialog. Default is true.
+
+20040801: Applied patch #1001473 - PlotLine bug in Tester::. Thanks to Xiaoguang Zhang.
+
+20040801: Changed the method of entering/editing CUS rules in FormulaEdit:: to use a dialog
+          for each function in order to keep correct grammer. The user has to use the dialog
+	  now instead of entering functions by hand. Hopefully we can remove all the potential
+	  user errors so I don't have to code error checking for every parm. sigh.....
+
+20040801: Added trade delays for each backtester rule for enter/exit. Also added an apply button
+          to the backtester dialog which saves the backtester rule at the user's wish.
+
+20040805: Removed the QSMath class and merged all it's code back into the indicator plugins.
+          Figured out how the plugins can use other plugins now, so we can keep plugin framework
+	  totaly OO in design. Bit of a speed hit, but barely noticable on a slow machine.
+
+20040805: New indicator plugins to be used for the CUS language. COMP, used to compare 2 data arrays
+          and return a boolean array. MATH, used to add, divide, multiply or subtract to data arrays.
+	  REF, returns a data array of bar values (open, close etc.). Need to update DOCS.
+
+20040805: Applied patch #1002999 - volume in tester. Thanks to Xiaoguang Zhang.
+
+20040805: Plugins removed: MA2, MA3, MMA. Trying to reduce the number of plugins, these plugins
+          are easily reproduced by using a CUS formula.
+
+20040807: Added ability to create sub-groups in the chart group panel.
+
+20040807: Tester now saves/loads the results of a test run.
+
+20040812: Applied patch #1007570 - displacements in COMP. Thanks to Xiaoguang Zhang.
+
+20040815: Modified the plugin base class and the indicator plugins to save custom parms in a new way
+          that doesn't depend on field order. Developers will have to recreate any custom indicators,
+	  tester rules etc. Also a complete recompile will be needed to update the plugins.
+
+20040815: Removed OI indicator plugin. Easily replaced by using a REF custom function now. Part
+          of a plugin consolidation revue in progress.
+
+20040815: Merged WAD plugin with the AD plugin. Removed WAD.
+
+20040815: Merged OBV,NVI,PVI,PVT plugins into new VT (Volume Trends) plugin. Removed OBV,NVI,PVI,PVT.
+
+20040815: Removed STOCHRSI. Can easily be reproduced by a CUS formula.
+
+20040816: Removed HLC. Can easily be reproduced by a CUS formula. Added MIN/MAX functions to the MATH plugin.
+
+20040816: Added option for all indicators to be placed either on the main chart, the tabbed charts or
+          stacked positions. Now users's can place them anywhere. Beware, some indicators placed on
+	  the main chart will mess the chart up because of scaling differences ie. VOL.
+
+20040817: Added an insert step function to the FormulaEdit widget, improving the editing of CUS
+          formulas.
+
+20040821: Moved Indicator class into qtstalkerlib so that plugins could return an Indicator
+          instead of individual PlotLines.
+
+20040825: New class of plugins added. db plugins will be used to manage storage of bar and chart
+          data. This allows more efficient use of storage, editing and extendibility. The plugins
+	  added so far are Stocks, Futures, Index, Spread and CC.
+
+20040825: Removed quote plugins CC, Spread, Index. No longer needed.
+
+20040825: Fixed bug in COMP plugin that created problems parsing parms using the "=" as the
+          delimiter. Had to change all the COMP operators to use abbreviations ie. GT instead of >.
+
+20040826: Added custom long and short stops to the tester module.
+
+20040901: Removed Plugin class to better separate the various plugin classes to make less
+          dependancies between plugin classes.
+
+20040902: Added copy rule to the backtester page.
+
+20040902: Added CUS rule respository ~/Qtstalker/cusrules. The FormulaEdit widget can now
+          open and save rules that are being edited. The rules can be used by any FormulaEdit
+	  using module.
+
+20040907: Added refresh option to the context menu for the group page.
+
+20040907: Fixed bug that accepts search characters when creating indicators. This applies
+          to any filename in qtstalker. Only number and alphabet characters are valid now.
+
+20040907: Scanner and backtest dialogs now display the name in the window titles.
+
+20040912: Created new class of plugins for chart objects. Continuing the process of maximum
+          modularity and flexibility. Moved chart object code classes from /src and created
+	  a COPlugin class for each one.
+
+20040913: Applied patch #1025390 - indicator plugin COUNTER. This is used for CUS rules that
+          allow the user to count COMP signals and have a method of using the number of
+	  consecutive TRUE signals. Thanks to Xiaoguang Zhang for the plugin.
+
+20040913: Applied patch #1026411 - customizable displace in COMP indicator. Thanks to
+          Xiaoguang Zhang for the patch.
+
+20040914: Fixed bug #1028142 with patch to fix seg faults on FormulaEdit insert function.
+          Thanks to Xiaoguang Zhang for the patch.
+
+20040916: A logic error was found in the DMI indicator that returned smaller +DI and -DI values.
+          Fixed that as well as optimised speed.
+
+20040918: Finally fixed signal propagation for the indicator tabs. Now the user can delete all the
+          tabs if desired. YAY!
+
+20040919: Added progress dialogs to Scanner and Tester.
+
+20040920: Added help dialogs to all the plugins.
+
+20040920: Added -ffast-math compiler option to all *.pro files. There is a noticable improvement
+          in speed. Very cool.
+
+20040922: Changed the quotes dialog to be modeless.
+
+20040922: Added help functions to menus and dialogs.
+
+

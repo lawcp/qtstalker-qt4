@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Volume Candles
+script=candles := BARS(Candle,dimgray)|vol := UTIL(REF,Volume,0)|vol_ma := TALIB(SMA,vol,20)|vol_ratio := UTIL(DIV,vol,vol_ma)|vol_r1 := UTIL(COMP,vol_ratio,1,LT)|t1 := UTIL(COLOR,vol_r1,candles,1,#400000)|vol_r2 := UTIL(COMP,vol_ratio,1,GT)|t2 := UTIL(COLOR,vol_r2,candles,1,darkred)|vol_r3 := UTIL(COMP,vol_ratio,1.1,GT)|t3 := UTIL(COLOR,vol_r3,candles,1,red)|vol_r4 := UTIL(COMP,vol_ratio,1.2,GT)|t4 := UTIL(COLOR,vol_r4,candles,1,orange)|vol_r5 := UTIL(COMP,vol_ratio,1.3,GT)|t5 := UTIL(COLOR,vol_r5,candles,1,yellow)|vol_r6 := UTIL(COMP,vol_ratio,1.6,GT)|t6 := UTIL(COLOR,vol_r6,candles,1,white)|plot (candles,dimgray,cdl-vol,Candle)
+logScale=1

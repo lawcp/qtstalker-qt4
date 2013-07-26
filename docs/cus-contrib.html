@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Contributing CUS custom indicator examples</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Contributing CUS custom indicator examples</u> </h2>
+
+<p>See the directories "misc/CUS_examples/" and "misc/CUS_examples/Contributions/" and copy some into your
+"~/.qtstalker/dataN/indicator/Indicators" directory.
+See the <a href="indicator/intro.html">documentation</a> and explanation of
+<a href="cus.html">CUS</a>.
+</p>
+
+<p>
+This is a set of example indicators, so that we have a best-practice set of
+examples for users to copy, and to encourage new contributions to be consistent.
+</p>
+
+<p>
+Contribute your indicator and docs using the 
+<a href="http://sourceforge.net/tracker/?group_id=25632">Qtstalker Patch Tracker</a>.
+</p>
+<p>
+Please consider the following guidelines ...
+</p>
+<pre>
+* If the indicator is something that the user can just do for themself, then 
+there is no need to contribute an example. The collection will get too
+cluttered with basic stuff.
+
+* Use "plugin=CUS" rather than "plugin=TALIB" or Qtstalker core.
+For example: VOL versus Volume; SZ.
+Using CUS enables combination of different plots in one indicator.
+
+* Keep indicator names short.
+The name is used for the Tab, so long names mean that less tabs can be added.
+Of course the user can disable/enable the less-used indicators via the Indicator
+Panel. There is a trade-off between short and meaningful.
+
+* Provide base indicators that can be included.
+The CUS can include other CUS, e.g. INCLUDECUS(bar). The "SZ" indicator is an
+example. It can then be easily changed to use candles instead of bars.
+
+* Use unique plot labels when relevant.
+For example if you have various different indicators, each using a moving
+average (especially using EMA for one and SMA for another) then give them
+unique label names. The plot labels do not matter within each plot, but in the
+Tools:IndicatorSummary they will over-write each other if they have the same
+name. Similarly if you have a 20-bar SMA of Close used by various indicators,
+then give it the same name for each, otherwise the table is cluttered with
+duplicate columns.
+
+* Use "logScale=1".
+
+* Use SMA unless an indicator specifically needs something else.
+
+* Use "enable=1" so an indicator is displayed when it is copied to the
+user workspace.
+
+* Use "dateFlag=1" for tabRow 1 main charts and "dateFlag=0" otherwise. This
+saves a bit of screenspace.
+
+* Use the defult parameter values from TA-LIB, unless a good reason to change (consider contributing changes to the talib project).
+</pre>
+
+<p><a href="cus.html" target="_self"><img src="back.png" border="0"
+width="32" height="32" alt="Back" /></a> <a href="indicatorreference.html"
+target="_self"><img src="next.png" border="0" width="32" height="32"
+alt="Next" /></a> <a href="toc.html"><img src="home.png" border="0"
+width="32" height="32" alt="Home" /></a></p>
+</div>
+</body>
+</html>

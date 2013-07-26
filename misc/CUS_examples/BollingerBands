@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=BollingerBands
+script=bars := BARS(Bar)|bbupper := TALIB(BBANDS,Close,5,2,2,SMA,1)|bbmid := TALIB(BBANDS,Close,5,2,2,SMA,2)|bblower := TALIB(BBANDS,Close,5,2,2,SMA,3)|plot (bars,#ff0000,Bars,Bar)|plot (bbupper,#ff0000,BBU,Line)|plot (bbmid,#ff0000,BBM,Line)|plot (bblower,#ff0000,BBL,Line)
+logScale=0

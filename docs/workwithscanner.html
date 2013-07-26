@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Work with Scanner</title>
+  <meta name="generator" content="Amaya 9.53, see http://www.w3.org/Amaya/">
+</head>
+
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+
+<h2><u>Scanner Panel</u></h2>
+
+<h3>Description</h3>
+
+<p>The scanner tab allows you scan symbols using a user defined formula. All
+the symbols that meet the criteria of the scan are <em>put into chart
+group</em>. After the scan you might think something goes wrong, nope. The
+chart group will use the same name as the scan name, and be located as a
+folder under the "Scanner" group.</p>
+
+<p><img alt="" src="scannernav.png" style="width: 232px; height: 258px;" />
+</p>
+<dl>
+  <dt><strong>New Scanner</strong></dt>
+    <dd>Here you can create a new scanner. Selecting this will bring up a
+      series of dialogs. First you are asked for a name to call your new
+      scanner. The name must be unique, if not an error message will display.
+      After that, the scanner dialog will appear. <p></p>
+    </dd>
+  <dt><strong>Open Scanner</strong></dt>
+    <dd>This will load and display the selected scanner in the scanner
+      dialog. <p></p>
+    </dd>
+  <dt><strong>Delete Scanner</strong></dt>
+    <dd>Deletes the selected scanner. <p></p>
+    </dd>
+  <dt><strong>Rename Scanner </strong></dt>
+    <dd>This brings up a dialog that allows you to enter the new name of the
+      selected scanner.<p></p>
+    </dd>
+  <dt><strong>Run Scanner</strong></dt>
+    <dd>Allows the user to select a list of scanners to run in sequence. </dd>
+</dl>
+
+<p></p>
+
+<h2>Scanner Dialog</h2>
+<img alt="" src="scannerdialog.png" /> 
+<dl>
+  <dt><strong>Symbol Selection</strong></dt>
+    <dd>Checking the "All symbols" box will choose all symbols in the
+      qtstalker database for scanning. Pressing the symbols button will bring
+      up a file selector dialog that allows you to select the symbols of your
+      desire. Use the Chart/Group selector to choose either charts or
+      groups.<p></p>
+    </dd>
+  <dt><strong>Bar Length</strong></dt>
+    <dd>The bar length to use when scanning symbols.<p></p>
+    </dd>
+  <dt><strong>Bars</strong></dt>
+    <dd>The amount of bars to load for each symbol. Make sure you choose a
+      number that will accomodate the bars required for the scanner formula.
+      ie. a 200 MA will need at least 200 bars. <p></p>
+    </dd>
+  <dt><strong>Formula/Plot Tab</strong></dt>
+    <dd>This is where the user must enter a CUS type of formula to use for
+      the scanning logic. <br>
+      See the <a href="cus.html">CUS indicator plugin</a> for details on how
+      to construct a formula.<br>
+      <strong>Note</strong>: In order for any scanner formula to work, you
+      must have a boolean array variable plotted in order to generate the
+      scan logic. The plotted variable is the one that qtstalker uses for
+      selecting symbols. A FALSE value will ignore the symbol and a TRUE
+      value will select the symbol.<p></p>
+    </dd>
+  <dt><strong>Scan button</strong></dt>
+    <dd>...will perform the scan. <p></p>
+    </dd>
+  <dt><strong>Apply button</strong></dt>
+    <dd>...will save the scan rule.<p></p>
+    </dd>
+</dl>
+
+<p>Once all the parameters are entered, the user presses the Scan button to
+perform the scan. A progress dialog will then display the progress of the
+scan. The scan can be aborted by pressing the Cancel button from the progress
+dialog. </p>
+
+<p><br>
+<br>
+</p>
+
+<p><a href="workwithbacktest.html" target="_self"><img src="back.png" border="0" width="32" height="32" alt="Back"></a>
+<a href="mainchart.html" target="_self"><img src="next.png" border="0" width="32" height="32" alt="Next"></a>
+<a href="toc.html"><img src="home.png" border="0" width="32" height="32" alt="Home"></a></p>
+</div>
+</body>
+</html>

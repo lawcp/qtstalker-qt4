@@ -1,0 +1,6 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+Name=Scanner: Reversal: Dark Cloud Cover (Kabuse) and Piercing Line (Kirikomi)
+script=crkk1 := TALIB(CDLDARKCLOUDCOVER)|c1 := UTIL(COMP, crkk1, -1, LTEQ)|crkk2 := TALIB(CDLPIERCING)|c2 := UTIL(COMP, crkk2, 1, GTEQ)|plot (c1,red,DarkCloudCover,Histogram Bar)|plot(c2,green,PiercingLine,Histogram Bar)

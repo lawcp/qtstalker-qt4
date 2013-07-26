@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=DMI - Directional Movement Indices with ADX
+script=lowerband := UTIL(REF,20)|upperband := UTIL(REF,40)|-dm := TALIB(MINUS_DI,14)|+dm := TALIB(PLUS_DI,14)|adx := TALIB(ADX,14)|plot (lowerband,#0088ff,Lowerband,Horizontal)|plot (upperband,#ff3399,Upperband,Horizontal)|plot (-dm,#ee0000,-DI,Line)|plot (+dm,#00aa00,+DI,Line)|plot (adx,#ccccff,ADX,Line)
+logScale=0

@@ -1,0 +1,8 @@
+enable=0
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Relative Candles with Pivotal Points
+script=INCLUDECUS(cdl-rel)|fr := PP(FR) // first resistance level|sr := PP(SR) // second resistance level|tr := PP(TR) // third resistance level|fs := PP(FS) // first support level|ss := PP(SS) // second suport level|ts := PP(TS) // third support level|plot (fs,#11ffcc,PP FS,Horizontal)|plot (ss,#11ffcc,PP SS,Horizontal)|plot (ts,#11ffcc,PP TS,Horizontal)|plot (fr,#ff9900,PP FR,Horizontal)|plot (sr,#ff9900,PP SR,Horizontal)|plot (tr,#ff9900,PP TR,Horizontal)
+logScale=1

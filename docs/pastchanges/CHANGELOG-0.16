@@ -1,0 +1,28 @@
+- added an icon for qtstalker (qtstalker.xpm)
+
+- added font preference for charts
+
+- Fixed bug that didn't update filelist after deleting a chart
+
+- COT changed filenames for the annual file, updated COT quote plugin to handle old and new names.
+
+- Fixed bug that skipped previous date when calculating MA's.
+
+- Added a compile option to increase speed and decrease size "-Os".
+
+- Fixed "export" all bug that seg faults when trying to export all charts.
+
+- Added new MA support for Wilder's MA method  and fixed TR function to include first bar. Thanks to Glen for the patch.
+
+- New quote plugin "Ratio". This is a composite that divides two symbols to produce the ratio between them.
+
+- New quote plugin "CSV". This imports comma-separated values (CSV) ascii
+  files from the local filesystem.
+
+- Fixed bug that prevented chart objects with a date parm to draw.
+
+- Oh yeah baby, now we are getting serious, the basic backtesting module now completed. First person that finds the best
+  indicator rules to short MSFT and UIS stock to oblivion gets drinks on me. Let the games begin.
+
+- Added new dialog to edit chart tick data in place.
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Quote Plugin - Yahoo</title>
+  <meta name="generator"
+ content="Amaya 9.53, see http://www.w3.org/Amaya/">
+</head>
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Yahoo Plugin</u> </h2>
+<h3>Description </h3>
+<p>Yahoo provides historical and 10 - 20 minute delayed quotes for
+free. All
+yahoo supported exchanges are available with this plugin. </p>
+<p><img alt="" src="yahooplugin.png"> </p>
+<h3>Input Parameters </h3>
+<h4>Method </h4>
+<p>The type of download quote data you want </p>
+<ul>
+  <li>History - Update history using a specific date range. <br>
+  </li>
+  <li>Auto History - Updates to the most recent history. <br>
+  </li>
+  <li>Quote - Updates the most recent intra-day delayed quote. </li>
+  <li>Fundamental - Updates charts with yahoo fundamental data. <br>
+  </li>
+</ul>
+<h4>Start Date </h4>
+<p>The most distant date to include for update. Used only for History
+method.
+</p>
+<h4>End Date </h4>
+<p>The most recent date to include for update. Used only for History
+method.
+</p>
+<h4>Adjustment </h4>
+<p>Propagate the Close/Adjusted Close factor to all price columns (i.e.
+adjust for stock splits and dividends) more info <a
+ href="#adjustmentdetail">below</a> </p>
+<h4>All Symbols </h4>
+<p>If checked, all symbols will be selected. Unchecked, specific
+symbols can
+be selected by using the file selector. </p>
+<h4>Error Retry </h4>
+<p>The number of attempts to make if an error downloading the symbol
+occurs.
+</p>
+<h4>Timeout </h4>
+<p>The number of seconds to wait while downloading a symbol before
+moving on
+to the next symbol in the list. </p>
+<p><br>
+</p>
+<a name="add"></a>
+<h3>Add new stocks to the Qtstalker database </h3>
+<p>Pressing the "New Symbol" button&nbsp;<img alt=""
+ src="../pics/newchart.xpm"><img alt="" src="newchart.png"
+ style="width: 22px; height: 22px;"> will bring up
+the following dialog. </p>
+<p><img src="yahoonewsymbols.png"> </p>
+<p>Here we will be adding RHT, AAPL and IBM to our database. Leave a
+space
+between the symbols. </p>
+<p>NOTE: You only have to create the symbols once and not every time
+you want
+to download quotes. </p>
+<p>To find out the correct Yahoo symbol name for the stock of your
+desire,
+search the stock at the yahoo finance portal and take a look at the
+upper
+left corner in the displayed chart. US stocks do not have a suffix at
+the end
+like .DE for stocks traded at Xetra or .L for London Stock Exchange. </p>
+<p><img src="yahoosymbolfindout.png"> </p>
+<p>Symbols can be lowercase (e.g bhp.ax) or uppercase (e.g. BHP.AX) - it doesn't matter, but be consistent.
+</p>
+<h3>Perform quote download </h3>
+<p>After you have made all adjustments in the GUI press the download
+button
+<img src="download.png"> and the process starts. If an error occurs, it will
+be
+displayed in the status window. </p>
+<p>If you want to abort the download for any reason, press the cancel
+button
+<img src="canceldownload.png"> which is only available while a download
+is
+in progress. </p>
+<a name="download"></a>
+<h3>Detailed explanation of downloading</h3>
+<p>
+See the <a href="quick.html">Quickstart</a> documentation for an overview.
+</p>
+<p>
+Add a <a href="#add">new symbol</a> as described above (e.g. BHP). Download
+some historical end-of-day data using the "History" method. This only needs to
+be done once. However if you have subsequent trouble with downloading, you
+might need to delete a symbol and download its history again.
+</p>
+<p>
+After the close of the market each day, use the "Auto History" method.
+This will automatically retrieve end-of-day data for each day to bring you
+up-to-date. Be aware of market closing times and <a href="#avail">data
+availability</a>.
+</p>
+<p>
+While the market is open, the "Quote" method can be used to obtain a snapshot
+of today's current trading (20-minute delayed). However, again be aware of 
+<a href="#avail">data availability</a> for your particular exchange.
+</p>
+<a name="avail"></a>
+<h3>Market closing times and data availability</h3>
+<p>
+Yahoo publishes the end-of-day data some time after each exchange closes.
+</p>
+<p>
+North American exchanges seem to be available around 01:00 UTC which is about
+5 hours after NYSE close.
+</p>
+<p>
+All other exchanges seem to be available around 13:00 UTC. For example, for
+Australia and London, yesterday's data will not be available before the
+exchange opens. Note that this causes difficulty using the Quote method
+because you will be missing yesterday's data.
+</p>
+<p>
+See a <a href="http://en.wikipedia.org/wiki/List_of_market_opening_times">list</a> of market opening times and closing times.
+</p>
+<h3><a name="adjustmentdetail">Detailed explanation about the
+adjustment
+option</a> </h3>
+<p>Yahoo provides an Adjusted Close column in its data, scaling prior
+closing
+prices to the most recent price based on stock splits and dividends.
+For
+example, if a 2-for-1 split occurs halfway through the data, the
+Adjusted
+Close price from before the split will be half of the Close price. If
+the
+Adjustments option is checked, the plugin will calculate the factor
+between
+the Close price and the Adjusted Close price and apply it to Open,
+Close,
+High, Low, and Volume. It divides the prices and multiplies the volume,
+so in
+any case Close x Volume is the same as before the conversion. This
+allows you
+to display continuous graphs and analyze the movement of an issue
+without
+large jumps due to stock splits, although the caveat is that absolute
+prices
+are a factor different from what occurred on the exchange that day.
+Having
+said that, factoring for historical events in this manner is a common
+approach for visually graphing stock prices. </p>
+<p><br>
+<br>
+</p>
+<p><a href="nybot.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a>
+<a href="workwithcharts.html" target="_self"><img src="next.png"
+ alt="Next" border="0" height="32" width="32"></a><a href="toc.html"><img
+ src="home.png" alt="Home" border="0" height="32" width="32"></a></p>
+</div>
+</body>
+</html>

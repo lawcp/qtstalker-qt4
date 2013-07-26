@@ -1,0 +1,297 @@
+20050606: Moved the text chart object grabbox from right side of text to the left side.
+
+20050608: Fixed bad indicator group list in the move indicator dialog.
+
+20050610: Changed SYMBOL indicator to recalculate when chart compression and bars loaded
+          are updated.
+
+20050628: Applied patch #1227777 - install.html updates.
+
+20050829: Applied patch #1261806 - change portfolio's 'volume' variable from int to float
+          Thanks to imoszarh for the patch.
+
+20050831: Fixed CSV plugin to ignore delimiter chars in date fields
+
+20050831: Fixed bars to load spinbox mouse scrolling problem. Replaced spinbox with a textbox.
+          User must now enter numbers with keyboard and press enter key to make change official.
+
+20050831: New indicator dialog now defaults to last used indicator.
+
+20050905: Removed the MySQL plugin from the distribution. There will be officially no support
+          for software authors/owners of products whose behaviour is disrespectful and harmful
+          to the OSS community. Sorry Marco, I know a lot of users appreciated the work you did
+          to support it. I will be looking at a possible postgres replacement in the future.
+
+20050906: Applied patch that adds a text option to the HorizontalLine plugin. Thanks to Michal
+          for the patch.
+
+20050906: Applied patch #1283054 - delete dupe symbol in portfolio. Thanks to imoszarh for the patch.
+
+20050906: Applied patch #1283036 - show portfolio balance in percent. Thanks to imoszarh for the patch.
+
+20050907: Applied patch #1283865 - float to double type migration. Thanks to imoszarh for the patch.
+
+20050908: NYBOT changed download url. Updated NYBOT plugin.
+
+20050908: PortfolioDialog was not updating after item is deleted. Fixed.
+
+20050909: Fixed MADialog focus.
+
+20050909: Changed COMP plugin 'then' parm default to true.
+
+20050912: Applied patch #1288467 - QtstalkerFormat plugin. Thanks to imoszarh for the patch.
+
+20050912: Added a 'Delete Chart' parm to the QtstalkerFormat plugin.
+
+20050919: Added "qt" config option to the src/src.pro file. Fix for strange qmake bug on some systems.
+
+20050919: Updated pl translation files from Benedict.
+
+20051003: Applied patch #1311897 - AROON indicator. Thanks to Flynn for the patch.
+
+20051004: Applied patch #1312718 - AROON indicator fix. Thanks to Flynn for the patch.
+
+20051006: Added Chaikin Oscillator method to the AD plugin.
+
+20051006: Added Chaikin Money Flow method to the AD plugin.
+
+20051006: New Indicator VOLA - volatility. This contains the new Chaikin Volatility indicator, SD indicator,
+          and the VOLR indicator.
+
+20051006: Removed the SD, VOLR plugins. They are folded into the VOLA plugin.
+
+20051012: Revised the CUS gui/storage format. This breaks all the CUS formulas that use the old format.
+          Need to update CUS docs for full details.
+
+20051012: Removed the i18n/qtstalker_pl.qm file from CVS. Configure now generates this file.
+
+20051012: Removed the COMP, COUNTER, MATH, REF plugins and folded them into the UTIL plugin. The switch
+          to the new CUS format allows us to do this.
+
+20051012: Removed the lib/FormulaInput.* files from CVS. Now deprecated.
+
+20051012: Fixed bug in STOCH that used BarData for high/low instead of user provided data.
+
+20051012: Had to remove the AND/OR and THEN/ELSE functionality from the COMP plugin. The new CUS format
+          makes this very difficult. Instead user will have to replace the removed logic with additional
+          steps in their CUS scripts. grrr more CUS breakage will ensue.
+
+20051012: Fixed bug in CUS::getMinBars that did not calculate minBars properly. This was causing the Scanner
+          to fail because not enough bars were being loaded.
+
+20051013: Removed the Macro functions. I am not satisfied with them as they appear half-assed.
+          They need to be revised at a later time.
+
+20051013: Merged AdaptiveSTOCH plugin into the STOCH plugin.
+
+20051013: Merged ROC plugin into the MOM plugin.
+
+20051013: Merged PER plugin into the UTIL plugin.
+
+20051014: Removed the MAOSC plugin. It duplicates the MACD plugin.
+
+20051014: Merged VT plugin into the VOL plugin.
+
+20051014: Moved the LOWPASS code out of the MA plugin back into it's own LOWPASS plugin. MA code was getting
+          messy to wrap easily.
+
+20051022: New indicator plugin BARS. Use this to plot bars/candles in any plot area.
+
+20051024: Removed the chart plugins. Bar and candle are replaced by the BARS indicator plugin. Users can
+          create more flexible charts now. I am not sure if I will add Swing/P&F/EP styles to the BARS plugin.
+          I will need substantial user complaints to restore them.
+
+          Users will now have to create a BARS indicator and add it to the main plot manually. This way, users
+          can put bars/candles on any plot they want.
+
+20051024: Added a COLOR option to the UTIL plugin. Adds ability to change the color of individual bars.
+          Use this in CUS scripts to create paint bars/candles etc.
+
+20051026: Merged all the plot types (Main, Stacked, Tabbed) into one tabbed style. Up to 3 rows
+          of tabs can now be created. Just choose the row # in which you want the indicator to appear.
+
+20051026: Moved the Log Scaling and Date plot toolbar functions to each individual indicator. The
+          indicator popup context menu now contains these toggles.
+
+20051026: Fixed bug #1332975 - chart objects available for deletion.
+
+20051028: Moved the crosshairs toggle from the plot context menu to the main toolbar.
+
+20051028: Added a filter box to the indicator page. Works the same as the one in the chart page.
+
+20051031: Added zone lines to the CCI plugin as per request.
+
+20051101: Changed weekly chart dates to use month number to avoid overcrowding.
+
+20051101: Fixed chart info writing over chart bars.
+
+20051102: Applied patch #1345509 install.html - use binary release Qt and DB
+
+20051103: Added new paper trading mode. Toggle the paper trade mode toolbar button. 2 new buttons will appear
+          beside the chart slider. The first button allows you to set the date you want to start the paper
+          trade. The second button advances the chart by one bar. This allows the user to simulate paper
+          trading easily.
+
+20051106: Upgraded FreeBSD compiler directives to use Berkeley DB 4.3.
+
+20051106: Fixed bug in the Tester that did not use trade delay properly. Use the trade delay
+          to enter/exit trades on the next trade delay bars.
+
+20051106: Added bar compression option to the tester.
+
+20051107: Added bar compression option to the scanner.
+
+20051108: Removed the bar chart from the tester plot page. Not really useful.
+
+20051110: Applied patch #1353064 - PlotLine copying.
+
+20051115: CME changed the file format. Updated the CME quote plugin.
+
+20051115: Fixed bug in tester that does not exit trade and enter new one within the same bar.
+          This also fixes the 2 consecutive TRUE values to trigger an alert bug.
+
+20051115: CUS scripts can now handle comments. You can either dedicate an entire line to a comment
+          or you can place a comment at the end of a line. All comments must start with a //
+          the same as C++ comments do. Here is an example:
+
+          // get some candles
+          candles := BARS(Candles)
+          vol := UTIL(REF, Volume, 0) // get some volume bars
+
+20051117: Changed the tester volume percentage option to default to a volume of 1 if it is set to 0.
+
+20060117: Applied patch 1366297 - percentage profit for each paper. Thanks to imo for the patch.
+
+20060120: Fixed CUS parsing error with input array labels ie. Closen, Opened etc.
+
+20060204: Experimental: Added new indicator TALIB. This uses the TALIB library to create any TALIB
+          indicator.
+
+20060205: Added TALIB CUS reference docs.
+
+20060205: Removed TypPrice from the UTIL plugin.
+
+20060205: Removed the OBV function from the VOL plugin.
+
+20060205: Removed the SD function from the VOLA plugin.
+
+20060205: Removed the AD, AROON, ATR, BB, CCI, CMO, DMI, DPO, MA, MACD, MF, MINMAX, MOM, RSI
+          SAR, STOCH, TRIX, WILLR plugins and docs.
+
+20060205: Added new MA types from TALIB.
+
+20060208: Fixed bug in CUS plugin that did not accept a non-input from BARS plugin.
+
+20060209: Fixed bug in TALIB plugin that did not keep settings when being modified.
+
+20060601: Removed all the macro code. Would like to wait until the main code has stabilised
+          before we continue with the macro module. Would also like to put all macro code
+          into a single separate module.
+
+20060617: Removed the chart object plugins and merged the code into qtstalkerlib. The amount
+          of overhead and code complexity of plugins is not required. I believe it is more effecient
+          to use qtstalkerlib instead.
+
+20060617: Added icons to the chart object popup menu items.
+
+20060620: Fixed bug in Tester that did not calculate account balances properly as trades
+          are made. We always ended up with a few 100 more unexplained dollars.
+
+20060621: Cleaned up the Tester code by splitting off code into sub classes.
+
+20060623: Added a toolbar to the chart page on the Tester gui.
+
+20060628: Added a bars parm to the scanner gui. Users will have to set the value manually.
+
+20060628: Added a midpoint option to the entry/exit price in the tester.
+
+20060629: Restored the bar chart to the tester. Instead of buy and sell arrows to indicate
+          entry and exit points, we are coloring the bars green for long and red for short.
+          I like this better than the arrows.
+
+20060630: Fixed bug in tester that caused stops to delay by an extra bar.
+
+20060630: Added option in the tester that calculates commissions as a percentage of the total
+          amount bought. Check the 'Use Commission %' option and input the percentage ie.
+          0.02 for 2% or 0.1 for 10% etc.
+
+20060703: Added option in UTIL(REF) indicator function that allows user to create Horizontal lines
+          in CUS scripts. ie.  hline := UTIL(REF, 5.5) would create a plot with one value of 5.5.
+          Then apply the 'Horizontal' line style option to the hline variable to plot it.
+
+20060704: When creating/editing CUS indicators, the user no longer has to input the variable name
+          manually. User can now choose from a list all the available variables.
+
+20060708: Fixed bug in tester that continued to enter trades even when account lacked the
+          required amount of funds.
+
+20060713: Added key shortcut (CTRL+Key_Right) to advance chart one bar in paper trade mode.
+
+20060716: Simplified and improved the bar creation functions in DbPlugin for speed and memory.
+
+20060716: Removed the IndicatorPlugin::minBars function. Not practical anymore as we move toward
+          TALIB integration.
+
+20060716: Papertrade mode now works with all bar length charts. Previously only worked with daily
+          charts.
+
+20060717: Added search filter boxes to the Tester and Scanner panels. They work the same as the
+          Indicator and Chart panels do.
+
+20060717: Fixed bug in Scanner that did not clean group directory properly before starting new
+          scan with same scanner rule. Was generating link errors.
+
+20060804: Removed the chart type plugins and merged them into DbPlugin class. I do not see these
+          to change much over time so we don't need the extra overhead.
+
+20060804: Added option to CC type charts to create gapless/non-gapless charts.
+
+20060829: I got tired of looking up the correct format for each indicator when constructing CUS
+          indicators. So, I added a format builder dialog to the CUS dialog. This allows the user to
+          quickly use the dialog to construct the CUS format for each variable and insert it into the
+          editor.
+
+20060829: VIDYA indicator dialog missing input array parm. Fixed.
+
+20060903: Added proper TA_Initialze and TA_Shutdown function calls to the TALIB indicator.
+
+20060905: Added default indicators to new installs and upgrades. Bars, Candles, Volume.
+          Add more?
+
+20060908: Fixed: Group panel now refreshes after a scanner is completed.
+
+20060912: Applied patches:
+
+20060912: Changed local indicators function to use directory symlinks instead.
+
+20060912: Expanded and polished the TALIB docs and plugin operations. Missing parms and lists
+          now available in the gui dialogs.
+
+20060914: Changed the gui to improve record navigation for editing chart records on disk in the
+          Edit Chart dialogs.
+
+20060920: Upgraded TALib source to 0.2.
+
+20060920: Removed indicator UO. TALib now handles this.
+
+20061011: Fixed bug #1468042 - default color not used in plot.
+
+20061011: Applied patch 1569805 - TALib url changes for docs.
+
+20061012: Added macx directive to TALIB.pro to fix TALib build problem on OSX.
+
+20061012: Added default color parm option to the BARS candle script interface.
+
+20061012: Applied patches #1576265 - updated candle cus examples and #1575686 - update macosx instructions.
+
+20061022: Fixed bug that did not update the date area being toggled on indicators.
+
+20061117: Fixed compilation bug that included ta-lib.h in BarData.h
+
+20061117: Fixed install bug that did not create default Bar indicator properly.
+
+20061117: Fixed Futures chart creation bug that did not include a symbol field in the header.
+
+20061117: Fixed Yahoo bug that truncated the last letter of the fundamentals heading list.
+
+

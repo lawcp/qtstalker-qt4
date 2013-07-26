@@ -1,0 +1,18 @@
+20050517: Bug fix release. In order to make the upgrade easier for users from 0.29
+          the storage path was changed from ~/Qtstalker to ~/.qtstalker/data0 This helps users
+          start with a fresh clean directory to minimze upgrade pain. The data0 directory is for
+          future upgrade issues in case we need to start fresh again, we will use data1, data2 etc.
+
+20050517: Fixed bug with Line plugin. On startup the default was not working causing no
+          plot to be drawn.
+
+20050517: Added a warning dialog that appears on startup reminding users of the upgrade issues.
+
+20050519: Added removal of the ~/.qt/qtstalkerrc file if user is upgrading from 0.29. We need to
+          start with a fresh clean settings file or things will break.
+
+20050519: Fixed bug in MySQL plugin that does not create the new directory structure /Stocks/MySQL
+
+20050519: Changed all the plugins to use a common include file plugin.config. Yay! Now I don't have
+          to modify all those bloody pro files...thanks Jim!
+

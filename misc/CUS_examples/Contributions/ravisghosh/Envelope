@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=0
+Name=Envelope
+script=bars := BARS(Bar)|EMA5 := TALIB(EMA,Close,5)|EMA22 := TALIB(EMA,Close,22)|EMA52 := TALIB(EMA,Close,52)|UCX := UTIL(MUL,EMA22,0.06)|LCX := UTIL(MUL,EMA22,0.06)|UC := UTIL(ADD,EMA22,UCX)|LC := UTIL(SUB,EMA22,LCX)|plot (bars,#ff0000,Candles,Candle)|plot (EMA52,#aaffff,EMA52,Line)|plot (EMA22,#00aaff,EMA22,Line)|plot (EMA5,#0000ff,EMA5,Line)|plot (LC,#ffff00,LowerEnv,Dash)|plot (UC,#ffff00,UpperEnv,Dash)
+logScale=1

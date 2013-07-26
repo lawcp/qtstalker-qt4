@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=SAR
+script=bars := BARS(Bar)|sar := TALIB(SAR,0.02,0.2)|plot (bars,#ff0000,Bars,Bar)|plot (sar,#ffff33,Sar,Dot)
+logScale=1

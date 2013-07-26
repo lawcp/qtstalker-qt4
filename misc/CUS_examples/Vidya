@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=Vidya
+script=close := UTIL(REF,Close,0)|vidya := VIDYA(close,14,10)|plot (close,#ff0000,Close,Line)|plot (vidya,#ffff00,VIDYA,Dash)
+logScale=0

@@ -1,0 +1,20 @@
+20070618: Added note to docs/faq.html that old indicators such as MA are now gone, so instead use, e.g. sma20 := TALIB(SMA,Close,20)
+
+20070719: Fixed "Pivot Point (PP)" which was not returning the PlotLine when used via CUS. Thanks to xley.
+
+20070904: Applied patch #1785660 - Clean up shared lib dependencies. Thanks to zwets.
+
+20070917: Applied patch #1789605 - Yahoo hostname change affected our "Quote" option only (the "History" and "Auto History" were still okay). Thanks to sjakka.
+
+20070919: Added generated source code documentation (produced with doxygen.org) to the Qtstalker website. Thanks to xley.
+
+20070927: Enhanced Yahoo documentation to explain difficulties with "Quote"
+method and exchanges outside North America. Thanks to xley.
+
+20070928: Enabled detection of either TA-Lib v0.3.0 or more recent versions. Thanks to zwets.
+
+20070928: Improved installation instructions. Thanks to xley.
+
+20070928: Provided link to Debian packages. Thanks to zwets.
+
+20070928: Provided link to MySQL Plugin which is maintained as a separate project. Thanks to zwets.

@@ -1,0 +1,116 @@
+20041009: Fixed bug #1043055 - app font should default to system font.
+
+20041009: Fixed bug #1043044 - font names with spaces don't persist.
+
+20041009: Fixed bug #1043037 - help path configuration.
+
+20041021: New indicator plugin SYMBOL. This allows user to overlay a plot of the close
+          of any symbol (ticker) onto any indicator.
+
+20041021: Removed the OVRLY indicator. Now redundant due to the SYMBOL plugin and
+          CUS language functions.
+
+20041025: Fixed bug in MATH::MIN/MAX that didn't include the current bar in the calculation.
+          Current bar is now included.
+
+20041030: Enabled chart context menu to allow creation and editing of indicators without the
+          need for a chart to be loaded.
+
+20041030: Fixed bug in COMP plugin that didn't check for displace value greater than the
+          timeLoop value. Was causing segfaults.
+
+20041101: Fixed logic error introduced from previous fix in the COMP plugin that removed
+          all true signals from being generated.
+
+20041101: Added levels to the default settings for the Fibo plugin.
+
+20041101: Fixed Auto History and retry functions for the Yahoo plugin.
+
+20041101: Fixed cancel download function for the yahoo plugin.
+
+20041101: Fixed bug in Fibo plugin that ignored levels that extend beyond the original
+          high and low points. The user can now select a fibo object by selecting any line
+	  rather than just the high and low ones. The grab handles will still only appear
+	  on the original high and low levels.
+
+20041102: Changed quotes dialog back to non-modal.
+
+20041102: Fixed bug in COT plugin that segs when first run.
+
+20041113: Added use of semicolon as a delimiter in the CSV plugin as per user request.
+
+20041117: Quote dialog now restores last used plugin as per user request.
+
+20041117: Fixed bug in Yahoo plugin that tried to download deleted symbols from the
+          ChartPage. Because the quotes dialog stays open a deleted chart does not
+	  get updated in the yahoo plugin download list.
+
+20041122: Applied patch 1058309 - add navigation buttons to docs. Thanks to Kern Sibbald.
+
+20041129: Added 3 more data inputs to the MATH plugin. Now the user can ADD/SUB/DIV/MUL up to
+          5 data arrays at once.
+
+20041201: Fixed segfault bug when right clicking mouse on a empty chart and drawmode is off.
+
+20041202: Applied feature request patch 1076502 - low band pass filter (LOWPASS).
+          Thanks to Jim Nolan for the patch.
+
+20050104: The status of enabled/disabled indicators on the main chart are now saved between
+          sessions as per user request.
+
+20050105: Fixed bug that locks up app if during the creation of a trendline or fiboline,
+          the end point is before the start point.
+
+20050105: Fixed bug in trendline plugin that was not saving it's color.
+
+20050105: Fixed bug in chart objects that was not propagating default changes to all the active plot
+          classes.
+
+20050106: Fixed the crosshair partial redraws and tab switching bugs.
+
+20050106: Stacked indicators now restore their sizes properly between sessions.
+
+20050106: Changed bar spacing +/- behaviour to keep chart centered instead of defaulting to the
+          right edge of the chart.
+
+20050110: Added a timeout parm to the yahoo plugin. This sets how many seconds are allowed
+          to elapse during each symbol being downloaded. If a symbol takes more than the set
+	  time to complete, the download will abort and move on to the next symbol.
+
+20050112: Fixed bug in crosshair draws that didn't draw on the left edge of plot.
+
+20050113: Fixed yahoo plugin to download symbols in sorted order.
+
+20050114: Changed plot cursor to reflect drawmode status. If drawmode is on then cursor is an
+          arrow. If drawmode is off then cursor is a cross.
+
+20050116: The export chart function now saves the original db path so the QtstalkerFormat
+          plugin can restore it properly without having to manually move the imported chart.
+
+20050116: Fixed bug that segfaults when context menu is called with no chart loaded at startup.
+
+20050117: Added a percentage changed field next to the change field in the plot info string
+          as per user request.
+
+20050117: Fixed key shortcut for drawmode to ctrl+w. Data window is ctrl+d.
+
+20050120: Bar spacing is now saved and restored for each chart type.
+
+20050122: Fixed bug that locks-up app when creating a trendline/fiboline and selecting end point
+          before start point.
+
+20050122: As per user request, the yahoo plugin now preloads all stock symbols as a default so
+          that the user need not bring up the dialog to select symbols. Once the yahoo plugin is selected
+	  from the quotes dialog the user can just start the update.
+
+20050122: Moved the 'CH=' info on the main chart info line to the left. This is so at least
+          the unique data here is still visible on a small chart.
+
+20050122: MySQLPlugin now checks for any deleted symbols before downloading and updates it's
+          symbol list.
+
+20050122: Fixed bug that didn't remove grab handles from objects when drawmode was turned off.
+
+20050123: As per user request, the CSV plugin now remembers symbol and input file selections.
+
+

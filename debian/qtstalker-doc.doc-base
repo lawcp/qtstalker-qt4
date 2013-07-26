@@ -1,0 +1,10 @@
+Document: qtstalker
+Title: Qtstalker Manual
+Author: Stefan Stratigakos
+Abstract: User manual for qtstalker. Describes the main program as
+ well as the quote and indicator plugins.
+Section: Apps/Graphics
+
+Format: HTML
+Index: /usr/share/doc/qtstalker-doc/html/toc.html
+Files: /usr/share/doc/qtstalker-doc/html/*.html

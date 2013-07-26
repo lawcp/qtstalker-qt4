@@ -1,0 +1,82 @@
+Status of qtstalker-qt4-branch
+Last modified at [$Date: 2009/03/15 13:41:40 $]
+
+This file summarises the tasks to complete this branch and merge back
+with trunk ASAP.
+
+See notes at http://doc.trolltech.com/4.3/porting4-overview.html
+
+See Issue: #1943707 - porting from Qt3 to Qt4
+and its attachment notes-porting-qt4.txt which has some review of the
+necessary changes. That issue also links to a discussion thread.
+
+Developers who are not committers, please send patches via the issue tracker.
+
+----------
+* Create CVS qtstalker-qt4-branch and create STATUS file.
+[Done]
+
+* Advise community and port maintainers that the qt4 branch is started.
+  i.e. Send message to the Qtstalker "Announce" list and "Discussion" forum.
+[Done]
+
+* Run the qt3to4 porting tool.
+  http://doc.trolltech.com/4.3/porting4.html
+[Done]
+
+* Recompile with Qt4 and start to fix issues. Add the major ones to this
+  list so that other developers can contribute.
+[Done]
+
+* Add syntax changes necessary to get it to compile, e.g. dir.exists(),
+  dir.remove(), etc. and CTRL+Key_Q => Qt::CTRL+Qt::Key_Q, etc.
+
+[Done]
+
+* Test that important functions are working and performance is satisfactory.
+  Can be improved later.
+[In progress]
+
+* It crashes after changing any Preferences.
+[Done]
+
+* Some "paint" messages are issued when changing charts. Try debug where they
+  come from.
+[Investigate]
+
+* Decide which of the remaining tasks in this list need to happen before
+  the branch can be merged, and which tasks can wait until after.
+[In progress]
+
+* We use "Double Buffering".
+  This might be solved already - "paintEvent()" is now "update()"
+  See Discussion forum.
+[Before]
+
+* Constructing menus and toolbars, Q3Action::addTo() etc.
+[?]
+
+* Use new syntax for Qt "include" class definitions, i.e. #include <QClassName>
+[Later]
+
+* Replace QUrlOperator with QHttp and QFtp
+[Later]
+
+* Replace QDict with QMap
+[?]
+
+* Replace QMemArray with QValueVector
+[?]
+
+* Attend to QPtr*
+[?]
+
+* FIXME: Add more tasks to this list if needed. The list attached to #1943707
+  has some notes and need to review the Trolltech porting notes again.
+
+* Advise community and port maintainers that the merge is soon to happen.
+  i.e. Send message to the Qtstalker "Announce" list and "Discussion" forum.
+
+* Move the remainer of these notes to the trunk.
+
+* Amend this STATUS file to signify that this branch is closed.

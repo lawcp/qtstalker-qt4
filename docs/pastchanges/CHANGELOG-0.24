@@ -1,0 +1,29 @@
+20040208: Fixed MDK/Redhat compile bug for db.h file not found problem. This was preventing a full
+          compile on the big distributions.
+
+20040208: Modified Plot::drawScale to compress the y-axis scaling numbers above 1000.
+
+20040208: Found a new bug in the AD and OBV indicator plugins that can't handle really large numbers.
+          Fixed this by applying a divisor of 1000 to all volume values used in the calculations.
+
+20040210: Changed Candle charts to display hollow and filled properly.
+
+20040211: Fixed bug for weekly and monthly charts when volume values exceed the double type limit.
+          This fix just disables the values. The proper fix will have to come in the next version
+          using Qt3.3 due to qt limits on long double conversion.
+
+20040213: Fixed bug that created phantom indicator when edited.
+
+20040214: Found and fixed the real cause of the volume overflow bug. Turns out it was because Scaler
+          just didn't go up high enough. Added more billions to the scaling strings. Restored weekly
+	  and monthly volume back to charts. Also restored the OBV and AD indictors by removing the
+	  divisor to volume values.
+
+20040214: Fixed bug that didn't refresh the group page if the group is renamed.
+
+20040215: Added new chart type Candle and Candle 2. Candle is the traditional way of plotting candle
+          charts. Candle 2 is the qtstalker custom way of candles.
+
+20040217: Fixed trendline bug that behaves erratically if the end point selected is <= the start point.
+
+

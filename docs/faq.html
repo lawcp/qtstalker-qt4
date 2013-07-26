@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Frequently Asked Questions</title>
+  <meta name="generator"
+ content="amaya 6.1, see http://www.w3.org/Amaya/">
+</head>
+<body xml:lang="en" lang="en">
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Frequently Asked Questions</u></h2>
+<h4>Can you make a binary package for Qtstalker ?</h4>
+No. Binary packages are so problematic now that they are a
+nightmare for maintainers. I will leave it up to the distributions to
+provide binaries and support them. Besides, learning how to compile
+from source makes you a better person, brings world peace and makes you
+more attractive to women.<br>
+<p>Qtstalker is now included in the Debian distribution thanks to the
+efforts of Marco van Zwetselaar. Marco is the maintainer for the binary
+package.</p>
+<p>There are also RPM's available from Redhat and other RPM based
+distributions. Use rpmfind to locate them.<br>
+<br>
+</p>
+<h4>What platforms are supported ?</h4>
+Currently, Linux compatible, FreeBSD and Mac OS X systems are
+supported. Some
+people have tried
+with some success on Solaris, IRIX and most unices. I'm afraid I cannot
+support any other platforms other than Linux compatible systems simply
+because I
+do not have the time or resources to maintain other operating systems
+for testing.
+So,
+if you want to port it, I can help as much as I am able. Due to ethical
+and political feelings, I will not help or support anyone trying to do
+a win32 port. The goal of this project is not to provide win32 users
+more gold bars for their prisons. So endith the lesson...
+<h4>My favorite indicator(s) are not included in Qtstalker, what can I
+do ?</h4>
+Bribes of beer or cash tend to work best, but you might also try asking
+me.
+I would be glad to create a plugin for you provided you supply me with
+a
+formula and you agree to include it into Qtstalker under the GPL.
+Another option
+is if you don't want to GPL your formula, you may contract me to write
+a
+proprietary plugin for you for a fee.
+<p>Of course, you can always develop the new indicator yourself. Just
+copy
+the C++/Qt code from an existing indicator that does similar things. Please
+consider
+contributing the new indicator back to this project. Everyone benefits.</p>
+<p>
+Using <a href="cus.html">CUS</a> enables script-based access to functions of other indicators and provides some logic to enable new indicators to be created.
+</p>
+<p>
+Another option is to contribute to the <a href="talib.html">TA-Lib</a> Technical Analysis Library project.
+Qtstalker provides access to the library.
+</p>
+<a name="versions"></a>
+<h4>What versions of documentation are available?</h4>
+<p>
+The <a href="dev.html">CVS</a> (i.e. next version in development) has the most up-to-date documentation.
+The <a href="http://qtstalker.sourceforge.net"/>website</a> reflects CVS.
+</p>
+<p>
+Each released version has its own copy of the documentation in the "docs" directory. This is usually installed at <code>/usr/local/share/doc/qtstalker/html/</code> so use your web browser to view its index.html file.
+The "Help" items in the application also refer to this local documentation.
+</p>
+<h4>I'm a day trader, how come there is no intraday charting functions ?</h4>
+There is currently basic support for tick data limited to a HH:MM:SS
+resolution. However, there are currently no quote plugins that download
+free tick data. (AFAIK there are none) It is left up to the user to
+provide quotes from a data
+service on an individual basis. You may use the CSV quote plugin to
+import ascii files with tick data.
+<h4>Does Qtstalker handle stock splits ?</h4>
+Yes, but they have to be handled manually using the edit chart dialog.
+Another method is to delete the chart that had a split, create the
+chart with the yahoo
+plugin and then update the data. This will pull in all the new
+corrected data. NOTE: the yahoo
+quote plugin allows the user to use the 'adjusted' price, however this
+is not the actual trading price but an adjusted one for chart sanity.<br>
+<br>
+<h4>Where does the name Qtstalker come from ?</h4>
+Well if you really must know...The Qt part comes from the GNU/Linux
+tradition of prefixing an X app with the GUI toolkit used. The stalker
+part is just cheesy word play stemming from the idea of "stock search"
+or "stalking stocks". I also just like the word "stalker".<br>
+<br>
+In english, Qt sounds like 'cutie' which is slang for 'a cute woman'.
+So now we have 'cutie stalker' which in all honesty was completely
+unintentional. Now if someone were to write a 'cutie stalker' indicator
+plugin we just might really be on to something ;-)<br>
+<br>
+<h4>Why don't you make this into a KDE app ?</h4>
+I want to keep things as simple, efficient and portable as possible. Qt
+does everything I need.<br>
+<br>
+<h4>There are alot of plugins I don't use taking up space. How do I get
+rid
+of them ?</h4>
+If you are sure there are plugins you don't need, then all you have to
+do
+is delete them from the /usr/local/lib/qtstalker/* directory. Simple as that.
+Be sure you don't delete the directory itself, just the plugin *.so
+file.<br>
+<br>
+<h4>Why don't you use SQL for data storage?</h4>
+Two reasons, speed and simplicty. Once again I cite the KISS (keep it
+simple, stupid!) philosophy. You can't beat Berkeley DB btree functions
+for ease
+of use and speed. Using SQL would just add another layer of
+requirements and speed penalties. It also means more
+administration hassles for the user to set up accounts, tables, logs
+etc. Why complicate things? With DB, each chart is it's own compact,
+flexible,
+dynamic, self-contained db. Blows SQL away in this respect.<br>
+<span style="font-weight: bold;"><br>
+</span>
+<br>
+<h4>Upgrading from version 0.29 to version 0.30 problems.</h4>
+With 0.30, qtstalker has removed the built in version of Berkeley 2.7.7
+and now requires the user to install a version equal to or greater than
+4.1.&nbsp; This was done to resolve upcoming issues with 64 bit
+systems. Unfortunately the Berkeley DB 4.* files are not backwards
+compatible with 2.7.7. What this means is that any charts created with
+qtstalker 0.29 or earlier will not work with future versions of
+qtstalker.<br>
+<br>
+There was also a restructuring of the chart storage directories in
+order to better organize and increase app performance. This will also
+cause confusion for the user, and render many charts unavailable for
+update. Any user groups created will also be broken due to directories
+being moved around.<br>
+<br>
+The simplest way to fix this is to delete your ~/.qt/qtstalkerrc file
+and your ~/Qtstalker directory and all of its contents. Yes this means
+you will lose all of your data and settings. There have been so many
+changes and improvements since 0.29 that it would be too difficult and
+complicated to create an upgrade workaround that would be prone to
+errors in implementing it for each user. We are talking hours of work
+for some.<br>
+<br>
+<h4>What happened to most of the indicators? They seem to be missing.</h4>
+<p>
+Many of the indicators that were once individual plugins in previous
+versions of Qtstalker have been replaced by the TA-Lib plugin. This
+plugin now contains most of the indicators you will use. Have a look at
+the docs for the <a href="talib.html">TALIB</a> indicator for a more detailed description.
+</p>
+<p>
+For example, there is no longer an MA indicator, so<br>
+Instead of the old: sma20 := MA(MA,Close,20,SMA)<br>
+Now use: sma20 := TALIB(SMA,Close,20)
+</p>
+
+<a href="plugintut.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a><a href="ctypes.html"
+ target="_self"><img src="next.png" alt="Next" border="0" height="32"
+ width="32"></a>
+<a href="toc.html"><img src="home.png" alt="Home" border="0" height="32"
+ width="32"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=AROON Oscilator
+script=lowerband := UTIL(REF,-50)|upperband := UTIL(REF,50)|AroonOsc := TALIB(AROONOSC,14)|plot (lowerband,#00aa00,Lowerband,Horizontal)|plot (upperband,#ee0000,Upperband,Horizontal)|plot (AroonOsc,#ccccff,AroonOSC,Line)
+logScale=0

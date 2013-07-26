@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+Name=Elder Ray Bear Power
+script=mac13 := EMA(EMA,Close,13)|bep := UTIL(SUB,Low,mac13)|plot (bep,#ff0000,RayBear,Histogram Bar)
+logScale=0

@@ -1,0 +1,3848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+		<title>Qtstalker: TA-Lib common functions library - TALIB</title>
+		<meta http-equiv="content-type"
+		      content="text/html; charset=ISO-8859-1">
+		</head>
+		<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+			<h2><u>TA-Lib common functions library - TALIB
+				</u></h2>
+			<h3>Description:
+			</h3>
+			<p>
+				This is a separate library of TA indicators called <a href="http://ta-lib.org">TA-Lib</a> that is used for most qtstalker
+				indicators. Use this TALIB plugin to access most of the popular TA
+				indicators. Moving Averages,
+				Stochastics, RSI etc. are all here. 
+			</p>
+			<p>See the <a href="http://tadoc.org/">tadoc.org Function Index</a> and
+				follow the links to the TA-Lib implementation source code. The
+				function, and it's input parameters and output values are described in
+				its code. You also have a local copy wherever you installed the TA-Lib source.
+                                See the <a									href="http://svn.sourceforge.net/viewvc/ta-lib/trunk/ta-lib/c/src/ta_func/">complete list</a> (which includes the candlestick functions) in the TA-Lib
+				source control system. See the explanation of the <a				href="http://ta-lib.org/d_api/d_api.html#Abstraction%20Layer">Abstraction Layer</a>.
+				</p><p>
+				For more detailed information
+				regarding TA-Lib, please consult the <a href="http://ta-lib.org/">TA-Lib</a>
+				website.<br>
+				</p>
+				
+			<h3>Formula Reference:</h3>
+			<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+				<tbody>						
+						<tr>
+							<td style="width: 100px;">
+								<strong>AD</strong>
+							</td>
+							<td style="width: 575px;" >TALIB(AD)
+							</td>
+						</tr>
+						<tr>
+							<td>Function
+							</td>
+							<td>Accumulation Distribution
+							</td>
+						</tr>
+						<tr>
+							<td>Example
+							</td>
+							<td>TALIB(AD)
+							</td>
+						</tr>
+						
+						
+						
+						<tr>
+							<td></td>
+							<td>&nbsp;<br>&nbsp;</td>
+							</tr>
+							
+							
+							
+							<tr>
+								<td>
+									<strong>ADOSC</strong>
+								</td>
+								<td>TALIB(ADOSC, FAST_PERIOD,
+									SLOW_PERIOD)
+								</td>
+							</tr>
+							<tr>
+								<td>Function
+								</td>
+								<td>Accumulation Distribution
+									Oscillator
+								</td>
+							</tr>
+							<tr>
+								<td>Example
+								</td>
+								<td>TALIB(ADOSC, 3, 10)
+								</td>
+							</tr>
+							
+							
+							
+							<tr>
+								<td></td>
+								<td>&nbsp;<br>&nbsp;</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td>
+										<strong>ADX</strong>
+									</td>
+									<td>TALIB(ADX, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Movement - Average
+										Index
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ADX, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ADXR</strong>
+									</td>
+									<td>TALIB(ADXR, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Movement - Average
+										Index Rating </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ADXR, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>APO</strong>
+									</td>
+									<td>TALIB(APO, INPUT_ARRAY,
+										FAST_PERIOD, SLOW_PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Price Oscillator - Absolute
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(APO, Close, 12, 26)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>AROON</strong>
+									</td>
+									<td>TALIB(AROON, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Aroon
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(AROON, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>AROONOSC</strong>
+									</td>
+									<td>TALIB(AROONOSC, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Aroon Oscillator
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(AROONOSC, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ATR</strong>
+									</td>
+									<td>TALIB(ATR, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Average True Range
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ATR, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>AVGPRICE</strong>
+									</td>
+									<td>TALIB(AVGPRICE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Average Price
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(AVGPRICE)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>BBANDS</strong>
+									</td>
+									<td>TALIB(BBANDS, INPUT_ARRAY,
+										PERIOD, DEVIATIONS_UP, DEVIATIONS_DOWN, PLOT#)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Bollinger Bands. 
+										
+										PLOT# is an integer that specifies 1 of 3 plots available. Plot #1 is
+										the upper band. Plot #2 is the middle band. Plot #3 is the lower band.
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(BBANDS, Close, 5, 2, 2, 1)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>BOP</strong>
+									</td>
+									<td>TALIB(BOP)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Balance Of Power
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(BOP)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CCI</strong>
+									</td>
+									<td>TALIB(CCI, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Commodity Channel Index
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CCI, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL2CROWS</strong>
+									</td>
+									<td>TALIB(CDL2CROWS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Two Crows
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL2CROWS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL3BLACKCROWS</strong>
+									</td>
+									<td>TALIB(CDL3BLACKCROWS) </td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Three Black Crows
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL3BLACKCROWS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL3INSIDE</strong>
+									</td>
+									<td>TALIB(CDL3INSIDE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Three Inside Up/Down </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL3INSIDE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL3LINESTRIKE</strong>
+									</td>
+									<td>TALIB(CDL3LINESTRIKE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Three-Line Strike
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL3LINESTRIKE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL3OUTSIDE</strong>
+									</td>
+									<td>TALIB(CDL3OUTSIDE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Three Outside Up/Down
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL3OUTSIDE) </td>
+								</tr>
+								
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL3STARSINSOUTH</strong>
+									</td>
+									<td>TALIB(CDL3STARSINSOUTH)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Three Stars In The South
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL3STARSINSOUTH) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDL3WHITESOLDIERS</strong>
+									</td>
+									<td>TALIB(CDL3WHITESOLDIERS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Three Advancing White Soldiers
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDL3WHITESOLDIERS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLABANDONEDBABY</strong>
+									</td>
+									<td>TALIB(CDLABANDONEDBABY,
+										PENETRATION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Abandoned Baby
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLABANDONEDBABY, 0.3) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLADVANCEBLOCK</strong>
+									</td>
+									<td>TALIB(CDLADVANCEBLOCK)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Advance Block
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLADVANCEBLOCK) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLBELTHOLD</strong>
+									</td>
+									<td>TALIB(CDLBELTHOLD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Belt Hold
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLBELTHOLD) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLBREAKAWAY</strong>
+									</td>
+									<td>TALIB(CDLBREAKAWAY)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Breakaway
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLBREAKAWAY) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLCLOSINGMARUBOZU</strong>
+									</td>
+									<td>TALIB(CDLCLOSINGMARUBOZU)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Closing Marubozu
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLCLOSINGMARUBOZU) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLCONCEALBABYSWALL</strong>
+									</td>
+									<td>TALIB(CDLCONCEALBABYSWALL)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Concealing Baby Swallow
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLCONCEALBABYSWALL) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLCOUNTERATTACK</strong>
+									</td>
+									<td>TALIB(CDLCOUNTERATTACK)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Counterattack
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLCOUNTERATTACK) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLDARKCLOUDCOVER</strong>
+									</td>
+									<td>TALIB(CDLDARKCLOUDCOVER,
+										PENETRATION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Dark Cloud Cover
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLDARKCLOUDCOVER, 0.5) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLDOJI</strong>
+									</td>
+									<td>TALIB(CDLDOJI)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Doji </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLDOJI) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLDOJISTAR</strong>
+									</td>
+									<td>TALIB(CDLDOJISTAR)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Doji Star
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLDOJISTAR) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLDRAGONFLYDOJI</strong>
+									</td>
+									<td>TALIB(CDLDRAGONFLYDOJI)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Dragonfly Doji
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLDRAGONFLYDOJI) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLENGULFING</strong>
+									</td>
+									<td>TALIB(CDLENGULFING)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Engulfing Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLENGULFING) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLEVENINGDOJISTAR</strong>
+									</td>
+									<td>TALIB(CDLEVENINGDOJISTAR,
+										PENETRATION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Evening Doji Star
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLEVENINGDOJISTAR, 0.3) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLEVENINGSTAR</strong>
+									</td>
+									<td>TALIB(CDLEVENINGSTAR,
+										PENETRATION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Evening Star
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLEVENINGSTAR, 0.3) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLGAPSIDESIDEWHITE</strong>
+									</td>
+									<td>TALIB(CDLGAPSIDESIDEWHITE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Up/Down-Gap Side-By-Side White
+										Lines
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLGAPSIDESIDEWHITE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLGRAVESTONEDOJI</strong>
+									</td>
+									<td>TALIB(CDLGRAVESTONEDOJI)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Gravestone Doji
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLGRAVESTONEDOJI) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHAMMER</strong>
+									</td>
+									<td>TALIB(CDLHAMMER)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hammer
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHAMMER) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHANGINGMAN</strong>
+									</td>
+									<td>TALIB(CDLHANGINGMAN)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hanging Man
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHANGINGMAN) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHARAMI</strong>
+									</td>
+									<td>TALIB(CDLHARAMI)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Harami Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHARAMI) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHARAMICROSS</strong>
+									</td>
+									<td>TALIB(CDLHARAMICROSS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Harami Cross Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHARAMICROSS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHIGHWAVE</strong>
+									</td>
+									<td>TALIB(CDLHIGHWAVE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>High Wave Candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHIGHWAVE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHIKKAKE</strong>
+									</td>
+									<td>TALIB(CDLHIKKAKE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hikkake Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHIKKAKE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHIKKAKEMOD</strong>
+									</td>
+									<td>TALIB(CDLHIKKAKEMOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Modified Hikkake Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHIKKAKEMOD) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLHOMINGPIGEON</strong>
+									</td>
+									<td>TALIB(CDLHOMINGPIGEON)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Homing Pigeon
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLHOMINGPIGEON) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLIDENTICAL3CROWS</strong>
+									</td>
+									<td>TALIB(CDLIDENTICAL3CROWS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Identical Three Crows
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLIDENTICAL3CROWS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLINNECK</strong>
+									</td>
+									<td>TALIB(CDLINNECK)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>In-Neck Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLINNECK) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLINVERTEDHAMMER</strong>
+									</td>
+									<td>TALIB(CDLINVERTEDHAMMER)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Inverted Hammer
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLINVERTEDHAMMER) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLKICKING</strong>
+									</td>
+									<td>TALIB(CDLKICKING)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Kicking
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLKICKING) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLKICKINGBYLENGTH</strong>
+									</td>
+									<td>TALIB(CDLKICKINGBYLENGTH)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Kicking - Bull/Bear Determined
+										By The Longer Marubozu
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLKICKINGBYLENGTH) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLLADDERBOTTOM</strong>
+									</td>
+									<td>TALIB(CDLLADDERBOTTOM)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Ladder Bottom
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLLADDERBOTTOM) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLLONGLEGGEDDOJI</strong>
+									</td>
+									<td>TALIB(CDLLONGLEGGEDDOJI)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Long Legged Doji
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLLONGLEGGEDDOJI) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLLONGLINE</strong>
+									</td>
+									<td>TALIB(CDLLONGLINE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Long Line Candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLLONGLINE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLMARUBOZU</strong>
+									</td>
+									<td>TALIB(CDLMARUBOZU)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Marubozu
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLMARUBOZU) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLMATCHINGLOW</strong>
+									</td>
+									<td>TALIB(CDLMATCHINGLOW)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Matching Low
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLMATCHINGLOW) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLMATHOLD</strong>
+									</td>
+									<td>TALIB(CDLMATHOLD, PENETRATION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Mat Hold
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLMATHOLD, 0.5) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLMORNINGDOJISTAR</strong>
+									</td>
+									<td>TALIB(CDLMORNINGDOJISTAR,
+										PENETARTION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Morning Doji Star
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLMORNINGDOJISTAR, 0.3) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLMORNINGSTAR</strong>
+									</td>
+									<td>TALIB(CDLMORNINGSTAR,
+										PENETRATION)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Morning Star
+										
+										PENETRATION is the percentage of penetration of a candle within another
+										candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLMORNINGSTAR, 0.3) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLONNECK</strong>
+									</td>
+									<td>TALIB(CDLONNECK)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>On-Neck Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLONNECK) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLPIERCING</strong>
+									</td>
+									<td>TALIB(CDLPIERCING)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Piercing Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLPIERCING) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLRICKSHAWMAN</strong>
+									</td>
+									<td>TALIB(CDLRICKSHAWMAN)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Rickshaw Man
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLRICKSHAWMAN) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLRISEFALL3METHODS</strong>
+									</td>
+									<td>TALIB(CDLRISEFALL3METHODS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Rising/Falling Three Methods
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLRISEFALL3METHODS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLSEPARATINGLINES</strong>
+									</td>
+									<td>TALIB(CDLSEPARATINGLINES)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Separating Lines
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLSEPARATINGLINES) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLSHOOTINGSTAR</strong>
+									</td>
+									<td>TALIB(CDLSHOOTINGSTAR)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Shooting Star
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLSHOOTINGSTAR) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLSHORTLINE</strong>
+									</td>
+									<td>TALIB(CDLSHORTLINE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Short Line Candle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLSHORTLINE) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLSPINNINGTOP</strong>
+									</td>
+									<td>TALIB(CDLSPINNINGTOP)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Spinning Top
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLSPINNINGTOP) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLSTALLEDPATTERN</strong>
+									</td>
+									<td>TALIB(CDLSTALLEDPATTERN)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Stalled Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLSTALLEDPATTERN) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLSTICKSANDWICH</strong>
+									</td>
+									<td>TALIB(CDLSTICKSANDWICH)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Stick Sandwich
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLSTICKSANDWICH) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLTAKURI</strong>
+									</td>
+									<td>TALIB(CDLTAKURI)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Takuri (Dragonfly Doji With Very
+										Long Lower Shadow)
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLTAKURI) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLTASUKIGAP</strong>
+									</td>
+									<td>TALIB(CDLTASUKIGAP)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Tasuki Gap
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLTASUKIGAP) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLTHRUSTING</strong>
+									</td>
+									<td>TALIB(CDLTHRUSTING)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Thrusting Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLTHRUSTING) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLTRISTAR</strong>
+									</td>
+									<td>TALIB(CDLTRISTAR)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Tristar Pattern
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLTRISTAR) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLUNIQUE3RIVER</strong>
+									</td>
+									<td>TALIB(CDLUNIQUE3RIVER)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Unique Three River
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLUNIQUE3RIVER) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLUPSIDEGAP2CROWS</strong>
+									</td>
+									<td>TALIB(CDLUPSIDEGAP2CROWS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Upside Gap Two Crows
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLUPSIDEGAP2CROWS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CDLXSIDEGAP3METHODS</strong>
+									</td>
+									<td>TALIB(CDLXSIDEGAP3METHODS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Upside/Downside Gap Three Methods
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CDLXSIDEGAP3METHODS) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CMO</strong>
+									</td>
+									<td>TALIB(CMO, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Chande Momentum Oscillator
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CMO, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>CORREL</strong>
+									</td>
+									<td>TALIB(CORREL, INPUT_ARRAY,
+										INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Pearson Product Momentum Corr.
+										Coef.
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(CORREL, Close, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>DEMA</strong>
+									</td>
+									<td>TALIB(DEMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Double Exponential Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(DEMA, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>DX</strong>
+									</td>
+									<td>TALIB(DX, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Movement - Index
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(DX, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>EMA</strong>
+									</td>
+									<td>TALIB(EMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Exponential Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(EMA, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>HT_DCPERIOD</strong>
+									</td>
+									<td>TALIB(HT_DCPERIOD, INPUT_ARRAY)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hilbert Transform - Dominant
+										Cycle Period
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(HT_DCPERIOD, Close)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>HT_DCPHASE</strong>
+									</td>
+									<td>TALIB(HT_DCPHASE, INPUT_ARRAY)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hilbert Transform - Dominant
+										Cycle Phase </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(HT_DCPHASE, Close) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>HT_PHASOR</strong>
+									</td>
+									<td>TALIB(HT_PHASOR, INPUT_ARRAY) </td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hilbert Transform - In-Phase
+										Indicator </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(HT_PHASOR, Close) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>HT_SINE</strong>
+									</td>
+									<td>TALIB(HT_SINE, INPUT_ARRAY) </td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hilbert Transform - Sinewave
+										Indicator </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(HT_SINE, Close)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>HT_TRENDLINE</strong>
+									</td>
+									<td>TALIB(HT_TRENDLINE, INPUT_ARRAY)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hilbert Transform - Instataneous
+										Trendline </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(HT_TRENDLINE, Close) </td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>HT_TRENDMODE</strong>
+									</td>
+									<td>TALIB(HT_TRENDMODE, INPUT_ARRAY)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Hilbert Transform - Market Mode </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(HT_TRENDMODE, Close)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>KAMA</strong>
+									</td>
+									<td>TALIB(KAMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Kaufman's Adaptive Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(KAMA, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>LINEARREG</strong>
+									</td>
+									<td>TALIB(LINEARREG, INPUT_ARRAY,
+										PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Linear Regression
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(LINEARREG, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>LINEARREG_ANGLE</strong>
+									</td>
+									<td>TALIB(LINEARREG_ANGLE,
+										INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Linear Regression Angle
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(LINEARREG_ANGLE, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>LINEARREG_INTERCEPT</strong>
+									</td>
+									<td>TALIB(LINEARREG_INTERCEPT,
+										INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Linear Regression Intercept
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(LINEARREG_INTERCEPT,
+										Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>LINEARREG_SLOPE</strong>
+									</td>
+									<td>TALIB(LINEARREG_SLOPE,
+										INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Linear Regression Slope
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(LINEARREG_SLOPE, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MACD</strong>
+									</td>
+									<td>TALIB(MACD, INPUT_ARRAY,
+										FAST_PERIOD, SLOW_PERIOD, TRIGGER_PERIOD, PLOT)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Moving Average Convergence
+										Divergence
+										
+										PLOT is an integer that specifies 1 of 3 plots available. Plot #1 is
+										the MACD. Plot #2 is the trigger. Plot #3 is the oscillator.
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MACD, Close, 12, 26, 9, 1)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MACDEXT</strong>
+									</td>
+									<td>TALIB(MACDEXT, INPUT_ARRAY,
+										FAST_PERIOD, SLOW_PERIOD, TRIGGER_PERIOD, PLOT)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Moving Average Convergence
+										Divergence (Extended parameters)
+										
+										PLOT is an integer that specifies 1 of 3 plots available. Plot #1 is
+										the MACD. Plot #2 is the trigger. Plot #3 is the oscillator.
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MACDEXT, Close, 12, 26, 9,
+										1)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MACDFIX</strong>
+									</td>
+									<td>TALIB(MACDFIX, INPUT_ARRAY,
+										TRIGGER_PERIOD, PLOT)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Moving Average Convergence
+										Divergence Fixed
+										
+										PLOT is an integer that specifies 1 of 3 plots available. Plot #1 is
+										the MACD. Plot #2 is the trigger. Plot #3 is the oscillator.
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MACDFIX, Close, 9, 1)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MAMA</strong>
+									</td>
+									<td>TALIB(MAMA, INPUT_ARRAY,
+										FAST_LIMIT, SLOW_LIMIT)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>MESA Adaptive Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MAMA, Close, 0.5, 0.05)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MAX</strong>
+									</td>
+									<td>TALIB(MAX, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Maximum
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MAX, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MEDPRICE</strong>
+									</td>
+									<td>TALIB(MEDPRICE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Median Price
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MEDPRICE)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MFI</strong>
+									</td>
+									<td>TALIB(MFI, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Money Flow Index
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MFI, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MIDPOINT</strong>
+									</td>
+									<td>TALIB(MIDPOINT, INPUT_ARRAY,
+										PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Mid Point
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MIDPOINT, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MIDPRICE</strong>
+									</td>
+									<td>TALIB(MIDPRICE, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Mid Price
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MIDPRICE, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MIN</strong>
+									</td>
+									<td>TALIB(MIN, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Minumum
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MIN, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MINUS_DI</strong>
+									</td>
+									<td>TALIB(MINUS_DI, 14)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Indicator - (-DI)
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MINUS_DI, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MINUS_DM</strong>
+									</td>
+									<td>TALIB(MINUS_DM, 14)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Movement - (-DM)
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MINUS_DM, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>MOM</strong>
+									</td>
+									<td>TALIB(MOM, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Momentum
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(MOM, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>NATR</strong>
+									</td>
+									<td>TALIB(NATR, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Normalized Average True Range
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(NATR, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>OBV</strong>
+									</td>
+									<td>TALIB(OBV, INPUT_ARRAY)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>On Balance Volume
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(OBV, Close)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>PLUS_DI</strong>
+									</td>
+									<td>TALIB(PLUS_DI, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Indicator - (+DI)
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(PLUS_DI, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>PLUS_DM</strong>
+									</td>
+									<td>TALIB(PLUS_DM, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Directional Movement - (+DM)
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(PLUS_DM, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>PPO</strong>
+									</td>
+									<td>TALIB(PPO, INPUT_ARRAY,
+										FAST_PERIOD, SLOW_PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Price Oscillator Percentage
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(PPO, Close, 12, 26)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ROC</strong>
+									</td>
+									<td>TALIB(ROC, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Rate Of Change:
+										((price/prevprice)-1)*100 </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ROC, Close, 10)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ROCP</strong>
+									</td>
+									<td>TALIB(ROCP, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Rate Of Change:
+										(price-prevprice)/prevprice
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ROCP, Close, 10)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ROCR</strong>
+									</td>
+									<td>TALIB(ROCR, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Rate Of Change: (price/prevprice)
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ROCR, Close, 10)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ROCR100</strong>
+									</td>
+									<td>TALIB(ROCR100, INPUT_ARRAY,
+										PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Rate Of Change:
+										(price/prevprice)*100
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ROCR100, Close, 10)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>RSI</strong>
+									</td>
+									<td>TALIB(RSI, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Relative Strength Index
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(RSI, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>SAR</strong>
+									</td>
+									<td>TALIB(SAR, ACCELERATION_FACTOR,
+										AF_MAXIMUM)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Parabolic SAR
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(SAR, 0.02, 0.2)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>SAREXT</strong>
+									</td>
+									<td>TALIB(SAREXT, START_VALUE,
+										OFFSET_ON_REVERSE, AF_INIT_LONG, AF_LONG, AF_MAX_LONG, AF_INIT_SHORT,
+										AF_SHORT, AF_MAX_SHORT)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Parabolic SAR Extended
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(SAREXT, 0, 0, 0.02, 0.02,
+										0.2, 0.02, 0.02, 0.2)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>SMA</strong>
+									</td>
+									<td>TALIB(SMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Simple Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(SMA, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>STDDEV</strong>
+									</td>
+									<td>TALIB(STDDEV, INPUT_ARRAY,
+										PERIOD, DEVIATIONS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Standard Deviation
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(STDDEV, Close, 5, 1)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>STOCH</strong>
+									</td>
+									<td>TALIB(STOCH, FASTK_PERIOD,
+										SLOWK_PERIOD, SLOWD_PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Stochastic Oscillator Slow
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(STOCH, 5, 3, 3)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>STOCHF</strong>
+									</td>
+									<td>TALIB(STOCHF, FASTK_PERIOD,
+										FASTD_PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Stochastic Oscillator Fast </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(STOCHF, 5, 3)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>STOCHRSI</strong>
+									</td>
+									<td>TALIB(STOCHRSI, INPUT_ARRAY,
+										PERIOD, FASTK_PERIOD, FASTD_PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Stochastic RSI </td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(STOCHRSI, Close, 14, 5, 3)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>T3</strong>
+									</td>
+									<td>TALIB(T3, INPUT_ARRAY, PERIOD,
+										VOLUME_FACTOR)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>T3
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(T3, Close, 5, 0.7)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>TEMA</strong>
+									</td>
+									<td>TALIB(TEMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Triple Exponential Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(TEMA, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>TRANGE</strong>
+									</td>
+									<td>TALIB(TRANGE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>True Range
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(TRANGE)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>TRIMA</strong>
+									</td>
+									<td>TALIB(TRIMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Triangular Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(TRIMA, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>TRIX</strong>
+									</td>
+									<td>TALIB(TRIX, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>TRIX
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(TRIX, Close, 30)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>TSF</strong>
+									</td>
+									<td>TALIB(TSF, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Time Series Forcast
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(TSF, Close, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>TYPPRICE</strong>
+									</td>
+									<td>TALIB(TYPPRICE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Typical Price
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(TYPPRICE)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>ULTOSC</strong>
+									</td>
+									<td>TALIB(ULTOSC, SHORT_PERIOD,
+										MEDIUM_PERIOD, LONG_PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Ultimate Oscillator
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(ULTOSC, 7, 14, 28)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>VAR</strong>
+									</td>
+									<td>TALIB(VAR, INPUT_ARRAY, PERIOD,
+										DEVIATIONS)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Variance
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(VAR, Close, 5, 1)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>WCLPRICE</strong>
+									</td>
+									<td>TALIB(WCLPRICE)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Weighted Close
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(WCLPRICE)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>WILLR</strong>
+									</td>
+									<td>TALIB(WILLR, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>William's %R
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(WILLR, 14)
+									</td>
+								</tr>
+								
+								
+								
+								<tr>
+									<td></td>
+									<td>&nbsp;<br>&nbsp;</td>
+									</tr>
+									
+									
+									
+									<tr>
+										<td>
+										<strong>WMA</strong>
+									</td>
+									<td>TALIB(WMA, INPUT_ARRAY, PERIOD)
+									</td>
+								</tr>
+								<tr>
+									<td>Function
+									</td>
+									<td>Weighted Moving Average
+									</td>
+								</tr>
+								<tr>
+									<td>Example
+									</td>
+									<td>TALIB(WMA, Close, 30)
+									</td>
+								</tr>
+							</tbody></table>
+						
+						<p><br><br></p>
+						
+						<a href="verticalline.html" target="_self"><img src="back.png" alt="Back" border="0" height="32" width="32"></a>
+						<a href="atr.html" target="_self"><img src="next.png" alt="Next" border="0" height="32"	width="32"></a>
+						<a href="toc.html"><img src="home.png" alt="Home" border="0" height="32" width="32"></a>
+</div>
+								</body>
+							</html>
+
+ 	  	 

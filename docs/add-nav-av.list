@@ -1,0 +1,97 @@
+# This is the list to order the html files
+# for the Qtstalker documentation.
+# This list is used by add-nav-av.pl
+# add-nav-av.pl is a advanced version of add-nav.pl,
+# and will add the navigation buttons next,prev,home
+# to each listet file.
+# Lines containing a # will be ignored, no matters on wich position.
+# To keep it more readable, it is possible and recommended
+# to insert whitespaces in front of a line so that it better match 
+# with the look of the orig toc.html.
+# BUT EMPTY LINES WILL STOP THE PROCESSING !
+						#
+						#
+toc.html
+changelog.html
+intro.html
+faq.html	
+install.html
+quick.html
+# E.		
+main.html
+  title.html
+  # 3
+  toolbars.html
+	preferences.html
+	newindicator.html
+	datawindow.html
+	quotes.html
+		cme.html
+		csv.html
+		nybot.html
+		yahoo.html
+  # 4			
+	workwithcharts.html
+		cc.html
+	#	futuresplugin.html
+		indexes.html
+		spread.html
+	#	stocksplugin.html
+						#
+	workwithgroups.html
+	workwithmainindicators.html
+	workwithportfolios.html
+	workwithbacktest.html
+	workwithscanner.html
+						#
+  #5.
+  mainchart.html
+	chartobjects.html
+		buyarrow.html
+		fiboline.html
+		horizontalline.html
+		sellarrow.html
+		text.html
+		trendline.html
+		verticalline.html
+		cycle.html
+						#
+	printing.html
+						#
+  #6.
+  datapanel.html
+  statusbar.html
+						#
+#F.
+  #1.
+  backtester.html
+	backtesterrules.html
+	backtesterstops.html
+	backtestertesting.html
+	backtesterreports.html
+	backtesterchart.html
+  #2.		
+  portfolios.html
+						#
+#G.
+cus.html
+	#3.
+	indicatorreference.html
+		bars.html
+		therm.html
+		sz.html
+		fi.html
+		lms.html
+		lowpass.html
+		pp.html
+#		sinwave.html
+		symbol.html
+		talib.html
+		uo.html
+		util.html
+		vfi.html
+		vidya.html
+		vola.html
+#				
+#H.
+dev.html

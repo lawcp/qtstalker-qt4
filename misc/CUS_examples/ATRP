@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=ATRP - Average True Range (Percent)
+script=threshold := UTIL(REF,5)|close-1 := UTIL(REF,Close,1)|atr := TALIB(ATR,4)|trd := UTIL(DIV,atr,close-1)|atrp := UTIL(MUL,trd,100)|plot (threshold,#ffff7f,Threshold,Horizontal)|plot (atr,#ff0000,ATR,Invisible)|plot (atrp,#0088ff,ATR%,Line)
+logScale=0

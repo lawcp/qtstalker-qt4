@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=CV - Chaikin Volatility
+script=hl := UTIL(SUB,High,Low)|ema := EMA(EMA,hl,10)|ema2 := UTIL(REF,ema,10)|ema3 := UTIL(SUB,ema,ema2)|ema4 := UTIL(DIV,ema3,ema2)|cv := UTIL(MUL,ema4,100)|plot (cv,#ff0000,CV,Line)
+logScale=0

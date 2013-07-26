@@ -1,0 +1,8 @@
+enable=0
+plugin=CUS
+tabRow=3
+dateFlag=0
+Name=William's Percent Range - %R
+version=0.33
+script=lowerband := UTIL(REF,-20)|upperband := UTIL(REF,-80)|r := TALIB(WILLR,14)|plot (lowerband,#ee0000,Lowerband,Horizontal)|plot (upperband,#00aa00,Upperband,Horizontal)|plot (r,#0088ff,%R,Line)
+logScale=0

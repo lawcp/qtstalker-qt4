@@ -1,0 +1,115 @@
+- Feature request #824930 applied. Moved html docs into /usr/share/doc/qtstalker/html
+
+- Fixed bug #824922 - License is GPL not LGPL.
+
+- Thanks to Marco van Zwetselaar for creating a Debian package. Marco is working on getting qtstalker into the main Debian
+  distribution. This is exciting news.
+
+- Fixed bug #825827 - MySQL plugin RH9 compile problem.
+
+- Repackaged the db source to minimize size.
+
+- Removed the CBOT plugin code. Given up hope for a work around.
+
+- Added DDMMYYYY date format to the CSV plugin. Also added auto detection for date field delimiters (/-.).
+
+- Fixed bug #830024 - single-click versus double-click with SymbolDialog.
+
+- Fixed bug #830357 - synchronised cross-hairs, data values were switched.
+
+- Added ability to stack indicators or add them to the tabs. Now you can view more than one tabbed indicator at a time.
+
+- Changed the new indicator dialog. Combined several steps and dialogs into one. Introduces an option to put the
+  indicator in either the tabs or stackable.
+
+- Added a search function to the workwith charts tab.
+
+- Added a new field format for the CSV plugin. SDOHLCV files can now be imported.
+
+- Changed trend line dialog and creation functions to better handle extending them without user intervention.
+  There are now 2 value options for the start and end points. You can either use the bar data OHLC or specify a value.
+  The "Use Bar" toggle selects the bar fields to be used instead of a specific value. Trend lines will
+  automatically extend as bars are added to the chart.
+
+- Added Point and Figure chart options to the preferences dialog. "P&F Box Size" determines the size of
+  each box, leaving this value at zero uses the default box sizing formula. "P&F Reversal" indicates
+  the number of boxes before a reversal takes place. The default is 3.
+
+- Applied patch #834376 - enhance chart search and tooltip.
+
+- Lowered the minimum bar spacing to 3 for line charts as per request.
+
+- Applied patch #836996 - changelog shows a bit more detail
+
+- Applied patch #837617 - patch to create libqtstalker.so. Kudos to Marco van Zwetselaar for moving the shared classes into a
+  library. This has reduced the size of the executable and plugins by as much 2 thirds! Great patch Marco, we are back on track
+  to being lean and mean.
+
+- Fixed the Index plugin. Was not populating the chart with data due to bad symbol paths.
+
+- Tweaked the plot crosshairs to draw faster and y axis duplication if possible.
+
+- Moved the plugin management functions into Config class. Changed the plugins to stay opened and available
+  instead of opening and closing all the time. Better speed. Maybe OSX will work with this arrangement.
+  Added a Plugin::clearOutput() function to minimize memory use with open plugins.
+
+- Added new indicator plugin THERM. Thanks to patch #843533 from Martin Flack.
+
+- Added function to PlotLine class to color individual histogram bars. VOL and THERM plugins now use this.
+
+- Fixed a bug with CC quote plugin. It was not calculating forward contracts properly on some symbols.
+
+- Applied patch #845558 - Elder's Safezone stop - new indicator SZ from Martin Flack.
+
+- Had to back out of keeping plugins open. Was causing problems with persistant settings losing values. The speed difference
+  was actually pretty small, so no big loss here.
+
+- Commented out all LIBS += -L/usr/lib references in all plugins and src *.pro files. This was causing a problem on some
+  distributions when compiling. The old /usr/lib/libqtstalker was being linked instead of the newly compiled library in
+  the source tree. This shows up as undefined references to functions when make tries to link the qtstalker binary to the
+  old library instead of the new library. Hopefully, this will fix it.
+
+- App now saves and restores window height, width, x and y positions.
+
+- Bar position is restored if chart is reloaded. No longer resets to the last bar.
+
+- Changed chart type name from "Point and Figure" to "P&F" to help shorten the width of the chart type
+  combobox.
+
+- Added a new functions Plugin::getPluginSettings and Setting::merge to better manipulate settings.
+
+- Modified a few functions in QtstalkerApp to refresh the chart much faster when modifying indicators. The old method
+  would just reload the whole chart. The new method refreshes just the indicator.
+
+- Applied patch #860795 - fix for indicator setting bug.
+
+- Modified the drawing routines for Plot::drawXGrid, Plot::getXFromDate to increase speed.
+
+- Added ability to print charts chart popup menus. Have not tested this, hope it works properly...
+
+- Applied patch #872874 - apply yahoo adjusted close column. Essentially the yahoo plugin can now do
+  adjusted splits for stocks. Consult the docs for the details on how this works. Thanks to Martin Flack
+  for this great patch.
+
+- Applied patch #872878 - double size of the MACD osc. Was appearing too small on some charts for easy viewing.
+
+- Applied patch #872881 - chart WILLR with 100 at bottom. This fixes the scaling to be faithful to the
+  original method. Values are converted to negative values in order to plot properly.
+
+- Added a flag to PlotLine to ignore shared scaling and scale relative to itself. Changed MACD plugin
+  to use this flag for the osc plot. Only minor flaw is the zero position for histograms does not match
+  up with the visible scale. Best use of this flag is for small ranges in multiple plots so that they
+  can better be seen by the user.
+
+- Added a new Scaler class for use in plotting flexibility. This is a utility class.
+
+- 20040118: Updated copyright notice and cleaned up .pro files for quote plugins.
+
+- 20040121: Updated copyright notice and cleaned up .pro files for indicator plugins.
+
+- 20040122: Moved the chart popup menu creation routines to Plot class. This also has the effect of
+            the popup menu listing only chart objects and indicators that apply to the chart clicked
+	    on.
+
+- 20040123: Updated the docs. Getting ready for the 0.23 release.
+

@@ -1,0 +1,28 @@
+- I have gone plugin crazy. Almost every chart feature will be a dll plugin library.
+  Chart types, indicators, quote sources, chart objects will be plugins.
+  So far, chart types, indicators, quote sources, are now plugins.
+  I will make chart objects plugins in the future.
+
+- chart objects can be applied to all plots
+
+- plot size now adjustable by using the splitter
+
+- common gui method for changing parameters in dialogs
+
+- redesigned the plot widget to be more OO
+
+- using gdbm for db functions, removed the db dependicies, I am sick and tired of db upgrades
+  and version changes
+
+- removed the glib dependecies
+
+- added paint bars chart type
+
+- moved all data except tick data, to ASCII format for headache reduction
+
+- space between bars can be changed now
+
+- 2 scaling styles now, scale to entire data series and scale to screen
+
+- changed indicator tabs to a toolbar with buttons
+

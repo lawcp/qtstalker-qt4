@@ -1,0 +1,8 @@
+enable=0
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Relative Candles
+script=candles := BARS(Candle,dimgray)|close-0 := UTIL(REF,Close,0)|close-1 := UTIL(REF,Close,1)|relUp := UTIL(COMP,close-0,close-1,GT)|tUp := UTIL(COLOR,relUp,candles,1,#00aa00)|relDown := UTIL(COMP,close-0,close-1,LT)|tDown := UTIL(COLOR,relDown,candles,1,#ee0000)|relEq := UTIL(COMP,close-0,close-1,EQ)|tEq := UTIL(COLOR,relEq,candles,1,#0088ff)|plot (candles,dimgray,cdl-rel,Candle)
+logScale=1

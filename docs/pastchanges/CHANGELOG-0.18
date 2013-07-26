@@ -1,0 +1,35 @@
+- Removed the -ldl linker parm from all *.pro files. This was a legacy issue, no longer needed.
+  Now compiles on FreeBSD just like on Linux. Yea baby.
+
+- Updated CC plugin to allow for rollover control. Number used is days from last trading day to
+  rollover to the next contract. This can be a lengthy process to run this plugin as it has to rebuild each chart
+  from scratch every time you update. Allow for a few minutes to complete. Also added a maximum years
+  parm to limit the size of the chart.
+
+- Updated HLC plugin to follow Donchian rule.
+
+- Removed the charts from the backtesting dialog. This was bloat and fluff we don't need. Everything that is
+  important is in the summary.
+
+- Added a global font preference for the app.
+
+- Changed the dialogs to edit most values in place instead of popping up a dialog.
+
+- Made some GUI changes to the toolbar. Replaced chart type and chart compression buttons with combo boxes.
+
+- Changed chart object creation to be alot simpler. After selecting an object to create, just click on the chart and the
+  object will be created without user interaction.
+
+- Made a major GUI change by adding a tabbed section on the left of the main screen. This area can be used to expand
+  stuff in the future. I merged all the chart, group, portfolio and backtest dialogs onto the tabs. This allows quick and easy
+  access to all the major stuff without having to bring up dialogs all the time. To navigate through a group, just use the mouse
+  or the keyboard arrow keys to move back and forth.
+
+- Added start and end date controls to the Yahoo plugin for more precise downloads. Hopefully this will solve some of the
+  foreign quote problems.
+
+- Did some tuning to various classes for better speed and memory usage.
+
+- Added individual pixmaps for each type chart object for better id.
+
+- Updated the docs.

@@ -1,0 +1,346 @@
+20050126: Removed the DB library and replaced db functions with my own. Ahhhhhh at last I have
+          sharks with fricken laser beams attached to their heads!
+
+20050127: Applied patch for bug report #1110284. Thanks to chadth for the patch.
+
+20050128: Applied patch #1111106 to allow custom mode for the VOL plugin. Thanks to chadth for the patch.
+
+20050128: Applied patch #1111167 to fix some html in the docs. Thanks to chadth for the patch.
+
+20050131: Scanner now saves all parms except the symbols selected. We don't save symbols selected
+          because big performance issues will appear if thousands were in the list.
+
+20050131: A double mouse click in the Scanner, Tester, Portfolio panels will open the clicked
+          item in the list.
+
+20050131: Added CSV export option to the chart panel. CSV exports chart in CSV format, and the
+          dump options dumps the raw chart along with header.
+
+20050203: Quote plugins now remember input files selected in the settings dialog.
+
+20050204: Added a "Fundamental" download method option to the yahoo plugin. Selecting this option will
+          download all the yahoo fundamental info for each symbol selected. The fundemental info
+	  can then be viewed by selecting the "Edit" option from the chart panel context menu.
+
+20050205: Fixed bug in MySQL plugin that didn't create the symbols if they did not already
+          exist. This was caused by trying to remove deleted symbols from the list. This can't
+	  work without user updating the symbol list, there is no way to distinguish between
+	  a user wanting to create a new symbol and a user deleting the chart.
+
+20050206: Added cancelUpdate function to the MySQL, CSV, NYBOT plugins. Was not implemented.
+
+20050206: Added a splitter to the data panel.
+
+20050207: Applied patch #1117680 - patch docs broken links. Thanks to David Crossley for the patch.
+          This fixes some broken doc links.
+
+20050207: Changed the indicator panel behaviour to list all indicators. The user can now turn on/off
+          any indicators in the Qtstalker/indicators directory. There is also a context menu available
+	  for each indicator in the list.
+
+20050210: Code cleanup. Moved menubar functions into a new class MainMenubar. Moved toolbar2 functions
+          into new class ChartToolbar. QtstalkerApp is getting too big, need to spin off more code
+	  into new classes.
+
+20050210: Added new option to the Pref's dialog. The 'Main Menubar' checkbox allows user to hide
+          the main menubar if left unchecked.
+
+20050213: Changed the behaviour of the side panel list cursor movements. Now you can move the cursor
+          anywhere on the list without loading the selected item. To load the chart the user either
+	  double clicks the mouse or presses the enter or return key. This is so you can select charts
+	  to modify them without having to load them first.
+
+20050213: Fixed bug with stacked indicator not drawing after being turned on/off.
+
+20050213: Fixed bug that segfaults if a turned off indicator is modified.
+
+20050214: Fixed bug #1122245 - issues with CSV and NYBOT plugins.
+
+20050214: F1-F12 keys now run macros assigned to them using the 'Assign Macro' menu option
+          in the Macro side panel.
+
+20050215: Scanner now saves and loades all the symbols selected when the user saves the scanner with 'Apply'.
+
+20050215: Added a 'Name' field parm to the CSV plugin.
+
+20050216: Applied patch from vinaynaik to correct BB logic error.
+
+20050218: Can now run multiple scanners in one go. Use the new 'Run Scanner' menu option.
+
+20050218: Put a chart reload timer into the toolbar. Value set will reload the chart every X minutes.
+
+20050218: Added a reload interval timer to the CSV plugin. The timer will only start once the
+          user has opened the CSV settings dialog and set the timer. A zero value will turn it
+	  off. Non zero value will import the selected input files every X minutes. Once the
+	  user saves the settings dialog will the timer take effect. This is to ensure we don't
+	  have the timer always running. The timer will stop if the user closes the quotes dialog
+	  or if a different quote plugin is selected. If you want to keep the timer going you will
+	  have to keep the quotes dialog open and left at the CSV method.
+
+20050218: The position of indicators can now be changed. Use the 'Move Indicator' menu option
+          in the indicator panel.
+
+20050218: Plugged a memory leak that was first reported to appear in the scanner. Traced into
+          the CUS plugin when unplotted PlotLine's were not being freed.
+
+20050219: Added log/scale to screen options on the tester charts. The tester charts now link
+          to the main app toolbar settings.
+
+20050219: Added a splitter to the Tester charts.
+
+20050219: Fixed bug that didn't always save chart pref changes when requested.
+
+20050220: When editing a CUS formula, a double mouse click on the line will bring up the
+          edit dialog.
+
+20050220: Fixed bug in LOWPASS that segfaults if input data is empty.
+
+20050220: Fixed focus bug in the chart panel that didn't enable the Edit Chart option in the
+          context menu when chart was selected.
+
+20050220: Backported QAction code to Qt3.1 in MainMenubar::
+
+20050220: Changed the default colors of chart objects to be red. Users that use a white background
+          couldn't see the objects being created. Red is an unlikely color anyone will use as
+	  a background to avoid this problem in the future.
+
+20050220: Optimised scanner by loading the minimum amount of bars for each chart. Removed the
+          bars parm from the scanner dialog.
+
+20050220: Changed the group side panel list behaviour to match the chart panel.
+
+20050221: Ugh...removed the chart reload timer from the toolbar...not needed...I forgot
+          we already have a reload signal coming from the quotes plugin...
+
+20050221: Added a scaling option for each step in a CUS formula. If the user checks a step
+          that is also marked to plot, the checked step will ignore the scaling boundaries
+	  of the related plots and will scale relative to itself. This allows the user to
+	  put say a BB plot overtop a RSI and keep the scaling readable for both plots. The
+	  only downside to this is the scaled plot will not match the Y axis of the other
+	  unscaled plots.
+
+20050224: It seems that my sharks swam amok and pointed their fricken lasers at each other and
+          self destructed. In other words, the home grown DB functions were a failure. Had to bite
+	  the bullet and port back to Berkeley DB 4. Oh well...I'm going to have several drinks now....
+	  This means that CVS users will have to install Berkeley DB 4.* and convert all their data
+	  to using the new format.
+
+20050224: Removed the ENV and PC indicators. Can easily be reproduced by a CUS formula.
+
+20050224: Fixed bug that segfaults if an indicator is deleted with no chart loaded.
+
+20050224: Fixed bug in tester that checks unused trading rules and issues 'COMP missing' message.
+
+20050226: Changed the plugin loading routines in Config to ignore the file extension. Let QLibrary
+          figure out what kind of dll it is. This helps portability.
+
+20050226: Fixed scope issues with some compilers with indicator plugins loading and saving
+          settings.
+
+20050226: Added the ability to create indicator groups to the indicator panel. A default group
+          called Indicators will contain all of your original indicators. This group
+	  cannot be removed. This is for the noobs.The user can create any number of new groups
+	  and add indicators to them. To switch between groups, just select the group from the
+	  combobox located above the list. All indicators in the list are global. Local indicators
+	  that apply only to the current chart, have yet to be implemented.
+
+20050226: Fixed first visible bar appearing always neutral in the Bars chart plugin
+
+20050226: Fixed CSV plugin rule editor to update the save button when the comboboxes are changed.
+
+20050227: Applied patch #1152912 - update for install.html. Thanks to David Crossley for the patch.
+
+20050227: Fixed DbPlugin::deleteBar function header.
+
+20050228: Applied patch to correct SD indicator plugin logic. Thanks to Vinay Naik for the patch.
+
+20050228: Added "CONFIG += qt" parm to the configure script for OSX.
+
+20050228: Specific indicators can now be applied to individual charts. When you want to apply
+          a specific indicator, you create a new one using the indicator panel context menus.
+	  To apply the indicator you need to select the "Local" option from Indicator Group parm.
+	  Once the indicator is applied and saved the indicator will appear only when that
+	  particular chart is viewed. If you change charts, the local indicator will disappear.
+
+20050301: Changed the 'delete all chart objects' dialog to allow user to select which object type
+          to delete.
+
+20050302: Moved MA functions from IndicatorPlugin:: into MA plugin.
+
+20050303: Plot:: code clean up. Split this class into 3 helper classes DatePlot, ScalePlot and
+          IndicatorPlot. Moved them from /src into /lib.
+
+20050303: Code clean up, moved all pixmaps from /src into new directory /pics.
+
+20050303: Changed quote plugins to verify the source of updates match original source that
+          created the chart. This is in response to data corruption by the CSV plugin attempting
+	  to update charts with matching symbol names and different data formats.
+
+20050303: Added a 'Data Directory' option to the CSV plugin. If this option is used, then
+          all updates will be forwarded to this directory. This is to help partition data
+	  better for custom uses. For example, if the user were to enter 'mystocks' as
+	  as a directory, and the type of security was a Stock, then the directory
+	  ~/Qtstalker/data/Stocks/mystocks would be created and all symbols stored in that
+	  location. The plugin would limit it's updates to that directory.
+
+20050304: Code clean up, moved Navigator class from /src into /lib.
+
+20050304: Big change for the Yahoo plugin. Due to naming conflicts with ticker symbols from
+          foreign exchanges and system performance concerns, we had to make a big change to the
+	  directory structure of ~/Qtstalker/data/Stocks/*. Instead of all stocks being dumped
+	  into one directory, the Yahoo plugin will now store symbols in sub-directories
+	  according to their exchange origins. It will follow the Yahoo naming conventions.
+	  For example:
+
+	  ~/Qtstalker/data/Stocks/Yahoo/US - USA stocks
+	  ~/Qtstalker/data/Stocks/Yahoo/AX - AUD stocks
+	  ~/Qtstalker/data/Stocks/Yahoo/L - UK stocks
+	  etc..etc..
+
+	  This allows any plugin to work from a common directory structure and allow
+	  the ability to create a unique work space so as not to interfere with any other plugin
+	  data space.
+
+20050304: Yahoo plugin can now download the entire history of symbols if requested. The 200
+          day limit has been fixed.
+
+20050305: Fixed time delimiter. If the ":" delimiter was not included the time was rejected.
+          Now delimiter is not needed.
+
+20050305: Added 'Symbol Filter' option to CSV plugin. This allows the user to filter out
+          all unmatching symbols from an input file. If left blank then all symbols will
+	  be imported. For example: if user enters 'IBM,RHAT' then all symbols except
+	  IBM and RHAT will be ignored in the import process. User must use a comma
+	  as delimiter between symbols.
+
+20050306: Changed all futures quote plugins to group symbols into their respective exchanges.
+	  For example:
+
+	  ~/Qtstalker/data/Futures/CME/*
+	  ~/Qtstalker/data/Futures/NYBOT/*
+	  etc...
+
+20050306: Added FW20* futures from Warsaw exchange to the futures database.
+
+20050306: Yahoo Fundamental option now updates the Name field for stocks. NOTE: Composites
+          and derivatives don't have fundamental data at yahoo so cannot be updated. Just real stocks.
+
+20050307: Added a new lib to the MySQL plugin for 64bit systems that need the MySQL 64bit lib.
+
+20050307: Changed quotes dialog shortcut key to CTRL+Q because ALT+2 is picked up by some WM's.
+
+20050308: The RSI and STOCH zone lines are missing. Put them back.
+
+20050308: Moved various common network functions from Quote plugins into QuotePlugin base class.
+          This is for future CSV network functions being planned.
+
+20050309: Made some GUI changes to the CSV plugin. Removed the rule page from the dialog and
+          created a dialog to edit rules. Rules are simpler to edit now.
+
+20050309: Moved the CSV rule storage out of qtstalkerrc and created a directory tree in
+          ~/Qtstalker/plugin/quote/CSV/* All the rules will be stored here now. Much better
+	  flexibility for storage options. The conversion should be seamless for users, it will
+	  be handled automatically the first time the user loads the CSV plugin dialog.
+
+20050310: Fixed bug in Scaler that locked up if the range was zero.
+
+20050310: Added finer scaling to very small bar ranges. Now to 4 decimal places.
+
+20050310: Fixed DatePlot to show euro time format for intraday bars instead of am/pm.
+
+20050310: Some strings that are used internally by various plugins were wrongfully marked
+          for translation. Code review to correct these errors. Translation files will need
+	  to be corrected to remove those strings. Not many were found, about 50 or so.
+
+20050310: Added new /i18n source tree directory. This will contain all the translation files
+          needed for i18n support. Added our first translation file (Polish) thanks to the
+	  great effort of Benedict.
+
+20050311: Removed the COT quote plugin. There is no method to chart the data right now. Maybe
+          I will return it once there is a way to chart the data without having to create
+	  a chart plugin for it.
+
+20050320: Added the qtstalker_pl.qm file to i18n dir. Added a *.qm install procedure to the
+          docs .pro file. It will create a /usr/share/qtstalker/i18n dir and copy all the
+	  *.qm files there. Translations are now activated on a 'make install'. Cmon folks
+	  lets see those translation files now!
+
+20050321: Added 1 and 10 minute bar chart options.
+
+20050322: Added new chart object called Cycle. This draws a series of arcs at the bottom of a
+          chart at a regular interval from a starting point. This allows the user to
+	  spot regular intervals between peaks and troughs by varying the interval time.
+
+20050323: Added value parms to all chart objects so users can fine tune placement.
+
+20050324: Added a progress bar to the status bar of the main window.
+
+20050324: Removed the data log message page from the quotes dialog. This was creating a lot
+          of unused signal overhead.
+
+20050325: Added an extend option to the Fiboline. This extends the lines to the end of the chart.
+
+20050325: Changed the Cycle arcs to vary in height according to their interval. Multiple Cycles
+          were difficult to distinguish.
+
+20050325: Fixed bug in Tester and Scanner that created a blank chart if symbol to test was not found.
+          This was caused by the data directory structure change.
+
+20050325: The navigator will now purge any invalid group items before displaying them. They don't
+          appear because they are broken symlinks, but it is better to get rid of them regardless.
+
+20050326: Changed behaviour of Cycle selection mode. Selecting the first grab box allows user
+          to drag the cycle across the chart. Selecting any other grab box will allow user to
+	  change the cycle interval.
+
+20050330: Added ACCUM function to the MATH plugin. This performs an accumulation total of the input
+          data.
+
+20050330: Added new input values to the BarData class. In addition to open, high, low close etc.
+          we can now use date and time values as input. Day the day number of the month. Week is
+	  the week number of the year. Month is the month number. DayOfWeek is the day of the week
+	  number 1 = Monday, 7 = Sunday.
+
+20050330: Expanded the functionality of the COMP plugin to a full if/then/else type logic behaviour.
+          Users are now able to compare 2 sets of data arrays with AND and OR options as well.
+	  THEN and ELSE will allow you to use the values of other steps and constants if desired.
+	  You will now be able to do something like this:
+
+          if (step1 > 0 && step2 < 100)
+            step3
+          else
+            0
+
+20050404: Merged LOWPASS plugin into MA plugin. Removed LOWPASS plugin.
+
+20050407: Moved PlotLine drawing functions back into Plot. Probably better to keep all the
+          Plot related functions confined to Plot.
+
+20050407: Fixed bug in PortfolioDialog that dropped symbol name when trying to edit an item.
+
+20050407: Double click on portfolio item now opens the Portfolio Item edit dialog.
+
+20050407: Added a balance display to the PortfolioDialog.
+
+20050419: Fixed a compile error for FreeBSD in TestPage. Changed static variable
+         'copy' to 'copypic'. Clash with some linked library function named 'copy'.
+
+20050421: Fixed indicator tab area to line up properly with the main chart by
+          removing the raised border that surrounds the chart.
+
+20050421: Moved the indicator tab area to the bottom of the page as the default.
+          This is the better position so the charts are closer together rather
+	  than separated by the tabs.
+
+20050512: Added parms to all pro files to compile on FreeBSD 5.*.
+
+20050512: Fixed bug in Plot that segfaults randomly on first chart loaded. Thanks to Jim
+          for tracking the bug to ScalePlot trying to draw using an empty Scaler with no
+	  parms.
+
+20050512: Fixed bug that would segfault when trying to create the first tabbed indicator. Was
+          trying to draw a null pixmap.
+
+20050515: Changed NYBOT plugin to download data instead of first manually saving the data file.
+          Yay!!
+

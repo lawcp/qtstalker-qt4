@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Using CVS to keep on the bleeding edge</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Using CVS to keep on the bleeding edge</u></h2>
+
+<p>The source code is maintained in Concurrent Version System (CVS) at
+SourceForge. To get your local working copy of the current codebase,
+go to the <a href="http://sourceforge.net/projects/qtstalker/">sourceforge
+page</a> and select the link in the Navigation bar to "CVS". Follow the
+instructions to get your local working copy installed. </p>
+
+<p>Or simply enter (copy&amp;paste) the following in a terminal that will
+create the folder <code>qtstalker</code> in your current working directory and
+download the latest version into it.</p>
+
+<p><code>cvs -z3
+-d:pserver:anonymous@qtstalker.cvs.sourceforge.net:/cvsroot/qtstalker
+checkout -P qtstalker</code></p>
+
+<p>If you get an error like <code>command not found</code> you have to
+install <em>cvs</em>. Ubuntu/Debian users have simply to install the package
+<em>cvs</em></p>
+
+<p>To build this version just do exactly the same as you would to <a
+href="install.html">build</a> a release tarball. Now edit some source code,
+build, install, see your changes, and send the project a Patch to incorporate
+your wonderful new features. </p>
+
+<p>Subscribe to the <a href="http://sourceforge.net/mail/?group_id=25632">qtstalker-cvs-commits</a>
+mailing list. This read-only list keeps you informed about the daily changes.
+Especially notice the modifications to docs/CHANGELOG.*
+</p>
+
+<p>If there are major changes, then do '<code>make distclean; ./configure; make && sudo make install</code>'
+</p>
+
+<p>You could keep two versions on your system - a "stable" version and a
+"test" version. Both versions can be from CVS if you like, as long as you
+deem one of them stable. Flipping back and forth between versions is just a
+matter of installing one over the other. A <tt>'make install'</tt> will
+overwrite everything except your data and preferences. If you find that the
+test version has problems, then just install the stable version. As a
+precaution, backup your ~/.qtstalker directory and your ~/.qt/qtstalkerrc file
+before installing a test version, so that you have a clean data tree to
+revert to in case of data corruption. You should never get data corruption
+anyway, but as always it is better to be safe. </p>
+
+<a name="patch"></a>
+<h2><u>Contributing patches to the project</u></h2>
+
+<p>Contributions are the life-blood of a community project. You can
+contribute in many ways, such as: discussion on the mailing list; helping
+other users; describing any problems that you might perceive; suggesting
+enhancements; and sending patches for code or documentation. </p>
+
+<p>A "patch" is a text file showing just the differences between your version
+and the version in the central repository. To create a patch, use... </p>
+
+<pre>
+cd /local/cvs/qtstalker
+cvs -q update -dP
+cvs diff -u &gt; mypatch.diff
+</pre>
+
+<p>...and add it via the tracker option at the <a
+href="http://sourceforge.net/projects/qtstalker/">sourceforge page</a>. If
+you have other files to be added, then tar and gzip them. Please describe the
+purpose of your patch.</p>
+
+<p>Of course you do not need CVS just to send a patch. If you are using a
+release version then make a backup copy of the original file and do...</p>
+
+<p><code>diff -u file.html.orig file.html &gt; mypatch.diff</code> </p>
+
+<h2><u>More information about CVS</u></h2>
+
+<p>See the <a href="http://cvsbook.red-bean.com/">CVS
+Book</a> and many more links e.g at <a
+href="http://en.wikipedia.org/wiki/Concurrent_Versions_System">wikipedia.org</a></p>
+
+<a name="patch-apply"></a>
+<h2><u>Apply a Patch</u></h2>
+
+<p>If there are new patches posted in the Tracker section, which are currently not included
+in the cvs tree, you can download them and apply them to your sources (i.e. patch) by hand. Change into your /local/cvs/qtstalker
+source directory and apply the new patch with the command:</p>
+
+<p><code>patch -u -p0 -i path/to/<em>downloaded-patchfile-diff.txt</em></code></p>
+
+<p>But normally you would wait until they are committed to CVS and then update your cvs sources with the abovementioned command:</p>
+
+<p><code>cvs -q update -d</code></p>
+
+<a name="editSettings"></a>
+<h2><u>Editing the application settings manually</u></h2>
+
+<p>
+Developers will sometimes need to search and even edit the Qtstalker settings.
+The user settings are persisted using platform-dependent mechanisms.
+</p>
+<p>
+On most platforms they are stored in the <code>~/.qt/qtstalkerrc</code> plain-text file. Edit, save, and re-start Qtstalker.
+</p>
+<p>
+On "Mac OS X" they are stored in a binary plist. To view/edit, do the following
+and then re-start Qtstalker:
+</p>
+<pre>
+cp /Library/Preferences/com.Qtstalker.plist $WORK/qtstalker/com.Qtstalker.plist.save
+plutil -convert xml1 -o $WORK/qtstalker/qtstalker.plist /Library/Preferences/com.Qtstalker.plist
+vi $WORK/qtstalker/qtstalker.plist
+plutil -convert binary1 -o $WORK/qtstalker/qtstalker.plist.bin $WORK/qtstalker/qtstalker.plist
+mv $WORK/qtstalker/qtstalker.plist.bin /Library/Preferences/com.Qtstalker.plist
+</pre>
+
+<a name="docs"></a>
+<h2><u>Enhancing documentation</u></h2>
+<p>Edit docs in docs/*.html and view them immediately in your web browser using
+the <code>file://</code> protocol.</p>
+<p>To install the updated docs, do this:
+</p>
+
+<pre>
+touch docs/docs.pro
+make && sudo make install
+</pre>
+
+<p>Now view docs via Qtstalker context help. No need to re-start Qtstalker.
+</p>
+
+<p>
+See other info about the "<a href="indicator/intro.html">indicator docs</a>"
+help system.
+</p>
+
+<p><a href="db.html" target="_self"><img src="back.png" border="0"
+width="32" height="32" alt="Back" /></a> <a href="toc.html"><img
+src="home.png" border="0" width="32" height="32" alt="Home" /></a></p>
+</div>
+</body>
+</html>

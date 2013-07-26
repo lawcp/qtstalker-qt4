@@ -1,0 +1,59 @@
+- Comprehensive documentation now included in the docs directory. Moved all the docs there.
+  Whew! I'd rather stare at the wall than write docmentation. It's finally done.
+
+- Ported code to Qt3. There is no backwards compatability with =< Qt2.3
+
+- Simplified the plugin interface with a new design. Much simpler now. Plugin is now the base
+  class for all plugins. Had to change all the plugins to accomodate the changes.
+
+- Removed chart plugins and merged them back into Plot code, this was not so
+  good an idea. Oh well.
+
+- Added new Quote plugins:
+    NYBOT - Used to import NYBOT exchange futures data from an ASCII file.
+    Qtstalker - Used to import ASCII files that have been exported using qtstalker's export function.
+    COT - Download commitment of traders reports for all major futures.
+    CMEHistory - Downloads CME history for the current year only.
+    Index - Used for creating and updating custom index composites
+    Spread - Used for creating and updating custom spread composites
+
+- Removed Variable plugin
+
+- Combined the STOCHF and STOCHS plugin indicators into new STOCH plugin
+
+- Combined the SMA, EMA, WMA plugin indicators into MA plugin
+
+- Added colors to Candle charts
+
+- New indicators:
+    MA2 - 2 plot MA
+    MA3 - 3 plot MA
+    DPO - Detrended Price Oscillator
+    VOLR - Volatility Ratio
+
+- added a cancel download function to quotes
+
+- added an install script that installs plugins and files for you instead of doing it manually.
+
+- added colors to text labels on plots.
+
+- added more detail to the date area of charts when zooming in.
+
+- moved chart object and line object management into the plot widget to be more OO
+
+- changed Point & Figure chart to include date spacing
+
+- changed the indicator area back to using tabs, arghh the button text was tool small for toolbar buttons
+
+- Removed NYMEX plugin because they have gone to a dynamic html format along with a click through EULA. Thanks alot NYMEX,
+  I guess you dont want to promote the exchange by making quotes easily available.
+
+- Oh boy, I changed db's again... I keep flip flopping, but I did some tests with db-2.7.7 against gdbm-1.8 and managed a
+  25% speed increase. So, I replaced gdbm with db. Btree is actually faster than hashing...go figure. Sorry folks, all your existing
+  charts are not usable in the old format.
+
+- Recoded ChartDb class to allow for custom data formats, now we can create custom charts for custom quote plugins.
+
+- Putting all the charts in one directory has become a problem when you have several hundred charts. Quote plugins will now create
+  sub directories from the root /data. The workwith charts dialog now navigates the directory tree.
+

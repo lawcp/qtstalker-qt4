@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+version=0.33
+Name=MACD - Moving Average Convergence/Divergence
+script=macd := TALIB(MACD,Close,12,26,9,1)|signal := TALIB(MACD,Close,12,26,9,2)|plot (macd,#696969,MACD,Histogram Bar)|plot (signal,#ee0000,SIGNAL,Dash)
+logScale=0

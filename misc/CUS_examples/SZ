@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=SZ - Elder Safezone Stops
+script=INCLUDECUS(ohlc-rel)|SZ-Short := SZ(Short,10,2,2.5)|SZ-Long := SZ(Long,10,2,2.5)|plot (SZ-Short,#ffa500,SZ-Short,Line)|plot (SZ-Long,#ffff33,SZ-Long,Line)
+logScale=1

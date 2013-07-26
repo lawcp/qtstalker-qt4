@@ -1,0 +1,18 @@
+BUGS
+
+The *bugs* might be lurking in the shadows and corners; since, this is
+just a version 0.36 backward compatible and almost working QT4 based
+branch; hence, major improvements and, or enhancements are not accepted
+here except for the fixates and, or small patches.
+
+FIX:
+
+    See TODO, and search FIX directives in the source files.
+
+NOTE:
+    The upstream is busy revising design and making heavy changes; users
+    are requested to use CVS head sources to build, test and report back
+    bugs and, or feature requests.
+
+--
+Balwinder S Dheeman <bdheeman@gmail.com>

@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+Name=FIMAs - Force Index with MAs
+script=cl1 := UTIL(REF,Close,1)|cld := UTIL(SUB,Close,cl1)|volby10k := UTIL(DIV,Volume,10000)|fir := UTIL(MUL,volby10k,cld)|fi0 := UTIL(DIV,fir,Close)|maf2 := EMA(EMA,fi0,2)|maf13 := EMA(EMA,fi0,13)|plot (fi0,#ff0000,FI,Histogram Bar)|plot (maf2,#ffffff,fi-ema-2,Line)|plot (maf13,#00ff00,fi-ema-13,Line)
+logScale=0

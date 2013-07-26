@@ -1,0 +1,8 @@
+enable=0
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=VOLR - Volatility Ratio
+script=threshold := UTIL(REF,1.5)|tr := TRANGE(TRANGE)|tr_sma := SMA(SMA,tr,14)|volr := UTIL(DIV,tr,tr_sma)|plot (threshold,#ffff7f,Threshold,Horizontal)|plot (volr,#ff0099,VOLR,Line)
+logScale=0

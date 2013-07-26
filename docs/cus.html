@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Custom - CUS</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Custom - CUS</u> </h2>
+
+<h3>Description </h3>
+
+<p>
+Qtstalker provides some ready-made indicators, especially via <a href="talib.html">TA-Lib</a>.
+However, most of its power lies with Custom scripts CUS which enables application
+of any formulae. Build your own indicators.
+</p>
+
+<p>CUS allows the user to create special indicators to plot according to his own
+wishes and is the basis for <a href="workwithscanner.html">scanner</a> and <a
+href="backtester.html">backtester</a>. The user builds an indicator in a step
+by step manner, by using all the indicator plugins available. We are able to
+build most any kind of indicator quickly and simply. These CUS rules are
+similar to a script and can also include other CUS rules. Complicated,
+intensive indicators would best be left to creating a plugin instead of long
+series of functions, for speed and memory and versatility considerations. </p>
+
+<p>
+See the contributed "<a href="#examples">CUS Examples Repository</a>".
+</p>
+
+<h3>Formula Page </h3>
+
+<p><img alt="" src="cusformula.png" style="width: 408px; height: 335px;" />
+</p>
+
+<h4>Buttons on the right </h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td width="50"><img alt="" src="openchart.png" width="16" height="16"
+        align="left" border="0" /> </td>
+      <td>Bring up a dialog to open an existing indicator rule, a use as
+        blueprint </td>
+    </tr>
+    <tr>
+      <td><img alt="" src="include.png" width="16" height="16" align="left"
+        border="0" /> </td>
+      <td>Opens a dialog to select an existing CUS to be used as <a
+        href="#includecus">INCLUDECUS()</a> </td>
+    </tr>
+    <tr>
+      <td><img alt="" src="insert.png" width="16" height="16" align="left"
+        border="0" /> </td>
+      <td>Opens the function dialog to select any kind of indicator available
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is where we enter our script. We break our script down into steps.
+Each step basically defines a variable. Each variable represents the results
+of an indicator command. </p>
+
+<p>
+This will create a text file at <tt>~/.qtstalker/dataN/indicator/Indicators/</tt>
+which can be further edited, either via the interface or by hand. For manual changes, reload the chart to see the effect. New indicators created manually require progam re-start.
+</p>
+
+<h3><a name="rulesyntax" id="rulesyntax">Rule Syntax</a> </h3>
+
+<p>&lt;variable&gt; := &lt;indicator&gt;(indicator parameters) </p>
+
+<table border="0">
+  <caption></caption>
+  <tbody>
+    <tr>
+      <td width="200px"><strong>&lt;variable&gt;</strong> </td>
+      <td>The variable name. It cannot contain a reserved word. </td>
+    </tr>
+    <tr>
+      <td><strong>:=</strong> </td>
+      <td>This separates the variable name from the parameters and lets the
+        parser know we are defining a variable </td>
+    </tr>
+    <tr>
+      <td><strong>&lt;indicator&gt;(indicator parameters)</strong> </td>
+      <td>This defines what indicator and its parameters to use. Consult the
+        indicator reference for the format of each indicator. </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br>
+</p>
+
+<h3>Example </h3>
+
+<p>Here is an example of what the MACD indicator would look like if we
+constructed one manually instead of using the builtin version. </p>
+
+<p><code>macd := TALIB(MACDFIX, Close, 9, 1)<br>
+trig := TALIB(EMA, macd, 9)<br>
+osc := UTIL(SUB, macd, trig)<br>
+</code> </p>
+
+<p>Lets review what we did. </p>
+
+<p>The first line creates a variable called <var>macd</var>. We use the TALIB
+indicator to get a MACD using the MACDFIX function. </p>
+
+<p>The next line we create a variable called <var>trig</var>. This will be
+the trigger of the MACD, which is just an EMA of the MACD. So we use the
+TALIB plugin again and request an 9 period EMA of the 'macd'. Notice we use
+the variable <var>macd</var> as the input for the <var>trig</var>. </p>
+
+<p>The last line we create a variable called <var>osc</var>. This is an
+oscillator. An oscillator is simply the difference between 2 variables. So we
+need to use the UTIL plugin that contains a subtraction (SUB) function. We
+input the parameters to get an oscillator of (<var>macd</var> -
+<var>trig</var>). </p>
+
+<p>That's it. </p>
+
+<p></p>
+
+<p>Fortunately, we do not have to input all the parameters manually. We can
+use the function dialog GUI to construct the script for us. </p>
+
+<p>For a description of available indicators see the <a
+href="indicatorreference.html">Indicator Reference.</a> </p>
+
+<p><br>
+</p>
+
+<h3>Plot Page </h3>
+
+<p><img alt="" src="cusplot.png" /></p>
+
+<h4>Buttons on the right </h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td width="50"><img alt="" src="insert.png" width="16" height="16"
+        align="left" border="0" /> </td>
+      <td>Bring up a dialog box to insert a variable from the formula tab</td>
+    </tr>
+    <tr>
+      <td><img alt="" src="edit.png" width="16" height="16" align="left"
+        border="0" /> </td>
+      <td>Opens a dialog change the plot properties of the selected
+      variable</td>
+    </tr>
+    <tr>
+      <td><img alt="" src="delete.png" width="16" height="16" align="left"
+        border="0" /> </td>
+      <td>Delete the selected variable from the plot list</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+
+<p>On this page we decide which variables from the formula page we choose to
+plot on our chart. Each plot command has 4 parameters. </p>
+
+<p><br>
+</p>
+
+<h3><a name="plotsyntax" id="plotsyntax">Plot Syntax</a> </h3>
+
+<p>plot (&lt;var&gt;, &lt;color&gt;, &lt;title&gt;, &lt;plot type&gt;) </p>
+
+<table>
+  <tbody>
+    <tr>
+      <td width="120px"><strong>&lt;var&gt;</strong> </td>
+      <td>The variable name used in the formula page </td>
+    </tr>
+    <tr>
+      <td><strong>&lt;color&gt;</strong> </td>
+      <td>The color the plot should use </td>
+    </tr>
+    <tr>
+      <td><strong>&lt;title&gt;</strong> </td>
+      <td>The text label the plot will use </td>
+    </tr>
+    <tr>
+      <td><strong>&lt;plot type&gt;</strong> </td>
+      <td>The plot type to use. i.e. Line, Histogram etc </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br>
+</p>
+
+<p>From our MACD example it looks like this: </p>
+
+<p><code>plot(osc, blue, OSC, Histogram)<br>
+plot(macd, red, MACD, Line)<br>
+plot(trig, yellow, TRIG, Dash)</code> </p>
+
+<p>Notice we plot the <var>osc</var> variable first. We do this so the
+histogram does not obscure the <var>macd</var> and <var>trig</var> plots.
+Fortunately, the user does not need to input the plot format manually. We can
+use the 'insert' dialog to construct the plot parameters for us correctly.
+</p>
+
+<p><br>
+</p>
+
+<h3><a name="cusstatements"  id="cusstatements">CUS Language Statements</a></h3>
+
+<h4><a name="remarks" id="remarks">Remarks</a> </h4>
+
+<p>Lines beginning with two slash <strong>//</strong> will be ignored by the
+CUS Interpreter. </p>
+
+<h4><a name="includecus" id="includecus">Include other CUS rules</a> </h4>
+
+<p>INCLUDECUS(ruleName) </p>
+
+<p>This allows the user to include other CUS rules. This is helpful when
+making changes to one indicator/rule, changes will be propagated to all
+scripts that use the included indicator. Not thoroughly tested yet. Careful
+how you combine different indicators. Any duplicate variable names will abort
+the calculation. Mixing indicators that have different scaling properties
+will result in awful looking charts. </p>
+
+<p>See the <em>cdl-rel-ma</em> example.</p>
+
+<h4><a name="examples" id="examples">CUS Examples Repository</a></h4>
+
+<p>See the directories "misc/CUS_examples/" and "misc/CUS_examples/Contributions/" and copy some into your
+"~/.qtstalker/dataN/indicator/Indicators" directory.
+See the <a href="indicator/intro.html">documentation</a> and how to
+<a href="cus-contrib.html">contribute</a>.
+</p>
+
+<h4><a name="reservedwords" id="reservedwords">Reserved Words</a> </h4>
+
+<p>These words and symbols are reserved for use in CUS scripts. Do not use
+these words and symbols in or part of variable names or the script will fail
+or become unstable. </p>
+
+<p>:=, plot, Date, Open, High, Low, Close, Volume, Open Interest, Day, Week,
+Month, DayOfWeek </p>
+
+<p><br>
+<br>
+</p>
+
+<p><a href="portfolios.html" target="_self"><img src="back.png" border="0"
+width="32" height="32" alt="Back" /></a> <a href="cus-contrib.html"
+target="_self"><img src="next.png" border="0" width="32" height="32"
+alt="Next" /></a> <a href="toc.html"><img src="home.png" border="0"
+width="32" height="32" alt="Home" /></a></p>
+</div>
+</body>
+</html>
+
+ 	  	 

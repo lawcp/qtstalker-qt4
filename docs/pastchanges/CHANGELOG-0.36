@@ -1,0 +1,31 @@
+20071009: Documentation now clearly identifies its Qtstalker version. Thanks to xley.
+
+20071010: Improved installation doc to show where stuff is installed and where user preferences are kept. Thanks to xley.
+
+20071010: Improved the docs with deliberately basic CSS. Thanks to xley.
+
+20071018: The "Auto Reload" of the CSV Quote plugin was not working. Thanks to xley.
+
+20071023: Improved installation doc to warn about non-standard installation of TA-Lib. Thanks to xley.
+
+20071025: If there is only one chart in a list, then select it automatically. Thanks to xley.
+
+20071101: Prevent accidental zero bars to load. Thanks to xley.
+
+20071102: Fixed the Yahoo Quote "adjustment" option which was not being applied. Thanks to dormilon and friend.
+
+20071113: Enable quick access to "Recent Charts". Thanks to xley.
+
+20071113: Optional "Extra Toolbar" which currently only has "Recent Charts". Thanks to xley.
+
+20071128: Improved installation docs. Added important notes about ensuring that 'qmake' and friends, and 'ta-lib-config', are available on your $PATH. Improved notes about Apple Mac installation. Thanks to xley.
+
+20080206: Added note to installation docs to warn about linker issues with undefined symbols on some systems. Thanks to degraaf.
+
+20080207: Changed some shortcuts: AdvancePaperTrade (Ctrl+Right), Open Quote Dialog (Ctrl+Y), Quit (Ctrl+Q). Thanks to xley and suggestion by alexlong.
+
+20080219: Improved error reporting for CSV Quote plugin. Thanks to xley.
+
+20080403: Increased dimensions of data window. Thanks to bdheeman.
+
+20080403: Applied part of patch #1913032. Set start date 10-year for Yahoo quote History option. Thanks to bdheeman.

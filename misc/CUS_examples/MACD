@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+version=0.33
+Name=MACD
+script=macd := TALIB(MACD,Close,12,26,9,1)|signal := TALIB(MACD,Close,12,26,9,2)|diff := TALIB(MACD,Close,12,26,9,3)|relUp := UTIL(COMP,diff,0,GT)|tUp := UTIL(COLOR,relUp,diff,1,#009900)|relDown := UTIL(COMP,diff,0,LT)|tDown := UTIL(COLOR,relDown,diff,1,#ee0000)|plot (diff,#696969,DIFF,Histogram Bar)|plot (macd,#ffff33,MACD,Line)|plot (signal,#0088ff,SIGNAL,Dash)
+logScale=0

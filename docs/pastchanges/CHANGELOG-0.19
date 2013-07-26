@@ -1,0 +1,13 @@
+This is a rush release to address some nasty bugs.
+
+- There was a nasty bug that segfaulted on new installs and when trying to delete the last tabbed indicator.
+  In trying to fix this I found an annoying limitation with the QTabWidget. In order to fix this I had to make
+  a tabbed indicator page always visible in order to propagate resize signals properly.
+
+- Adjusted the initial chart position by one bar due to some plots being partially truncated.
+
+- I was unhappy with the all the tab function buttons causing limitations to resizing. I removed the buttons
+  and replaced them with a context menu instead. Just right click with the mouse to bring it up. Doh!
+
+- Changed the tab directory widgets to behave more like the standard directory dialogs. Double clicks to
+  enter and leave sub directories instead of single clicks. Singles were creating some problems.

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Least Mean Square Predictor - LMS</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Least Mean Square Predictor - LMS<br>
+</u></h2>
+<p>
+<img alt="" src="lms1.png" style="width: 518px; height: 162px;"><br>
+</p>
+<h3>Description</h3>
+<h3><br>
+</h3>
+<h3>Parameters</h3>
+<ul>
+  <li>Slow K Color</li>
+  <li>2 Day Color</li>
+  <li>5 Day Color</li>
+  <li>K Line Type - The line type for this plot</li>
+  <li>2 Line Type - The line type for this plot</li>
+  <li>5 Line Type - The line type for this plot<br>
+  </li>
+  <li>Slow K Label - The text to identify the plot</li>
+  <li>Select Mode - Cycle or Counter Trend<br>
+  </li>
+  <li>Slow K Period - The period used.</li>
+  <li>Fast K Period - The period used</li>
+  <li>Show 2 Day Prediction - Check if plot is shown.<br>
+  </li>
+  <li>Show 5 Day Prediction - Check if plot is shown.</li>
+  <li>Plot Test Pattern - A reference plot.<br>
+  </li>
+</ul>
+<span style="font-weight: bold;">Description:<br>
+<br>
+</span>This is another indicator from the DSP (Digital Signal
+Processing) arena. Ehlers uses a least mean squares<br>
+technique to generate a 2 day and a 5 day prediction of a modified slow
+stochastic.<br>
+<br>
+There are two modes: <br>
+<br>
+Cycle mode where the indicator is plotted as a normal tabbed indicator
+and works best when there is rapid price movement and some cyclic
+content. Buy signals are generated when the SlowK line crosses over the
+2 or 5 day prediction line.<br>
+<br>
+The Counter Trend mode can be used in the same way but can also be
+ploted on the main chart with a low delay filter (e.g. EMA or even
+better LowPass) to indicate counter trend trades i.e. the signal to buy
+is when the low delay moving average crosses over the 2 or 5 day
+prediction.<br>
+<br>
+More information can be found at www.mesa.co.uk/articles/ in the
+article "Linear Prediction". There are more cycle oriented articles
+there as well.<br>
+<br>
+Some notes on the implementation: <br>
+<br>
+1. Included in the preferences dialog is the abiblty to change both the
+fast and slow "K" values. This is<br>
+not in Ehler's original code. he uses only one value for slowK and
+recommends the value of 10 periods -- the default is set for 5 periods.<br>
+<br>
+2. Also included is a "test pattern" which is a simple sine wave that
+replaces the price data. This pattern<br>
+will show how well the selected parameters can track the "ideal" signal
+and give some confidence to cyclic<br>
+doubters :-)<br>
+<br>
+Actually, item 2 is a confidence check that the code is actually
+corrrect! These signals have a tendency to<br>
+wander in their initial directions and are rather difficult to trust
+without some confirmation -- in trading or coding....<br>
+<br>
+<h3>Formula Reference:<br>
+</h3>
+<table style="text-align: left; width: 905px; height: 112px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Syntax<br>
+      </td>
+      <td style="vertical-align: top;">LMS(Fast K Period, Slow K
+Period, Select Mode, Show 2 Day, Show 5 Day)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Function<br>
+      </td>
+      <td style="vertical-align: top;"> Select Mode is either "Counter
+Trend" or "Cycle" value. Show 2 Day and Show 5 Day is a TRUE or FALSE
+value.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Example<br>
+      </td>
+      <td style="vertical-align: top;">LMS(5, 5, Cycle, TRUE, TRUE)<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<a href="sz.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a><a href="lowpass.html"
+ target="_self"><img src="next.png" alt="Next" border="0" height="32"
+ width="32"></a><a href="toc.html"><img src="home.png" alt="Home"
+ border="0" height="32" width="32"></a>
+</div>
+</body>
+</html>

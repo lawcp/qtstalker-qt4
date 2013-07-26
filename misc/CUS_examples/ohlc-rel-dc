@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Relative OHLC with DonchianChannels
+script=INCLUDECUS(ohlc-rel)|high-1 := UTIL(REF,High,1)|low-1 := UTIL(REF,Low,1)|DU := TALIB(MAX,high-1,4)|DL := TALIB(MIN,low-1,4)|sum := UTIL(ADD,DU,DL)|DM := UTIL(DIV,sum,2)|ch := UTIL(SUB,High,Low)|ach := SMA(SMA,ch,4)|plot (DU,#66ffff,DU,Line)|plot (DM,#ffff3f,DM,Line)|plot (DL,#ff99ff,DL,Line)|plot (ach,#ff0000,MACH,Invisible)
+logScale=1

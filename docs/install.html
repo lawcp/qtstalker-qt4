@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Basic Installation</title>
+  <meta name="generator" content="Amaya 9.53, see http://www.w3.org/Amaya/">
+</head>
+
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+
+<h2><u>Installation</u></h2>
+
+<h3>Requirements</h3>
+<ul>
+  <li>A Linux, FreeBSD, Mac OS X, Solaris or Unix compatible operating system.</li>
+  <li><a href="http://www.trolltech.com/">Qt</a> development library.
+    At least Qt 4.3, past versions not tested.</li>
+  <li><a href="http://www.sleepycat.com/">Berkeley DB</a> database.
+    At least db-4.4 version, 4.8.30 works; the 5.x is not supported.</li>
+  <li><a href="http://ta-lib.org/">TA-Lib</a> Technical Analysis Library.
+    At least ta-lib-0.3.0 version; better use 0.4.0 or SVN trunk.</li>
+</ul>
+
+<p>
+When upgrading Qtstalker from a previous source version, see the
+<a href="#upgrade">notes</a> below.
+</p>
+
+<p>
+See notes below about <a href="#where">where</a>
+stuff gets installed.
+</p>
+
+<a name="packages"></a>
+<h3>Installing via packages</h3>
+<p>Packages are available for some operating systems:</p>
+<ul>
+ <li><a href="http://www.zwets.com/qtstalker/">Debian packages</a></li>
+</ul>
+
+<a name="source"></a>
+<h3>Installing from source</h3>
+
+<p><strong>Note:</strong> Package users can ignore the following advice as this
+will be done automatically by the package installer. </p>
+
+<p><strong>Important (Qt):</strong> Ensure that Qt is installed properly.
+Also ensure that the $QTDIR environment variable is set (see below).
+Also ensure that '<code>qmake</code>' and friends are available (e.g. add $QTDIR/bin to your $PATH).
+</p>
+
+<p><strong>Important (DB):</strong> Ensure that Berkeley DB is installed properly.
+If you installed Berkeley DB at a non-standard location, then edit the
+Qtstalker "configure" file (e.g. "<code>INCLUDEPATH += /opt/local/include/db4</code>"). <br>
+And some installations miss symbolic links in the lib directory. </p>
+
+<p><strong>Important (TA-Lib):</strong> Ensure that TA-Lib is installed properly.
+Also ensure that the '<code>ta-lib-config</code>' program is available on your $PATH
+</p>
+
+<h4>Hint for Ubuntu / Debian users</h4>
+
+<p>You need to install these packages before:</p>
+<ul>
+  <li><strong>build-essential</strong> (meta package for compiler etc.)</li>
+  <li><strong>libdb4.4-dev</strong> (for Berkely)</li>
+  <li><strong>qt3-dev-tools</strong> (for qmake)</li>
+  <li><strong>libqt3-mt-dev</strong> (this will also select much more
+    packages to install, don't be afraid) 
+  </li>
+</ul>
+
+<h4>Install TA-Lib</h4>
+
+<p>Since version 0.34 of Qtstalker you must install TA-Lib separately
+<b>before</b> you install Qtstalker itself. In previous versions, TA-Lib was
+included in the Qtstalker source tree, but not now. You can download the source of
+<a href="http://ta-lib.org/">TA-Lib</a>
+e.g. with the command...</p>
+
+<p><code>wget
+http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz </code> </p>
+
+<p>...entered in your terminal. Unpack the downloaded file, <em>cd</em> into
+the extracted folder and compile/install TA-Lib with the sequence</p>
+<ol>
+  <li><code>./configure</code></li>
+  <li><code>make</code></li>
+  <li><code>make install</code> (as root)</li>
+  <li>There may also need to modify something if an error like this
+    appears when you start Qtstalker ... 
+    <p><code>/usr/local/bin/qtstalker: error while loading shared libraries:
+    libqtstalker.so.0: cannot open shared object file: No such file or
+    directory</code></p>
+    <p>To fix this add <code>/usr/local/lib</code>
+    to your <code>/etc/ld.so.conf</code> file and run <code>ldconfig -v</code>
+    (as root).</p>
+  </li>
+</ol>
+<p>
+If you installed TA-Lib at a non-standard location, then edit the
+Qtstalker "configure" file (e.g. "<code>INCLUDEPATH += /opt/local/include/ta-lib</code>").
+</p>
+<p>
+Also ensure that the '<code>ta-lib-config</code>' program is available on your $PATH
+</p>
+
+<h4>Install Qtstalker</h4>
+
+<h5>For Linux users</h5>
+<p>See important pre-requisite notes <a href="#source">above</a>.</p>
+<ul>
+  <li>Ensure that your shell QTDIR environment variable is set
+    to point to the location of the root Qt directory. This setting is
+    usually something like this: '<code>export QTDIR=/usr/lib/qt</code>' or
+    something similar to this. Failure to set this properly will result in
+    make errors.<br>
+  </li>
+  <li>Unpack the Qtstalker source.</li>
+  <li><code>./configure</code> (this will create the Makefile)<br>
+  </li>
+  <li><code>make</code></li>
+  <li><code>make install</code> (as root)</li>
+</ul>
+
+<p>If you get errors about undefined symbols when you start qtstalker, then add
+ <code>/usr/local/lib</code>
+ to your <code>/etc/ld.so.conf</code> file and run <code>ldconfig -v</code>
+ (as root).</p>
+
+<h5>For FreeBSD users</h5>
+<p>See important pre-requisite notes <a href="#source">above</a>.</p>
+<ul>
+  <li>Set a few environment variables in your shell. <br>
+    Enter this: '<code>export QTDIR=/usr/X11R6</code>' <br>
+    Then enter this '<code>export
+    QMAKESPEC=/usr/local/share/qt/mkspecs/freebsd-g++</code>'.<br>
+    Failure to set these variables properly will result in make errors.<br>
+  </li>
+  <li>Unpack the Qtstalker source.</li>
+  <li><code>./configure</code> (this will create the Makefile)<br>
+  </li>
+  <li><code>make</code></li>
+  <li><code>make install</code> (as root)</li>
+</ul>
+
+<h5>For Macintosh OS X users (Tiger 10.4+)</h5>
+<p>See important pre-requisite notes <a href="#source">above</a>.</p>
+<p><strong>Note:</strong> By default Qtstalker will only look for supporting
+libraries etc. under <code>/usr/local/</code> so Mac users will need to tell Qtstalker via the "<code>configure</code>" file where to look for these. We cannot give explicit instructions because you might install some bits via Fink and other bits via MacPorts, etc. so the following notes are just a guide.
+</p>
+<ul>
+  <li>Get Berkeley DB using <a href="http://macports.org/">MacPorts.org</a>
+    (which would install stuff under <code>/opt</code> directory)
+    or <a href="http://fink.sf.net/">Fink.sf.net</a>
+    (which would install stuff under <code>/sw</code> directory)
+<br>
+    We have reports of needing e.g. '<code>cd /opt/local/lib; ln -s
+    libdb-4.2.dylib libdb.dylib</code>')</li>
+  <li>Get <a href="http://ta-lib.org/">TA-Lib</a> source and install as described above.</li>
+  <li>Get "Qt for Aqua" (i.e. not for X11). Trolltech says must be at least qt-3.3.5 version. You can get this via Fink, or MacPorts, or direct from Trolltech.</li>
+  <li>Set your shell QTDIR environment variable to point where you installed
+    Qt. <br>
+    e.g. '<code>export QTDIR=/sw/lib/qt3mac</code>' or something similar. <br>
+    Failure to set this properly will result in make errors. </li>
+  <li>Unpack the Qtstalker source.</li>
+  <li>Edit the "configure" file to be something like: <br>
+    <code>qmake "DEFINES += QT_NO_COMPAT" "CONFIG += qt" "macx:INCLUDEPATH +=
+    /opt/local/include/db4" "macx:LIBS += -L/opt/local/lib" -o Makefile
+    qtstalker.pro</code></li>
+  <li><code>./configure</code> (this will create the Makefile) </li>
+  <li><code>make</code> </li>
+  <li><code>sudo make install</code></li>
+  <li>To start, type '<code>open /usr/local/bin/qtstalker.app</code>'</li>
+</ul>
+
+<a name="where"></a>
+<h3>Where does stuff get installed</h3>
+<ul>
+ <li>The executable 'qtstalker' will be copied to the
+  <code>/usr/local/bin</code> directory</li>
+ <li>The plugins will be copied to <code>/usr/local/lib/qtstalker</code>
+  directory</li>
+ <li>The translation files will be copied to
+   <code>/usr/local/share/qtstalker/i18n</code> directory</li>
+ <li>The docs will be copied to
+  <code>/usr/local/share/doc/qtstalker/html</code> directory (see toc.html for
+  the table of contents)</li>
+</ul>
+<p>The user workspace is in your home at <code>~/.qtstalker/data1/</code> directory.
+</p>
+<p>
+The user settings are persistent.
+On most platforms they are stored in the <code>~/.qt/qtstalkerrc</code> plain-text file.
+On "Mac OS X" they are stored in a binary plist.
+See <a href="dev.html#editSettings">notes</a>.
+</p>
+
+<a name="upgrade"></a>
+<h3>Updating from a previous version</h3>
+
+<p>If you are updating from a previous source version already installed on
+your system, it is best that you first uninstall the previous version first
+before you install the upgraded version. Doing this will better ensure a
+problem-free upgrade. Many upgrade errors can be caused by old plugins and
+libraries hanging around complicating things. You can uninstall the old
+version by doing <code>'sudo make uninstall'</code> from the top directory of the
+<b>old</b>
+source install.</p>
+
+<h4>Updating from 0.33 to 0.35</h4>
+<p>
+When the newly installed 0.35 program starts, it
+will automatically upgrade the internal database used with 0.33 to a new format. The new user
+workspace will be
+<code>~/.qtstalker/data1/</code> and the old <code>~/.qtstalker/data0/</code>
+will remain in case you need it.
+</p>
+<p>
+If you cancel the upgrade process, then you will need to clean up. Remove the
+<code>~/.qtstalker/data1/</code> directory and <a href="dev.html#editSettings">edit</a>
+Qtstalker settings to set the "Version" back to 0.33 and each "data1" path
+back to "data0".
+</p>
+<p>
+Version 0.32 and older are not supported, so you would need to import your raw data with the Quote plugins and add new indicators.
+</p>
+
+<h3>Using the current development source</h3>
+
+<p>See instructions for <a href="dev.html">using CVS</a>. </p>
+
+<p><br>
+<br>
+</p>
+
+<p><a href="faq.html" target="_self"><img src="back.png" border="0"
+width="32" height="32" alt="Back" /></a> <a href="quick.html"
+target="_self"><img src="next.png" border="0" width="32" height="32"
+alt="Next" /></a> <a href="toc.html"><img src="home.png" border="0"
+width="32" height="32" alt="Home" /></a></p>
+</div>
+</body>
+</html>

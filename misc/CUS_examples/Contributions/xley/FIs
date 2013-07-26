@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+Name=Force Index
+script=fi2 := FI(EMA,2)|fi13 := FI(EMA,13)|plot (fi2,orange,fi-ema-2,Histogram Bar)|plot (fi13,red,fi-ema-13,Line)
+logScale=0

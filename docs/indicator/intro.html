@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Indicator documentation</title>
+    <link rel="stylesheet" type="text/css" href="../qtstalker.css" media="screen" />
+    <script src="../qtstalker.js" type="text/javascript"> </script>
+  </head>
+  <body>
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+    <h1>Indicator documentation</h1>
+    <p>
+      Note: If you reached this page from the context help system, then there
+      is no documentation available for your indicator. See below how to create some.
+    </p>
+    <p>
+      A collection of contributed indicators is available. Not all of them have
+      accompanying documentation.
+    </p>
+    <p>
+      For assistance with creating indicators, see the
+      <a href="../cus.html">CUS</a> howto document.
+    </p>
+    <p>
+      See the <a href="../indicator/">directory listing</a> of available documents.
+    </p>
+    <p>
+      There is other documentation for indicators at
+      <a href="../indicatorreference.html">Indicator Reference</a>.
+(FIXME: Some of those docs are old, not all indicators work properly.)
+    </p>
+    <h2>How it works</h2>
+    <p>
+      Right-click on a chart and choose "Indicator Help" from the context menu.
+      The documentation system will append ".html" to the indicator name
+      (e.g. cdl-rel.html) and then look for a corresponding html file.
+      It searches first in the user directory:
+      <tt>~/.qtstalker/dataN/docs/indicator/</tt>
+      and then in the main
+      <tt>docs/indicator/</tt> directory.
+      If no file is available then it presents this introduction.
+    </p>
+    <p>
+      Copy some indicator examples files from the "CUS Examples Repository"
+      at <tt>misc/CUS_Examples/</tt> into your workspace at
+      <tt>~/.qtstalker/dataN/indicator/Indicators/</tt> and view their help.
+    </p>
+    <h2>How to contribute documentation and indicators</h2>
+    <p>
+      To create documentation for an indicator, copy the file
+      <tt>qtstalker/docs/indicator/template.html</tt>
+      (filenames are assumed to be lowercase).
+    </p>
+    <p>
+      Please consider
+      <a href="../cus-contrib.html">contributing</a> indicators and documentation back to the project.
+    </p>
+  </body>
+</html>

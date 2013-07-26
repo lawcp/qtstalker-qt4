@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+version=0.33
+Name=Stochastic Oscillator (Fast)
+script=overbought := UTIL(REF,80)|oversold := UTIL(REF,20)|sd := TALIB(STOCH,13,3,SMA,3,SMA,2)|sk := TALIB(STOCH,13,3,SMA,3,SMA,1)|plot (overbought,#ee0000,Overbought,Horizontal)|plot (oversold,#00aa00,Oversold,Horizontal)|plot (sd,#0088ff,SlowD,Line)|plot (sk,#ffff33,SlowK,Line)
+logScale=0

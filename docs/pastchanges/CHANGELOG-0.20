@@ -1,0 +1,32 @@
+- Some compile errors reported because I made some changes that apply to Qt3.1.2 that are not compatible with Qt3.0*
+  Back ported the QString::remove to Qt3.0*
+
+- I split the ./compile script into 2 scripts. ./compile creates the qtstalker binary, and ./compile_plugins creates all
+  the plugins. This is to make the compile process more efficient and flexible.
+
+- Thanks to Marco van Zwetselaar for a patch to implement Log scaling to charts.
+
+- Added a "Color Bars" parm to draw color up and down bars for the VOL plugin. This only works if you use the
+  histogram bars line style.
+
+- Added a data panel located under the tab area that dynamically updates all the chart values where the mouse is currently located.
+
+- Reports that 0.19 does not create a binary on some dist's "Debian". 0.17 compiles fine. I think this is because
+  I removed the -ldl linker option for FreeBSD. Some dist's need the linker option. Updated all the *.pro files to add
+  the -ldl linker option if on a linux-g++ system.
+
+- Added new chart type "Swing". This is the typical Gann swing chart type.
+
+- Experimented with an OSX port. Turns out apple has a broken plugin system, you can load them but can't unload them.
+  Until they fix this, a OSX port will not be practical or efficient. Cmon apple, even win32 can do this...think different?
+
+- Added the stdlib header to GroupPage to fix a compile error on Debian.
+
+- Fixed a bug that didn't update the ChartPage after downloading quotes for the first time.
+
+- Backported QTable::setColumnLabel() function to Qt3.0.* It seems most of the compile errors being reported are caused
+  by very small changes in the 3.1* versions. Most distributions are still using the 3.0* version, guess I'm spoiled
+  using Gentoo.
+
+- fixed QDir::refresh() compile error, backported to Qt 3.0*
+

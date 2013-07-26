@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+version=0.33
+Name=Volume with SMAs
+script=vol := UTIL(REF,Volume,0)|vol_sma10 := TALIB(SMA,vol,10)|vol_sma20 := TALIB(SMA,vol,20)|close-0 := UTIL(REF,Close,0)|close-1 := UTIL(REF,Close,1)|relUp := UTIL(COMP,close-0,close-1,GT)|tUp := UTIL(COLOR,relUp,vol,1,#009900)|relDown := UTIL(COMP,close-0,close-1,LT)|tDown := UTIL(COLOR,relDown,vol,1,#ee0000)|relEq := UTIL(COMP,close-0,close-1,EQ)|tEq := UTIL(COLOR,relEq,vol,1,#0088ff)|plot (vol,dimgray,vol,Histogram Bar)|plot (vol_sma10,#ffff33,vol-sma-10,Line)|plot (vol_sma20,#0088ff,vol-sma-20,Line)
+logScale=0

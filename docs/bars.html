@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Qtstalker: Bars - BARS</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+</head>
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Bars - BARS</u></h2>
+<h3>Description:</h3>
+<p>
+Plots standard OHLC bars, or Japanese Candles, or Heiken Ashi Candles, or Point and Figure.
+</p>
+<p>There is also an optional 3 MA's
+that can be plotted over the Bars or Candles. To plot the MA's, set the
+period to 2 or greater or 1 to hide.
+</p>
+<p>
+Note: For Candles, see the CUS example <a href="indicator/cdl-rel.html">cdl-rel</a>
+which might be a better way to work with candles.
+</p>
+<h3>Bar Parameters:</h3>
+<ul>
+  <li>Up Color - color used for 'up' bars</li>
+  <li>Down Color - color used for 'down' bars</li>
+  <li>Neutral Color - color used for 'neutral' bars<br>
+  </li>
+  <li>Label - text to identify the plot</li>
+</ul>
+<h3>Candle Parameters:</h3>
+<ul>
+  <li>Candle Color - color used for candles</li>
+  <li>Label - text to identify the plot</li>
+</ul>
+<h3>Point and Figure Parameters:</h3>
+<ul>
+  <li>Method - Default or Custom (see below)</li>
+  <li>X Color - color used for rising prices</li>
+  <li>O Color - color used for falling prices</li>
+  <li>Box Size - the minimum price change that must occur before a mark is plotted.</li>
+  <li>Reversal - amount of price change required to commence the new right-hand column.</li>
+  <li>Label - text to identify the plot</li>
+</ul>
+<p>
+The 'Default' method box sizing is a simple formula:
+2% of the mid point of bars displayed. Set method to 'Custom' to set the box
+size and reversal parms for each individual chart.
+</p>
+<h3>Formula Reference:</h3>
+<table style="text-align: left; width: 905px; height: 112px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Syntax<br>
+      </td>
+      <td style="vertical-align: top;">BARS(TYPE)<br>
+BARS(TYPE, COLOR)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Function<br>
+      </td>
+      <td style="vertical-align: top;">Type is either Bar, Candle, HACandle or PF.
+The Color parm is only used for the Candle or HACandle TYPE.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Example<br>
+      </td>
+      <td style="vertical-align: top;">BARS(Bar)<br>
+BARS(Candle, red)<br>
+BARS(HACandle, dimgray)<br>
+BARS(PF)<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<a href="trix.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a>
+<a href="vol.html" target="_self"><img src="next.png" alt="Next"
+ border="0" height="32" width="32"></a><a href="toc.html"><img
+ src="home.png" alt="Home" border="0" height="32" width="32"></a>
+</div>
+</body>
+</html>

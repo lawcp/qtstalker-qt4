@@ -1,0 +1,69 @@
+To Do:
+======
+
+- create some howto docs for quote plugins
+- postgresql quote plugin
+- key bindings
+- key binding scripting
+- trendlines and fibo objects to plot on weekly and monthly charts as well
+  https://sourceforge.net/forum/message.php?msg_id=4527886
+- allow negative displacement for line plots
+- default CSV plugin import rules to the install process
+- change Quote behaviour in yahoo plugin to create separate symbols for intraday and daily
+  data. also put a timer on yahoo plugin for intraday tick downloads every X minutes. same limitations
+  will apply as in the CSV timer
+- overhaul CSV plugin to allow URL downloads and clean up code...it's a mess  
+- add more crosshairs behaviours to IndicatorPlot
+- user defined bar lengths for intraday charts
+- add better icons for add/insert in the edit formula dialog widget, functions not obvious
+- create CUS tutorial.
+- add stock margins to the tester
+- add ability to not draw sections of plotlines. (vectors)
+- save last chart viewed between sessions.
+- add paper trade mode to portfolio tracker (use last chart value instead of last db value)
+- add optimization range testing for the backtester.
+- fix: negative account volume trades in the tester.
+- add: there is no way to use buy/sell prices in stop formulas in the tester. 
+- median lines chart objects
+- fibo time chart objects
+- add more stats to edit chart dialog ie. high date low date 
+- add default scanners for biggest % gainers, new 52 week highs etc.
+- add more flexible symbol and directory selector for the yahoo plugin.
+- add ExScript CUS interface for indicators and plots.
+- remove full paths from all files, only symbol is needed for index lookup
+- change yahoo plugin to get fundamentals on new charts automatically 
+- display chart object info when cursor hovers over them in the data panel or make tooltip.
+- update classes with a description of purpose, usage etc.
+- the compressionCombo does not keep the compression buttons toggled.
+- lib/TALIB.cpp should use TA-Abstract for parameter validation.
+  See Mario's comments: https://sourceforge.net/forum/message.php?msg_id=4585375
+- Improve the use of window margins and borders. On some systems there is wasted
+  screen space. See some notes in src/Qtstalker.cpp setContentsMargins()
+- Create default docs/indicator/*.html for all the existing misc/CUS_examples, e.g. "CV - Chaikin Volatility".
+- Round off values to lesser precision when displaying in data panel.
+- Some old files have not been removed from CVS (CC.cpp Index.cpp Spread*.cpp). See discussion in mail archives about this functionality which has moved but seems to have trouble. The lingering files caused compile troubles for someone, but not for others.
+- There are many empty CVS directories. Remove them.
+- Improve source code documentation. Javadoc comments are utilised by Doxygen.
+Need more comments, starting with top-level classes.
+
+- Experiment with SVN trunk version of TA-Lib. Provide feedback to them if we have issues. Their 0.5 release is scheduled for January 2008.
+ 
+Move to Qt4:
+============
+* See Issue: #1943707 - porting from Qt3 to Qt4
+* Review the code and prepare for move by not using certain Qt3 features:
+http://doc.trolltech.com/4.3/porting4-overview.html
+* Run the qt3to4 porting tool and use Qt3Support library:
+http://doc.trolltech.com/4.3/porting4.html
+* Refine code to remove Qt3 dependencies.
+
+Maybe some day:
+===============
+
+- I would love to add scripting. This is by far the hardest thing to implement.
+  So, fat chance I'm going to get this done soon without any help... help.... 
+  help...
+
+- A proper portfolio manager.
+
+- support for options

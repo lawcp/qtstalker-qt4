@@ -1,0 +1,5 @@
+?package(qtstalker):needs="X11" section="Applications/Office"\
+  title="Qtstalker" command="/usr/bin/qtstalker"\
+  hints="Stock and Commodity Charting, Trading and Technical Analysis Platform"\
+  kderemove="y"\
+  icon="/usr/share/pixmaps/qtstalker.xpm"

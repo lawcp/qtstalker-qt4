@@ -1,0 +1,130 @@
+20040221: Added new BarData class to libqtstalker. Plot and all plugins were modified to handle the new
+          input bar interface. This structural change in preparation for future design changes.
+
+20040222: Added a small current close arrow pointer to the scale area of the main plot. Helps with
+          tracking where the last close is located on the scale.
+
+20040224: Moved chart object logic out of Plot:: and split each chart object off into it's own
+          class. Moving towards a proper OO framework.
+
+20040228: Moved PlotLine line type logic out of Plot:: and into PlotLine::
+          Moving towards a proper OO framework.
+
+20040228: Moved chart type logic out of Plot:: and split each chart type off into it's own
+          plugin. We now have chart plugins. Chart plugins now have their own pref dialogs
+	  to handle colors and any parms that are specific to that chart style.
+
+20040228: Added new option to MACD plugin. Option controls the osc scaling. True turns on full
+          scaling and false reverts to normal scaling.
+
+20040302: Yehaaww! Drag and drop chart objects are working. Needs some polishing and tweaking
+          here and there still. But it works. This is a big step forward in usability. Overhauled
+	  the Fibonacci and trendlines.
+
+20040303: Applied patch #909286 - thin and fat candles. Added an option to turn this feature on
+          and off to compliment it. Thanks to Dany Daw.
+
+20040303: Applied patch #903981 - new doc explain cvs, development, contribution. Thanks to
+          David Crossley.
+
+20040307: Added preference dialogs to all the quote plugins. Changed the quotes dialog to reflect
+          this change. The settings interface to each quote plugin no longer displays in the
+	  quote dialog. You need to press the settings button beside the plugin combobox to bring
+	  up the settings dialog for each plugin.
+
+20040307: Folded YahooQuote plugin into Yahoo plugin. Removed YahooQuote quote plugin.
+
+20040308: Removed Price indicator plugin. Now redundant because of the Line chart plugin can replace
+          it's functions.
+
+20040309: Added an option to save the minimum bar spacing for each chart plugin. When you change
+          chart types, the minimum bar spacing for that type will be the default.
+
+20040309: Last chart plugin used is now restored between sessions.
+
+20040310: Config settings were not being saved when the WM kills the app. Fixed.
+
+20040310: Fixed the plotting on tabbed indicators that left a space above the date if a date area
+          was requested.
+
+20040313: Converted all indicator plugins to the new dialog format. This conversion removes storage
+          of indicator settings from the rc file to individual flat ascii files that are stored
+	  in the new ~/Qtstalker/indicator directory. This allows greater flexibilty for
+	  manipulating indicator plugins, no longer being tied to Settings:: class internally.
+	  Just tell the plugin where the settings file is and it will load and configure
+	  itself to it.
+
+20040313: Converted the indicator EP plugin to a new EP chart plugin. The chart plugin is now
+          better suited. Removing the EP indicator.
+
+20040322: Completed intraday quote conversion to all classes. Intraday quotes up to the minute
+          can now be used. All that is needed is an app that can update the charts with quotes.
+	  Will be updating the CSV and Yahoo plugins to use them in the future.
+
+20040322: Updated the GUI to use new chart compression formats of 5/15/30/60 minute charts if
+          minute bar quotes are available.
+
+20040322: Replaced the Bars combobox on the toolbar with a spinbox to better control the number of bars
+          to load.
+
+20040324: Overhauled the CSV plugin to allow for users to create thier own input file format rules.
+          Need to update the docs on how to do this. You create a new rule and insert the field
+	  format of the ascii file into the Rule Contents list. The fields in the list should match
+	  the fields in the ascii file from top to bottom in the list. Probably should create some
+	  default formats for users to play with initially.
+
+20040324: Consolidated PaintBar plugin into the Bar plugin. Removed PaintBar plugin.
+
+20040324: Consolidated CandleQS plugin into the Candle plugin. Removed CandleQS plugin.
+
+20040324: Modified patch #911112 - volume candle plugin - and pulled it into the Candle plugin.
+          Thanks to Dany Daw for this cool patch.
+
+20040326: Modified indicator plugins to use QSMath class for often used TA functions.
+
+20040330: Added function to toggle the crosshairs from the chart context menu.
+
+20040330: Draw mode state is now saved between sessions.
+
+20040331: Added a drawing function to allow the user to draw in newly created trendlines and
+          fibo's instead of just clicking the start and end points.
+
+20040401: Added a set defaults function for chart objects. Each object type can have set
+          defaults when created. So far, only color and font are defaulted.
+
+20040410: After much discussion the chart object user interface has a workable method now.
+          Left mouse click to select an object. An object is selected when 1 or more boxes
+	  appear next or on top of it. Left mouse click a selected object on any of the boxes
+	  will put object into move mode. Move mode then tracks the position of the mouse pointer
+	  allowing drag and drop action of the object. To place the object a left mouse
+	  click on the point you wish to drop it. Right mouse click with a selected object
+	  brings up the context menu. To unselect an object just click anywhere else on the chart
+	  other than the bounds of the chart object currently selected. A double left mouse click
+	  on a selection brings up the edit dialog. Keyboard shortcuts for a selected object are
+	  CTRL-E for edit dialog, CTRL-M for move mode and CTRL-D for object delete.
+
+20040428: Fixed chart object scaling when scale to screen is true. Now objects only appear if
+          they fall within the bar price range on screen. If scale to screen is false, all chart
+	  objects will appear.
+
+20040428: Moved the "Tab Position Top" parm from prefs menu to a context menu activated by
+          mouse right click on the indicator tab area.
+
+20040428: Moved the "Navigator Position Left" parm from prefs menu to a context menu activated by
+          mouse right click on the navigator tab area.
+
+20040506: Added key accels to menus and dialog buttons.
+
+20040520: Added a version number to plugin file names. Will use the file versions to control
+          proper plugin loading. Note the plugin filename is slightly different than dynamic lib
+	  naming convention due to qmake ignoring the version parm when building plugins.
+
+20040523: Merged CMEHistory plugin into CME plugin.
+
+20040527: Yahoo changed historical url. Updated yahoo plugin.
+
+20040528: Applied patch #962153 - remove deprectaed qt2 features. Thanks to Marco for this
+          patch.
+
+20040602: Applied patches #963998, 963987, 963961 - doc updates.
+

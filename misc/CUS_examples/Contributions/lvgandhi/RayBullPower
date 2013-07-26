@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=2
+dateFlag=0
+Name=Elder Ray Bull Power
+script=mac13 := EMA(EMA,Close,13)|bp := UTIL(SUB,High,mac13)|plot (bp,#ff0000,RayBull,Histogram Bar)
+logScale=0

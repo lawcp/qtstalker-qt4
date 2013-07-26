@@ -1,0 +1,10 @@
+- Bug fix for yahoo quotes that didn't update new symbols first time.
+
+- Added basic indicator documentation.
+
+- Added new quote plugin CC. This creates a continuous adjusted futures chart for each futures symbol available.
+
+- Added status messages to all the quote plugins for monitoring download progress.
+
+- Added an indicator plugin tutorial in the docs.
+

@@ -1,0 +1,208 @@
+Qtstalker Translator Howto v1.0
+date (2009-04-11)
+created by Yannick LE NY (y.le.ny at ifrance dot com )
+
+In this text file, I give the main steps to translate Qtstalker in an
+other language.
+
+Here, I use a console like KDE Konsole or xterm .
+
+1) Download Qtstalker code sources.
+
+Stable release:
+
+You can download Qtstalker code sources for the latest stable release
+here: https://sourceforge.net/project/showfiles.php?group_id=25632
+
+CVS developpment release:
+
+a) install cvs package or software
+b) Create a folder named qtstalker-cvs:
+
+    $ mkdir qtstalker-cvs
+
+c) go in this folder:
+
+    $ cd qtstalker-cvs
+
+d) get the latest CVS code sources by CVS (development branch):
+
+    $ cvs -z3 -d:pserver:anonymous@qtstalker.cvs.sourceforge.net:/cvsroot/qtstalker co -r qtstalker-qt4-branch qtstalker
+
+2) Create the language file for your language:
+
+a) Go in the i18n folder
+
+    $ cd qtstalker/i18n
+
+b) create your language file, exemple for French language file creation:
+
+    $ cp -p qtstalker_pl.ts qtstalker_fr.ts
+
+  or
+
+    $ cp -p qtstalker_xx.ts qtstalker_fr.ts
+
+    exemple for german language file creation:
+
+    $ cp -p qtstalker_pl.ts qtstalker_de.ts
+
+  or
+
+    $ cp -p qtstalker_xx.ts qtstalker_de.ts
+
+Here, the _fr or _de in the file name are for French and, or German
+language respectively.
+
+You can find the 2 letter codes that identify your language at
+http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+
+3) Translate.
+
+a) Edit your language translation file, here qtstalker_fr.ts for french
+   with a text editor that can use UTF-8 format like kwrite or gedit
+   (Linux) or Unired (MS Windows)
+
+b) In you text editor, at the beginng of the file, you have:
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
+<context>
+    <name>BarEdit</name>
+    <message>
+        <location filename="../lib/BarEdit.cpp" line="70"/>
+        <source>Delete Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lib/BarEdit.cpp" line="64"/>
+        <source>Save Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+
+After translation in french, you have:
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
+<context>
+    <name>BarEdit</name>
+    <message>
+        <location filename="../lib/BarEdit.cpp" line="70"/>
+        <source>Delete Record</source>
+        <translation>Supprimer enregistrement</translation>
+    </message>
+    <message>
+        <location filename="../lib/BarEdit.cpp" line="64"/>
+        <source>Save Record</source>
+        <translation>Sauvegarder enregistrement</translation>
+    </message>
+
+You need to do the same tasks in the translation file for your language.
+
+Keyboard Shortcut (http://en.wikipedia.org/wiki/Keyboard_shortcut) problem, in the Qtstalker Menu there is letter with underscore to use shortcut.
+In the text to translate here, there is &amp; before the letter that is with underscore.
+You need to reuse this letter in the translated text string in you language like this (letter u):
+    <message>
+        <location filename="../src/ChartPage.cpp" line="82"/>
+        <source>D&amp;ump Chart		Ctrl+U</source>
+        <translation>Vider le graphiq&amp;ue  Ctrl+U</translation>
+    </message>
+
+If it is not possible, add after an alone letter with the underscore
+after the text strings translated in your language like this :
+
+    <message>
+        <location filename="../src/ChartPage.cpp" line="82"/>
+        <source>D&amp;ump Chart		Ctrl+U</source>
+        <translation>Vider le graphique &amp;u  Ctrl+U</translation>
+    </message>
+
+3) Compile Qtstalker
+
+a) Configure step
+
+    $ cd ..
+
+now you are in the qtstlaker main folder start configuation:
+
+    $ ./configure
+
+when you use this command, you can see some useful things for the
+translator like these
+
+********* Finished testing of Dependencies *********
+/home/webadm/qtstalker-0.37-svn/qtstalker
+
+Creating national language files in i18n ...
+Updating 'i18n/qtstalker_fr.ts'...
+
+    Found 974 source text(s) (0 new and 974 already existing)
+    Same-text heuristic provided 100 translation(s)
+
+Updating 'i18n/qtstalker_pl.ts'...
+
+    Found 974 source text(s) (0 new and 974 already existing)
+
+Done
+Compiling existing translations ...
+Updating 'i18n/qtstalker_fr.qm'...
+    Generated 370 translation(s) (247 finished and 123 unfinished)
+
+    Ignored 604 untranslated source text(s)
+Updating 'i18n/qtstalker_pl.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+
+    Ignored 974 untranslated source text(s)
+Done
+
+You may now 'make && sudo make install'
+
+b) Compile step
+
+    $ make
+    $ make install
+
+(by default , qtstalker is installed in /usr/local/)
+
+4) Start qtstalker
+
+a) If /usr/local/lib is not in your LD_LIBRARY_PATH, do:
+
+    $ export LD_LIBRARY_PATH=/usr/local/lib
+
+b) Launch qtstalker
+
+    $ cd /usr/local/bin
+    $ ./qtstalker
+
+5) Improve translation by incremental step:
+
+a) Ppdate your qstalker translation file *.ts
+b) Save it
+c) Stop qstalker program
+d) Update the translation binary file *.qm:
+
+    $ lrelease i18n/qtstalker_fr.ts 
+
+ or
+
+    $ /usr/lib/qt4/bin/lrelease i18n/qtstalker_fr.ts 
+
+  here fr in the file name for french translation.
+
+e) copy the binary translation file in the good folder
+
+    $ cp -p i18n/qtstalker_fr.qm /usr/local/share/qtstalker/i18n/
+
+   or
+
+    $ cp -p i18n/qtstalker_fr.qm /usr/share/qtstalker/i18n/
+
+  here fr in the file name for french translation.
+
+f) Start qstalker program.
+g) Check, if your translation is good and OK
+
+That's all folks!

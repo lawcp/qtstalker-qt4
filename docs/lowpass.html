@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Low Band Pass Filter - LOWPASS</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>Low Band Pass Filter - LOWPASS<br>
+</u></h2>
+<img alt="" src="lowpass1.png" style="width: 588px; height: 216px;"><br>
+&nbsp;
+<br>
+<h3>Parameters:</h3>
+<ul>
+  <li>Color - Plot color</li>
+  <li>Line Type - The type of plot to draw</li>
+  <li>Label - The text that identifies the plot</li>
+  <li>Width - The weighting exponent to alter the bandwidth of the
+filter.<br>
+  </li>
+  <li>Freq - Adjusts how responsive the filter is to variations in the
+input signal.</li>
+</ul>
+<h3>Description:
+</h3>
+LOWPASS is a zero lag low bandpass filter similar to the Jurik
+indicator. It uses a Fast Fourier Transform to translate the input to
+the frequency domain, applies a low bandpass filter and returns the
+filtered signal in the real domain.&nbsp; It is useful a general
+indicator similar to a moving average without the attendant lag.&nbsp;
+It is extremely useful for smoothing other&nbsp; indicators with a
+configurable delay.<br>
+<br>
+The Lowpass filter comes out of Digital Signal Possessing (DSP) where
+the intent is to sample a comlex (analog) waveform and filter or
+decompose it into its various frequency components. The width and freq
+parameters have real mathematical meanings having to do with
+determining the Nyquist frequency (i.e. one half of the bandwidth of
+the input signal) and the cutoff frequency for the filter. All of which
+are probably not appropriate for this forum. A net search on "DSP",
+"Nyquist Theorem", "Time Series Analysis", "DSP Filters", etc. will
+provide a reading list for the next few years. The best book I know on
+the subject is: Neural, Novel &amp; Hybrid Algorithms for Time Series
+Prediction by Timothy Masters. <br>
+&nbsp; <br>
+As a practical matter, the standard low bandpass filters like SMA or
+EMA induce a lag from the input signal while the DSP version minimizes
+the lag and (in theory) makes for more responsive indicators. I would
+suggest experimentation. Plot and SMA, compare with Lowpass then play
+around with the parameters (ignoring the absolute values) to see if you
+find it useful. <br>
+<br>
+There are two input parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+Width (0.0 to 0.5) adjusts the weighting exponent to alter the
+bandwidth of the filter i.e. the range of points considered by the
+filter.<br>
+<br>
+Freq (0.001 to 0.2) (in frequency units) adjusts how responsive the
+filter is to variations in the input signal. Experimentation is
+suggested to find the best values. (note: if the fractional ranges turn
+out to be a problem for users, perhaps a range of arbitrary values
+could be mapped into the acceptable ones.)<br>
+&nbsp;&nbsp;&nbsp; <br>
+The FFT routine used was written by Laurent de Soras and freely
+available for use (see notes in code).<br>
+<br>
+<h3>Formula Reference:<br>
+</h3>
+<table style="text-align: left; width: 905px; height: 112px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Syntax<br>
+      </td>
+      <td style="vertical-align: top;">LOWPASS(ARRAY INPUT, Freq, Width)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Function<br>
+      </td>
+      <td style="vertical-align: top;">ARRAY INPUT can be either an
+array of bars or a formula variable array of data. </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Example<br>
+      </td>
+      <td style="vertical-align: top;">LOWPASS(Close, 0.05, 0.2)<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<a href="fi.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a><a href="math.html"
+ target="_self"><img src="next.png" alt="Next" border="0" height="32"
+ width="32"></a>
+<a href="toc.html"><img src="home.png" alt="Home" border="0" height="32"
+ width="32"></a>
+</div>
+</body>
+</html>

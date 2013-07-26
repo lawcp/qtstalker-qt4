@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+Name=Candles: black background, white candles
+script=candles := BARS(Candle,white)|plot (candles,white,cdl-bw,Candle)
+logScale=1

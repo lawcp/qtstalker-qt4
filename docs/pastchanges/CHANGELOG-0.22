@@ -1,0 +1,54 @@
+- Added MA options to the VOL, OI indicator plugins.
+
+- Updated the date area of charts to include more detail.
+
+- Fixed compile error in the /src/src.pro file that didn't compile QuotePlugin and IndicatorPlugin classes.
+
+- Added a new side panel to allow the user to enable/disable main chart indicators on the fly.
+  Double click on the indicator in the list to enable or disable the indicator.
+
+- Added 0% line option to fibo chart object.
+
+- Added DTOHLC format option to the CSV plugin.
+
+- Added toolbar toggle to hide/show the main OHLC plot. Use this to clarify other close based indicators
+  on the chart.
+
+- Added new indicator PRICE. This allows you to plot a number of different price plot formulas.
+
+- Applied patch #816926 - BB indicator not showing BBU value.
+
+- Applied patch #816927 - Added a new "Data Panel" doc. Further clarify the
+candlesticks. Updated FAQ to encourage more contributions.
+
+- Added an additional include path to all the plugins to help in compiling with older qmake versions. (Debian).
+
+- Applied patch #816871 from Marco van Zwetselaar. This is a new quote plugin (MySQL) that allows the user to import quote data from
+  MySQL db's into Qtstalker format. Added a function to the qtstalker.pro file to make a conditional compile of this plugin if the
+  mysql.h header file can be found. If not found, the plugin will not be compiled.
+
+- Better resizing of columns when editing user settings in SettingView class.
+
+- Fixed bug #819309 that caused a segfault with 'floating point error' on new tab indicator creation.
+
+- New indicator plugin OVRLY. This tabbed indicator allows you to chart the current symbol along with a base symbol on the same chart.
+  There are 2 methods. Compare Price will show both plots, normalized so that scaling makes sense. This is good for comparing symbols
+  against an index or similar sectors. Compare Performance plots the % performance of each symbol from the first bar. This is good for
+  showing the relative % performance.
+
+- Added new directive to all the plugin *.pro files to use /src for all moc files. Now compiles on Debian stable finally!
+
+- Disabled indicators settings were not being set after loading a new chart. Fixed.
+
+- Added new button to the toolbar to toggle the date plot on the tabbed indicators.
+
+- Added new preference to change the position of the indicator tabs. 'Indicator Tabs Top' if checked will put the tabs on the top,
+  unchecked will move tabs to the bottom.
+
+- The crosshairs are now linked between the main plot and the indicator tabs.
+
+- Trimmed down most of the png files in the docs in an attempt to reduce the size of the source package (2+ meg). Perhaps in the future,
+  we will have to split the docs off into a separate source package.
+
+- Added check for spaces when creating a group.
+

@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Engulfing Candles
+script=candles := BARS(Candle,dimgray)|ceng := TALIB(CDLENGULFING)|c1 := UTIL(COMP,ceng,1,GTEQ)|t1 := UTIL(COLOR,c1,candles,1,red)|c2 := UTIL(COMP,ceng,-1,LTEQ)|t2 := UTIL(COLOR,c2,candles,1,green)|plot (candles,dimgray,c-eng,Candle)
+logScale=1

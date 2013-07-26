@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: Quote Plugin - CSV</title>
+  <meta content="amaya 6.1, see http://www.w3.org/Amaya/"
+ name="generator">
+</head>
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>CSV Plugin</u></h2>
+<h3>Description:</h3>
+<p>Use local plain-text comma-separated values (CSV) ascii files.
+Perhaps
+you already have a collection of files in this format ... end-of-day
+data
+managed as a separate concern by some other application. This plugin is
+further flexible in that it uses user created "rules" to import many
+different formats. The rule describes the field format of each line of
+data to import. <br>
+</p>
+<h3>General Input Parameters:</h3>
+<ul>
+  <li>Rule - The field format rule to apply to the input files selected.</li>
+  <li>Input - The ASCII file to be imported from your local filesystem.</li>
+  <li>Symbol - If you do not specify a symbol field in the rule, the
+symbol field will enable allowing you to enter a symbol. If no symbol
+is entered, then the basename part
+of the filename will be used.</li>
+  <li>Auto Reload - If set &gt; 0 minutes, will import the input files
+every ? minutes. This can be used as a way of updating intraday quotes
+via some other app that is downloading ascii quotes to a file.<br>
+  </li>
+  <li>Select Date Range - Select a date range of records to import. If
+checked, the Start Date and End Date options are required.</li>
+  <li>Date Start - Specify a start date for record filtering. Only used
+if "Select Date Range' option is checked.</li>
+  <li>Date End - Specify a ending date for record filtering. Only used
+if "Select Date Range' option is checked.</li>
+</ul>
+<p>The dates are automatically set to today's date in readiness for loading
+tonight's End-of-Day data with the "Select Date Range" option.
+</p>
+<img alt="" src="csv1.png" style="width: 281px; height: 353px;"><br>
+
+<h3>Rule Page Parameters:</h3>
+Use this page to create, edit or delete rules.<br>
+<ul>
+  <li>Rule - The name of the rule.<br>
+  </li>
+  <li>Chart Type - The chart to create can be stock or futures chart.</li>
+  <li>Delimiter - The delimiter used between fields.</li>
+  <li>Data Directory - The directory offset used to place the imported
+data. The above example will update charts located in the MyStocks
+directory.</li>
+  <li>Symbol Filter - If you wish to select specific symbol names from
+an input file. Separate symbols with a comma. If left blank all symbols
+will be imported.<br>
+  </li>
+  <li>Fields - The field type you want to insert. Currently the
+following fields are available:<br>
+  </li>
+  <ul>
+    <li>Date:YYYYMMDD - date field<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Date:YYMMDD - date field<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Date:MMDDYY - date field<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Date:MMDDYYYY - date field</li>
+  </ul>
+  <ul>
+    <li>Date:DDMMYYYY - date field</li>
+  </ul>
+  <ul>
+    <li>Date:MMDDYYYYHHMMSS - ISO date field<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Time - time field eg. 23:59:59<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Symbol - symbol or ticker name<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Open<br>
+    </li>
+  </ul>
+  <ul>
+    <li>High<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Low<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Close<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Volume<br>
+    </li>
+  </ul>
+  <ul>
+    <li>OI - open interest<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Ignore - use this to ignore any unwanted data fields in the
+record</li>
+    <li>Name - The symbol name. eg. Microsoft Corporation<br>
+    </li>
+  </ul>
+</ul>
+<br>
+<img alt="" src="csv2.png" style="width: 401px; height: 398px;"><br>
+<br>
+<p>The left side list contains all the available import fields. The
+right side list contains the rule fields used. Use the buttons on the
+button bar to insert or delete items. The fields in the list should
+match the fields
+in the ascii file from top to bottom in the list. Using the above
+picture as an example; The rule would import a record that had the
+format of "Date:MMDDYYYYHHMMSS,Open,High,Low,Close,Volume,Ignore". An
+actual
+data record would look something like "12/31/1999
+23:59:59,100,101,99,100,999999,+0.25".
+</p>
+<p>The import rules are stored in <code>~/.qtstalker/dataN/plugin/quote/CSV/</code> directory.
+</p>
+<a href="cot.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a><a href="mysql.html"
+ target="_self"><img src="next.png" alt="Next" border="0" height="32"
+ width="32"></a>
+<a href="toc.html"><img src="home.png" alt="Home" border="0" height="32"
+ width="32"></a>
+</div>
+</body>
+</html>

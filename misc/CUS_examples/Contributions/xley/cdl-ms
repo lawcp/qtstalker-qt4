@@ -1,0 +1,7 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+Name=Candle: Morning Star and Evening Star, Abandonded Baby, Tri Star
+script=candles := BARS(Candle,dimgray)|css1 := TALIB(CDLMORNINGSTAR)|css2 := TALIB(CDLMORNINGDOJISTAR)|css3 := TALIB(CDLEVENINGSTAR)|css4 := TALIB(CDLEVENINGDOJISTAR)|css5 := TALIB(CDLABANDONEDBABY)|css6 := TALIB(CDLTRISTAR)|c1 := UTIL(COMP, css1, 1, GTEQ)|t1 := UTIL(COLOR, c1, candles, 1, green)|c2 := UTIL(COMP, css2, 1, GTEQ)|t2 := UTIL(COLOR, c2, candles, 1, cyan)|c3 := UTIL(COMP, css3, -1, LTEQ)|t3 := UTIL(COLOR, c3, candles, 1, red)|c4 := UTIL(COMP, css4, -1, LTEQ)|t4 := UTIL(COLOR, c4, candles, 1, orange)|c5 := UTIL(COMP, css5, 1, GTEQ)|t5 := UTIL(COLOR, c5, candles, 1, blue)|c5b := UTIL(COMP, css5, -1, LTEQ)|t5b := UTIL(COLOR, c5b, candles, 1, yellow)|c6 := UTIL(COMP, css6, 1, GTEQ)|t6 := UTIL(COLOR, c6, candles, 1, magenta)|c6b := UTIL(COMP, css6, -1, LTEQ)|t6b := UTIL(COLOR, c6b, candles, 1, brown)|plot (candles,dimgray,star,Candle)
+logScale=1

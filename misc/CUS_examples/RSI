@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+version=0.33
+Name=RSI - Relative Strength Index
+script=overbought := UTIL(REF,70)|oversold := UTIL(REF,30)|r24 := TALIB(RSI,Close,24)|r12 := TALIB(RSI,Close,12)|r6 := TALIB(RSI,Close,6)|plot (overbought,#ee0000,Overbought,Horizontal)|plot (oversold,#00aa00,Oversold,Horizontal)|plot (r24,#ccccff,RSI24,Line)|plot (r12,#0088ff,RSI12,Line)|plot (r6,#ffff33,RSI6,Line)
+logScale=0

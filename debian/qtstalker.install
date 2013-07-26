@@ -1,0 +1,4 @@
+usr/bin/*
+usr/lib/*
+usr/share/qtstalker/i18n/*
+usr/share/qtstalker/indicator/*

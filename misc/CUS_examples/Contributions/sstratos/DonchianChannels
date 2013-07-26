@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+Name=Relative OHLC with DonchianChannels
+version=0.33
+script=INCLUDECUS(ohlc-rel)|high-1 := UTIL(REF,High,1)|low-1 := UTIL(REF,Low,1)|high := TALIB(MAX,high-1,20)|low := TALIB(MIN,low-1,20)|plot (high,#ff9900,HH,Line)|plot (low,#11ffcc,LL,Line)
+logScale=0

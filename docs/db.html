@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+    <script src="qtstalker.js" type="text/javascript"> </script>
+    <title>Qtstalker: Database explanation and alternative data loading methods</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <div id="content">
+      <div id="rightPanel">
+        <div id="version"></div>
+      </div>
+<!-- Content -->
+    <h1>Qtstalker: Database explanation and alternative data loading methods</h1>
+    <h2 id="introduction">Introduction</h2>
+    <p>
+Qtstalker provides various methods for data loading and update. The
+<a href="quotes.html">Quote Plugins</a> framework provides two examples
+"Yahoo" and "CSV". The latter is useful for managing your data separately
+as comma-separated value (CSV) files and manually or automated loading.
+The framework also enables the user to create their own plugins, such as the MySql plugin.
+    </p>
+    <p>
+Qtstalker stores the data for each assest (symbol) in separate Berkeley DB database files.
+    </p>
+    <p>
+This feature enables the user to load and update data via external methods to access the database files separately to Qtstalker. For example, there are Perl and Python modules for accessing Berkeley Database files.
+    </p>
+    <h2 id="structure">DB structure</h2>
+    <p>
+TODO: Explain the separate chart db files, the "index" db, and the chart objects db.
+<a href="http://sourceforge.net/forum/message.php?msg_id=4942952">This</a>
+forum discussion has some explanation.
+The C++ code will also explain, e.g. see
+<a href="http://qtstalker.sourceforge.net/doc/struct_d_b_index_item_item.html">DBIndexItemItem</a>.
+    </p>
+
+<!-- Footer -->
+    <p>
+      <a href="cus.html"><img src="back.png" border="0" width="32" height="32" alt="Back" /></a>
+      <a href="dev.html"><img src="next.png" border="0" width="32" height="32" alt="Next" /></a>
+      <a href="toc.html"><img src="home.png" border="0" width="32" height="32" alt="Home" /></a>
+    </p>
+    </div>
+  </body>
+</html>

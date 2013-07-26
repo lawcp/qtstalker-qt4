@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+version=0.33
+Name=BREV - Bar Reversals (Top and Bottom)
+script=high-1 := UTIL(REF,High,1)|high-2 := UTIL(REF,High,2)|highd-1 := UTIL(SUB,High,high-1)|highd-2 := UTIL(SUB,high-1,high-2)|highs-1 := UTIL(SIGN,highd-1)|highs-2 := UTIL(SIGN,highd-2)|top := UTIL(COMP,highs-1,highs-2,LT)|trev := UTIL(MUL,top,-1)|low-1 := UTIL(REF,Low,1)|low-2 := UTIL(REF,Low,2)|lowd-1 := UTIL(SUB,Low,low-1)|lowd-2 := UTIL(SUB,low-1,low-2)|lows-1 := UTIL(SIGN,lowd-1)|lows-2 := UTIL(SIGN,lowd-2)|brev := UTIL(COMP,lows-1,lows-2,GT)|plot (trev,#ee0000,BREV,Line)|plot (brev,#00aa00,TREV,Line)
+logScale=0

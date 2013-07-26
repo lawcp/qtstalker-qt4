@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Relative OHLC with BollingerBands
+script=INCLUDECUS(ohlc-rel)|bbupper2 := TALIB(BBANDS,Close,20,2,2,SMA,1)|bbupper1 := TALIB(BBANDS,Close,20,1,1,SMA,1)|bbmid2 := TALIB(BBANDS,Close,20,2,2,SMA,2)|bblower1 := TALIB(BBANDS,Close,20,1,1,SMA,3)|bblower2 := TALIB(BBANDS,Close,20,2,2,SMA,3)|plot (bbupper2,#ff3300,BBU,Line)|plot (bbupper1,#11ffcc,BBU,Line)|plot (bbmid2,#ffff3f,BBM,Line)|plot (bblower1,#ff9900,BBL,Line)|plot (bblower2,#00cc00,BBL,Line)
+logScale=1

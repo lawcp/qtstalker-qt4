@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+DEB_MAKE_INSTALL_TARGET = install INSTALL_ROOT=$(DEB_DESTDIR)
+#DEB_DH_INSTALL_ARGS = --fail-missing
+DEB_INSTALL_MANPAGES_qtstalker := debian/qtstalker.1
+
+# Oops! we needa install some missing CUS examples too
+binary-install/qtstalker-doc::
+	@mkdir -p debian/qtstalker-doc/usr/share/doc/qtstalker
+	@ln -s ../qtstalker-doc/html debian/qtstalker-doc/usr/share/doc/qtstalker/html
+	@find ./misc/CUS_examples -type f |sed 's|^\.\|||' |while read file; do\
+	    install -D -m 0644 $$file debian/qtstalker-doc/usr/share/doc/qtstalker-doc/html/$$file ;\
+	done
+	@find debian/qtstalker-doc/usr/share/doc/qtstalker-doc/html/misc -type d -name 'CVS' |xargs rm -rf
+	@find debian/tmp/usr/share/qtstalker/indicator -type f |sed 's|/tmp|/qtstalker-doc|; s|/qtstalker/indicator|/doc/qtstalker-doc/html/misc/CUS_examples|' |while read file; do\
+	    rm $$file ;\
+	done
+
+# Also install pixmaps and desktop
+binary-install/qtstalker::
+	@dh_install debian/*.desktop usr/share/applications
+	@dh_install pics/qtstalker.xpm usr/share/pixmaps
+
+# Finally, cleanup most of the generated stuff
+clean::
+	@-rm tests/dependencies/Makefile tests/dependencies/*.moc tests/dependencies/*.o tests/dependencies/dependencies
+	@-rm i18n/*.qm config.status qtstalker_single.pro
+	find . -name '*.so*' -delete

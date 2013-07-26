@@ -1,0 +1,8 @@
+enable=0
+plugin=CUS
+tabRow=1
+dateFlag=1
+version=0.33
+Name=Relative Candles with PP
+script=INCLUDECUS(cdl-rel)|sma6dh := TALIB(SMA,High,6)|maximo := UTIL(REF,sma6dh,1)|sma6dl := TALIB(SMA,Low,6)|minimo := UTIL(REF,sma6dl,1)|plot (maximo,#ffaa00,MAX,Line)|plot (minimo,#55aa00,MIN,Line)
+logScale=1

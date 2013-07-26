@@ -1,0 +1,4 @@
+20041002: Changed quotes dialog back to modal to fix segfaults.
+
+20041007: Fixed rule parsing error in CSV quote plugin.
+

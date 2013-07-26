@@ -1,0 +1,112 @@
+#!/bin/sh
+
+echo -n "Determining Qt version ..."
+qtVersionMajorRequired="4"
+qtVersionMinorRequired="3"
+qtMessage="This version of Qtstalker requires Qt$qtVersionMajorRequired.$qtVersionMinorRequired or better"
+qmakeCmd=`command -v qmake-qt4`
+if [ -z "$qmakeCmd" ] ; then
+  qmakeCmd=`command -v qmake`
+fi
+qtVersionOk="false"
+if [ -z "$qmakeCmd" ] ; then
+  qmakeOk="false"
+  echo " not found" >&2
+  echo "ERROR: Qt4 is not properly installed - cannot find '{qmake-qt4|qmake}'"
+  exit 1
+else
+  qmakeOk="true"
+  qtVersionOk="true"
+  qtVersion=`$qmakeCmd --version 2>&1 | sed -n '/[0-9]\.[0-9]\.[0-9]/s/^.*\([0-9]\.[0-9]\.[0-9]\).*$/\1/p'`
+  echo -n " $qtVersion ..."
+  qtVersionMajor=`echo $qtVersion | sed 's/^\([0-9]\)\..*$/\1/'`
+  qtVersionMinor=`echo $qtVersion | sed 's/^[0-9]\.\([0-9]\)\..*$/\1/'`
+  if [ $qtVersionMajor -ne $qtVersionMajorRequired ]; then
+    qtVersionOk="false"
+  elif [ $qtVersionMinor -lt $qtVersionMinorRequired ]; then
+    qtVersionOk="false"
+  fi
+  if [ "$qtVersionOk" != "true" ]; then
+    echo " not okay"
+    echo "ERROR: $qtMessage"
+  else
+    echo " okay"
+  fi
+  lreleaseCmd=`command -v lrelease-qt4`
+  if [ -z "$lreleaseCmd" ] ; then
+    lreleaseCmd=`command -v lrelease`
+  fi
+  lupdateCmd=`command -v lupdate-qt4`
+  if [ -z "$lupdateCmd" ] ; then
+    lupdateCmd=`command -v lupdate`
+  fi
+fi
+
+echo -n "Determining TA-Lib version ..."
+talibCmd=`command -v ta-lib-config`
+if [ -z "$talibCmd" ] ; then
+  talibOk="false"
+  echo " not found"
+  echo "ERROR: TA-Lib is not properly installed - cannot find 'ta-lib-config'"
+else
+  talibOk="true"
+  talibVersion=`$talibCmd --version`
+  echo -n " $talibVersion ..."
+  echo " okay"
+fi
+if [ "$qmakeOk" != "true" ] || [ "$qtVersionOk" != "true" ] || [ "$talibOk" != "true" ]; then
+  echo "ERROR: There were configuration issues. See docs/install.html"
+  exit 1
+fi
+
+echo
+echo "Building Makefile ..."
+$qmakeCmd "DEFINES += QT_NO_COMPAT" "CONFIG += qt" -o Makefile qtstalker.pro
+if [ "$?" -ne "0" ]; then
+  echo "ERROR: See configuration messages above."
+  exit 1
+else
+  echo "Done"
+fi
+
+echo
+echo "Ensuring valid Berkeley DB database ..."
+cd tests/dependencies
+touch Dependencies.cpp
+$qmakeCmd
+if [ "$?" -ne "0" ]; then
+  echo "ERROR: See messages above."
+  exit 1
+fi
+make
+if [ "$?" -ne "0" ]; then
+  echo "ERROR: See messages above."
+  exit 1
+fi
+if [ -x dependencies ]; then
+  ./dependencies
+else
+  echo "Cannot run test."
+  exit 1
+fi
+if [ "$?" -ne "0" ]; then
+  echo "ERROR: See messages above."
+  exit 1
+fi
+cd -
+
+echo
+echo "Creating national language files in i18n ..."
+$qmakeCmd -project -r -o qtstalker_single.pro .
+$lupdateCmd qtstalker_single.pro
+echo "Done"
+if ls i18n/* >/dev/null 2>&1; then
+    echo "Compiling existing translations ..."
+    $lreleaseCmd i18n/qtstalker_??.ts
+    echo "Done"
+fi
+echo './configure' >config.status
+chmod 755 config.status
+
+echo
+echo "Now run 'make && sudo make install', without quotes"

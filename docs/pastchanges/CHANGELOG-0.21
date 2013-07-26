@@ -1,0 +1,67 @@
+- Fixed the resize bug with the side panel causing the annoying plot resizes.
+
+- Shortened the labels that appear in the side panel to minimize space.
+
+- Removed the Volume label from the side panel when mouse is over the main chart. It should only appear in the VOL chart.
+
+- Applied patch from David Crossley for the CSV plugin docs.
+
+- Fixed a bug that would segfault if there was only 1 bar to plot.
+
+- Applied 3 patches for PP color and several docs from David Crossley.
+
+- Applied preliminary exhaustion bar patch from David Crossley. This is a new chart type see docs for details.
+
+- Changed the name of the Qtstalker quotes plugin to QtstalkerFormat. This was to keep from confusing object files with the
+  main program.
+
+- Finally changed the compiling process to a regular './configure;make;make install' format. To do this I had to re-organize the
+  entire source tree. The executable 'qtstalker' will now be put into /usr/bin. The plugins will be created in /usr/lib/qtstalker.
+  The docs will go into /usr/share/doc/qtstalker. This seems to be the most popular choice (at least with Gentoo and Debian)
+
+- Removed the install plugins stuff. Not really needed since all you have to do is plop the lib into the dir for it to work.
+
+- Rewrote the paint bar functions in Plot class to accept colors from indicator plugins. Added a new function to Plugin class
+  to handle color bars from indicators.
+
+- New indicator Exhaustion Points (EP). This was originally code from Plot class that was moved into an indicator instead.
+
+- New line type "Invisible" added. This allows data plots to be hidden, but the data to be visible in the side panel or data window.
+
+- Color bars were off by one in the EP indicator. Fixed.
+
+- Removed CBOT plugin from the compile process pending a future fix or removal.
+
+- Fixed the change field in the main chart to display only decimal numbers.
+
+- Applied patch #788557 for EP docs from David Crossley.
+
+- Applied patch #788595 for new indicator MMA from David Crossley.
+
+- Changed SettingView class to remove user sorting of the table. Instead the key sorting will be done internally.
+
+- Applied patch #789058 from David Crossley to fix candles not being drawn properly when open == close.
+
+- Changed some functions in Qtstalker class to use signals to make Plot class parm changes.
+
+- Applied patch #791519 from Marco van Zwetselaar to add .cvsignore files to the source tree.
+
+- Applied patch #792296 from David Crossley for new indicator FI (force index).
+
+- Added new Config option NavigatorPosition that allows user to place the chart navigator on the left or right side. The
+  default is left side. This setting is edited in the preferences dialog. Checked means left side. Unchecked means right side.
+
+- Added new option to all MA's to displace them if desired. 0 for no displacement and > 0 for bars of displacement. Updated the
+  MA, MA2, MA3, MMA plugins with the new parm.
+
+- Removed Ratio quote plugin. Moved ratio functions into the Spread quote plugin.
+
+- Applied patch #806926 from David Crossley.
+
+- Put a lebel in the group navigator tab to indicate what the current group is.
+
+- Fixed Yahoo quote plugin to accept yahoo format change (Adj. Close*) on 2003.09.17.
+
+- Renamed /src/Qtstalker.pro to src.pro to fix problem with qmake logic on some distributions.
+
+- CSV plugin updated to accept date ranges, delimiter types and date format.

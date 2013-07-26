@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+  <link rel="stylesheet" type="text/css" href="qtstalker.css" media="screen" />
+  <script src="qtstalker.js" type="text/javascript"> </script>
+  <title>Qtstalker: New Indicator</title>
+  <meta content="amaya 6.1, see http://www.w3.org/Amaya/"
+ name="generator">
+</head>
+<body>
+<div id="content">
+<div id="rightPanel">
+<div id="version"></div>
+</div>
+<h2><u>New Indicator</u></h2>
+<h3>Description:</h3>
+<p>Create a new indicator for display and further configuration.</p>
+<p>Selecting New Indicator will bring up a dialog that asks you to
+choose from the list of installed indicator plugins. Only indicators
+that have been installed as plugins will be available. This includes the
+extensive list of indicators available via the
+<a href="talib.html">TA-LIB</a> library.
+</p>
+<p>
+There are two ways to use indicators:
+</p>
+<ul>
+ <li>Select it from the list. This provides access to its parameters.</li>
+ <li>Select "CUS" from the list to use it via the <a href="cus.html">CUS</a> custom indicator. This also enables combination of different plots in one indicator. See <a href="cus.html#examples">examples</a>.
+</ul>
+<h3>Usage:</h3>
+<p>
+The "Name" field
+requires a unique name for the new indicator. The "Tab Row" sets the
+row number where you want the indicator to be placed. The
+maximum number of rows is 3.
+</p>
+The Indicator Group field has two types. The user can apply the new
+indicator to the current indicator group or may create a 'Local'
+indicator. A local indicator applies only to the currently loaded
+chart. This is useful if the user wants to apply specific indicators to
+specific charts rather than applying global indicators.<br>
+<br>
+<br>
+<img alt="" src="newindicator1.png" style="width: 275px; height: 215px;"><br>
+<p><br>
+After completing the above dialog, the edit indicator dialog will be
+displayed. All
+of the parameters that apply to the indicator can be edited here.</p>
+<p>
+This will create a text file at <tt>~/.qtstalker/dataN/indicator/Indicators/</tt>
+which can be further edited, either via the interface or by hand. For manual changes, reload the chart to see the effect. New indicators created manually require progam re-start.
+</p>
+<a href="toolbars.html" target="_self"><img src="back.png" alt="Back"
+ border="0" height="32" width="32"></a><a href="datawindow.html"
+ target="_self"><img src="next.png" alt="Next" border="0" height="32"
+ width="32"></a>
+<a href="toc.html"><img src="home.png" alt="Home" border="0" height="32"
+ width="32"></a>
+</div>
+</body>
+</html>

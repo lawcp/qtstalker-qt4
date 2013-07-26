@@ -1,0 +1,39 @@
+20050515: Applied patch #1201695 - more math StdDev and TypPrice. Thanks to Jim for the patch.
+
+20050515: Applied new feature request #1202167 - Adaptive Stochastic Indicator. Thanks to Jim
+          for this patch.
+
+20050522: Applied feature request #1206257 - Chande CMO indicator. Thanks to Jim for the patch.
+
+20050522: Applied feature request #1204641 - Ehler's Sine Wave indicator. Thanks to Jim for the patch.
+
+20050522: Applied feature request #1203183 - Ehler's LMS Predictor indicator. Thanks to Jim for the patch.
+
+20050522: Removed StdDev function from MATH due to duplication in the SD plugin.
+
+20050522: Added a Normalize function to the MATH plugin.
+
+20050523: MATH plugin was getting too crowded. It will only contain the four ADD, DIV, MUL, SUB functions.
+          Split the rest into 2 new indicator plugins. The UTIL plugin will contain simple utility functions
+          like Normalize, ACCUM etc. The MINMAX plugin contains the MIN and MAX functions.
+
+20050526: Portfolio was not parsing path properly. Removed parse function and now using full path in storage.
+
+20050529: Applied feature request #1206364 - Chande VIDYA indicator. Thanks to Jim for the patch.
+
+20050529: Changed help dialog windows to be non-modal.
+
+20050529: Changed portfolio to use only the symbol instead of the full path. It was too large. Now parses
+          properly.
+
+20050530: Fixed bug in chart objects that would remove previous objects and prevented multiple objects of the
+          same type from being created.
+
+20050531: Changed function interface in IndicatorPlugin::getMA to allow for Lowpass extra parms.
+
+20050531: Added an enhanced dialog for editing MA's to hide/show unused parms depending on MA type chosen.
+
+20050601: Fixed MySQL plugin not compiling on FreeBSD.
+
+20050604: Stock splits can now be applied by using the Split page in the edit chart dialog.
+

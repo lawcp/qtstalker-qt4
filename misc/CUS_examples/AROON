@@ -1,0 +1,8 @@
+enable=1
+plugin=CUS
+tabRow=3
+dateFlag=0
+version=0.33
+Name=AROON
+script=lowerband := UTIL(REF,30)|upperband := UTIL(REF,70)|AroonDown := TALIB(AROON,14,1)|AroonUp := TALIB(AROON,14,2)|plot (lowerband,#ff3399,Lowerband,Horizontal)|plot (upperband,#0088ff,Upperband,Horizontal)|plot (AroonDown,#ee0000,AroonDN,Line)|plot (AroonUp,#ffff33,AroonUP,Line)
+logScale=0
